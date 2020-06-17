@@ -1,6 +1,8 @@
 <template>
  <div>
-  <div>1</div>
+      <div class="login">
+          <div>adwdasdaw</div>
+      </div>
  </div>
 </template>
 
@@ -32,6 +34,12 @@
  }
 </script>
 
-<style scoped lang='scss'>
-
+<style scoped>
+  .login {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 </style>

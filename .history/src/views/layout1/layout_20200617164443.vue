@@ -1,6 +1,8 @@
 <template>
  <div>
-  <div>1</div>
+    <div class="box">
+        <div>123245</div>
+    </div>
  </div>
 </template>
 

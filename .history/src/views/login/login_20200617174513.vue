@@ -1,6 +1,8 @@
 <template>
  <div>
-  <div>1</div>
+      <div class="login">
+          <div class="l-box">adwdasdaw</div>
+      </div>
  </div>
 </template>
 
@@ -32,6 +34,6 @@
  }
 </script>
 
-<style scoped lang='scss'>
-
+<style scoped>
+  
 </style>

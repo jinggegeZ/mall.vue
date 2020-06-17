@@ -1,13 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import layout from '../views/layout1/layout.vue'
 
 Vue.use(VueRouter)
 
   const routes = [
   {
-      path: '/',
+      path: '/layout',
       name: 'layout',
       component: layout,
       children:[
@@ -16,33 +15,9 @@ Vue.use(VueRouter)
           name: 'Home',
           component: Home,
           meta:{
-          title:'商城'
+          title:'首页'
           }
-        },
-        {
-          path: 'classification',
-          name: 'classification',
-          component: () => import('../views/classification/classification.vue'),
-          meta:{
-          title:'分类'
-          }
-        },
-        {
-          path: 'carts',
-          name: 'carts',
-          component: () => import('../views/carts/carts.vue'),
-          meta:{
-          title:'购物车'
-          }
-        },
-        {
-          path: 'my',
-          name: 'my',
-          component: () => import('../views/my/my.vue'),
-          meta:{
-          title:'我的'
-          }
-        },
+        }
       ]
   },
   {
