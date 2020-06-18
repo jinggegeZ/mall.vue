@@ -99,7 +99,7 @@ export default {
     },
     // 18. 获取登录注册默认验证码(get)
     verify(){
-        return service.get('/verify')
+        return service.get('/v1/verify')
     },
     // 19. 查询用户收货地址(get)
     getAddress(){

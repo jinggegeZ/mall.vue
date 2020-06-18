@@ -8,7 +8,7 @@ import api from './http/api'
 
 
 Vue.use(Vant);
-Vue.prototype.$api = api
+vue.prototype.$api = api
 Vue.config.productionTip = false
 
 new Vue({

@@ -18,7 +18,7 @@
           </div>
         </div>
         <div></div>
-        <div class="denglu">
+        <div>
             <van-button round block type="info" native-type="submit">
             登录
             </van-button>
@@ -114,9 +114,5 @@
   .van {
     margin-top: 15px;
     margin-bottom: 20px;
-  }
-  .denglu {
-    margin-top: 15px;
-    margin-bottom: 15px;
   }
 </style>

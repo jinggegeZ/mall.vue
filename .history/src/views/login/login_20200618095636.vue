@@ -18,15 +18,9 @@
           </div>
         </div>
         <div></div>
-        <div class="denglu">
-            <van-button round block type="info" native-type="submit">
-            登录
-            </van-button>
-        </div>
         <div>
-            <van-button round block type="info" native-type="submit">
-            注册
-            </van-button>
+          <van-button type="primary">登录</van-button>
+          <van-button type="info">注册</van-button>
         </div>
       </div>
     </div>
@@ -45,9 +39,9 @@
      return {
        username: '',
        password: '',
-       number1:'',
-       number2:'',
-       number3:'',
+       手机号:'',
+       验证码:'',
+       图形验证码:'',
      }
    },
    methods: {
@@ -114,9 +108,5 @@
   .van {
     margin-top: 15px;
     margin-bottom: 20px;
-  }
-  .denglu {
-    margin-top: 15px;
-    margin-bottom: 15px;
   }
 </style>

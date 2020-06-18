@@ -6,27 +6,19 @@
         <div class="l-font">登录/注册</div>
         <div class="">
           <van-form @submit="onSubmit">
-            <van-field v-model="username" name="用户名" label="Username" placeholder="Username" :rules="[{ required: true, message: '请填写用户名' }]"/>
-            <van-field v-model="password" type="password" name="密码" label="Password" placeholder="Password" :rules="[{ required: true, message: '请填写密码' }]" />
+            <van-field v-model="username" name="用户名" label="用户名" placeholder="用户名" :rules="[{ required: true, message: '请填写用户名' }]"/>
+            <van-field v-model="password" type="password" name="密码" label="密码" placeholder="密码" :rules="[{ required: true, message: '请填写密码' }]" />
+            <div class="div">
+            <van-button round block type="info" native-type="submit">
+            提交
+            </van-button>
+            </div>
           </van-form>
-          <div class="van">
-            <van-form>
-            <van-field v-model="number1" type="number" name="手机号" label="手机号" placeholder="仅验证需要" :rules="[{ required: true, message: '请填写手机号' }]" />
-            <van-field v-model="number2" type="number" name="验证码" label="验证码" placeholder="仅登录需要" :rules="[{ required: true, message: '请填写短信验证码' }]" />
-            <van-field v-model="number3" type="number" name="图形验证码" label="图形验证码" placeholder="仅登录需要" :rules="[{ required: true, message: '请填写图形验证码' }]" />
-            </van-form>
-          </div>
         </div>
         <div></div>
-        <div class="denglu">
-            <van-button round block type="info" native-type="submit">
-            登录
-            </van-button>
-        </div>
         <div>
-            <van-button round block type="info" native-type="submit">
-            注册
-            </van-button>
+          <van-button type="primary">登录</van-button>
+          <van-button type="info">注册</van-button>
         </div>
       </div>
     </div>
@@ -45,9 +37,6 @@
      return {
        username: '',
        password: '',
-       number1:'',
-       number2:'',
-       number3:'',
      }
    },
    methods: {
@@ -102,7 +91,7 @@
   .l-font {
     font-size: 20px;
     font-weight: 700;
-    margin-bottom: 35px;
+    margin-bottom: 15px;
   }
   .l-box2 {
     width: 90%;
@@ -110,13 +99,5 @@
   }
   .div {
     margin: 16px;
-  }
-  .van {
-    margin-top: 15px;
-    margin-bottom: 20px;
-  }
-  .denglu {
-    margin-top: 15px;
-    margin-bottom: 15px;
   }
 </style>
