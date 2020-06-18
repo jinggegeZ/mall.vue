@@ -12,10 +12,6 @@
  export default {
    name: '',
    props: {
-     obj:{
-       type:Array,
-       default:() => {}
-     }
    },
    components: {
 

@@ -46,7 +46,7 @@
 <style scoped>
   .h2-box {
     width: 100%;
-    height: 90px;
+    height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -65,6 +65,6 @@
     height: 50px;
   }
   .h2-font{
-    font-size: 14px;
+    font-size: 16px;
   }
 </style>

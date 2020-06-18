@@ -12,24 +12,25 @@
  export default {
    name: '',
    props: {
-     obj:{
-       type:Array,
-       default:() => {}
-     }
    },
    components: {
 
    },
    data () {
      return {
-       
+       obj:{}
      }
    },
    methods: {
 
    },
    mounted() {
-     
+     this.$api.recommend().then(res => {
+        this.obj = res.data.slides
+        console.log(res.data.slides);
+    }).catch(err => {
+        console.log(err);
+    })
    },
    watch: {
 
@@ -44,7 +45,6 @@
   .h1-box {
     width: 100%;
     box-shadow: 0 1px 2px 0 #ddd;
-    margin-top: 5px;
   }
   .van-swipe-item img {
     width: 100%;

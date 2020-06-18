@@ -1,6 +1,12 @@
 <template>
  <div>
-  <div class="h3-box"><img src="this.advertesPicture" alt=""></div>
+  <div class="h2-box">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
  </div>
 </template>
 
@@ -8,24 +14,20 @@
  export default {
    name: '',
    props: {
-     advertesPicture:{
-       type: Object,
-       default:() => {}
-     }
    },
    components: {
 
    },
    data () {
      return {
-
+       obj:{},
      }
    },
    methods: {
 
    },
    mounted() {
-
+     this.$api.
    },
    watch: {
 
@@ -37,15 +39,9 @@
 </script>
 
 <style scoped>
-  .h3-box {
-    width: 100%;
-    height: 50px;
+  .h2-box {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-  }
-  .h3-box img{
-    width: 90%;
-    height: 90%;
   }
 </style>

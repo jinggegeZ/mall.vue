@@ -12,17 +12,15 @@
  export default {
    name: '',
    props: {
-     obj:{
-       type:Array,
-       default:() => {}
-     }
    },
    components: {
 
    },
    data () {
      return {
-       
+       obj:[],
+       category:[],
+       floor1:[]
      }
    },
    methods: {

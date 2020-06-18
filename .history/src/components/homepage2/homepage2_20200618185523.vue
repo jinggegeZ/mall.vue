@@ -4,7 +4,7 @@
     <div class="h21-box" v-for="(item,index) in category" :key="index">
       <div>
         <div><img :src="item.image" alt=""></div>
-        <div class="h2-font">{{item.mallCategoryName}}</div>
+        <div>{{item.mallCategoryName}}</div>
       </div>
     </div>
   </div>
@@ -46,7 +46,7 @@
 <style scoped>
   .h2-box {
     width: 100%;
-    height: 90px;
+    height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -61,10 +61,7 @@
     align-items: center;
   }
   .h21-box img {
-    width: 50px;
-    height: 50px;
-  }
-  .h2-font{
-    font-size: 14px;
+    width: 40px;
+    height: 40px;
   }
 </style>

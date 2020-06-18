@@ -1,33 +1,25 @@
 <template>
  <div>
-  <top></top>
-  <homepage :obj='obj'></homepage>
-  <homepage2 :category='category'></homepage2>
-  <homepage3 :advertesPicture='advertesPicture'></homepage3>
+  <div class="h1-box">
+      <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
+      <van-swipe-item v-for="(item,index) in obj" :key="index"><img :src="item.image" alt=""></van-swipe-item>
+      </van-swipe>
+  </div>
  </div>
 </template>
 
 <script>
-import top from '../components/top/top'
-import homepage from '../components/homepage/homepage1'
-import homepage2 from '../components/homepage2/homepage2'
-import homepage3 from '../components/homepage3/homepage3'
  export default {
    name: '',
    props: {
    },
    components: {
-     top,
-     homepage,
-     homepage2,
-     homepage3,
+
    },
    data () {
      return {
        obj:[],
        category:[],
-       advertesPicture:{},
-       floor1:[]
      }
    },
    methods: {
@@ -37,7 +29,6 @@ import homepage3 from '../components/homepage3/homepage3'
      this.$api.recommend().then(res => {
         this.obj = res.data.slides
         this.category = res.data.category
-        this.floor1 = res.data.floor1
         console.log(res.data);
     }).catch(err => {
         console.log(err);
@@ -53,5 +44,13 @@ import homepage3 from '../components/homepage3/homepage3'
 </script>
 
 <style scoped lang='scss'>
-
+  .h1-box {
+    width: 100%;
+    box-shadow: 0 1px 2px 0 #ddd;
+    margin-top: 5px;
+  }
+  .van-swipe-item img {
+    width: 100%;
+    height: 165px;
+  }
 </style>

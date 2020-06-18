@@ -1,6 +1,6 @@
 <template>
  <div>
-  <div class="h3-box"><img src="this.advertesPicture" alt=""></div>
+  <div class="h3-box"><img :src="" alt=""></div>
  </div>
 </template>
 

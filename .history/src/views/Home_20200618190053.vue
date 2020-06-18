@@ -3,7 +3,7 @@
   <top></top>
   <homepage :obj='obj'></homepage>
   <homepage2 :category='category'></homepage2>
-  <homepage3 :advertesPicture='advertesPicture'></homepage3>
+  <homepage3 :floor1='floor1'></homepage3>
  </div>
 </template>
 
@@ -26,7 +26,7 @@ import homepage3 from '../components/homepage3/homepage3'
      return {
        obj:[],
        category:[],
-       advertesPicture:{},
+       advertesPicture:'',
        floor1:[]
      }
    },

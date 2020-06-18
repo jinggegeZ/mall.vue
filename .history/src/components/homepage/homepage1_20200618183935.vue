@@ -12,24 +12,25 @@
  export default {
    name: '',
    props: {
-     obj:{
-       type:Array,
-       default:() => {}
-     }
    },
    components: {
 
    },
    data () {
      return {
-       
+       obj:[]
      }
    },
    methods: {
 
    },
    mounted() {
-     
+     this.$api.recommend().then(res => {
+        this.obj = res.data.slides
+        console.log(res.data);
+    }).catch(err => {
+        console.log(err);
+    })
    },
    watch: {
 
