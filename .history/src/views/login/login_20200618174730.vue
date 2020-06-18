@@ -106,8 +106,7 @@
           time--
           this.value = `${time}`
         }
-      },1000)
-      
+      })
     }
    },
    mounted() {

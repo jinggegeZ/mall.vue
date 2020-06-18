@@ -107,7 +107,7 @@
           this.value = `${time}`
         }
       },1000)
-      
+      clearInterval(timer)
     }
    },
    mounted() {

@@ -1,8 +1,6 @@
 <template>
  <div>
-    <div class="box">
-        <div><router-view></router-view></div>
-    </div>
+
  </div>
 </template>
 

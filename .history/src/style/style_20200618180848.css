@@ -17,7 +17,6 @@ html {
     height: 40px;
 }
 .van-search {
-    padding: 0 !important;
-    line-height: center;
+    margin: 0 !important;
 }
 

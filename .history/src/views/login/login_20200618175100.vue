@@ -97,18 +97,18 @@
        console.log(err);
      })
     },
-    gettime(){
-      let time = 60;
-      this.timer = setInterval(() => {
-        if(time == 0){
-          this.value = '获取验证码'
-        }else{
-          time--
-          this.value = `${time}`
-        }
-      },1000)
+    // gettime(){
+    //   let time = 60;
+    //   this.timer = setInterval(() => {
+    //     if(time == 0){
+    //       this.value = '获取验证码'
+    //     }else{
+    //       time--
+    //       this.value = `${time}`
+    //     }
+    //   },1000)
       
-    }
+    // }
    },
    mounted() {
      this.getcode()

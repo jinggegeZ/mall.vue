@@ -15,7 +15,7 @@
             <div class="number">
               <van-field v-model="sms" center clearablelabel="短信验证码" placeholder="请输入短信验证码">
                 <template #button>
-                 <van-button size="small" type="primary" @click="gettime">{{value}}</van-button>
+                 <van-button size="small" type="primary">发送验证码</van-button>
                 </template>
               </van-field>
             </div>
@@ -58,10 +58,7 @@
        sms:'',
        verify:'',
        code:'',
-       obj:'',
-       value:'获取验证码',
-       time:'',
-       timer:''
+       obj:''
      }
    },
    methods: {
@@ -97,18 +94,6 @@
        console.log(err);
      })
     },
-    gettime(){
-      let time = 60;
-      this.timer = setInterval(() => {
-        if(time == 0){
-          this.value = '获取验证码'
-        }else{
-          time--
-          this.value = `${time}`
-        }
-      },1000)
-      
-    }
    },
    mounted() {
      this.getcode()
