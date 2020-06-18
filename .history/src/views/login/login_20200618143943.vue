@@ -72,8 +72,13 @@
     zhuce(){
       this.$router.push('/register')
     },
-    obtain(){
-
+    getcode(){
+      this.$api.verify().then(res => {
+       this.code = res
+       console.log(res);
+     }).catch(err => {
+       console.log(err);
+     })
     },
     denglu(){
       this.$api.login(this.nickname,this.password,this.verify).then(res => {
@@ -83,14 +88,6 @@
         this.$message.error(err);
       })
       
-    },
-    getcode(){
-      this.$api.verify().then(res => {
-       this.code = res
-       console.log(res);
-     }).catch(err => {
-       console.log(err);
-     })
     }
    },
    mounted() {

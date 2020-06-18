@@ -26,7 +26,7 @@
             </div>
             <div class="number">
               <div><van-field v-model="number3" type="number" name="图形验证码" label="图形验证码" placeholder="仅登录需要" :rules="[{ required: true, message: '请填写图形验证码' }]" /></div>
-              <div @click="getcode" v-html="code"></div>
+              <div class="code" v-html="code"></div>
             </div>
             </van-form>
           </div>
@@ -83,18 +83,15 @@
         this.$message.error(err);
       })
       
-    },
-    getcode(){
-      this.$api.verify().then(res => {
+    }
+   },
+   mounted() {
+     this.$api.verify().then(res => {
        this.code = res
        console.log(res);
      }).catch(err => {
        console.log(err);
      })
-    }
-   },
-   mounted() {
-     this.getcode()
    },
    watch: {
 

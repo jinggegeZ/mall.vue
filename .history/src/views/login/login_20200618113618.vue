@@ -26,13 +26,13 @@
             </div>
             <div class="number">
               <div><van-field v-model="number3" type="number" name="图形验证码" label="图形验证码" placeholder="仅登录需要" :rules="[{ required: true, message: '请填写图形验证码' }]" /></div>
-              <div @click="getcode" v-html="code"></div>
+              <div class="code"><van-field v-html="code" /></div>
             </div>
             </van-form>
           </div>
         </div>
         <div></div>
-        <div class="denglu" @click="denglu">
+        <div class="denglu">
             <van-button round block type="info" native-type="submit">
             登录
             </van-button>
@@ -74,27 +74,15 @@
     },
     obtain(){
 
-    },
-    denglu(){
-      this.$api.login(this.nickname,this.password,this.verify).then(res => {
-        this.$message.success('登录成功')
-        this.$router.push('/')
-      }).catch(err => {
-        this.$message.error(err);
-      })
-      
-    },
-    getcode(){
-      this.$api.verify().then(res => {
+    }
+   },
+   mounted() {
+     this.$api.verify().then(res => {
        this.code = res
        console.log(res);
      }).catch(err => {
        console.log(err);
      })
-    }
-   },
-   mounted() {
-     this.getcode()
    },
    watch: {
 
@@ -164,11 +152,14 @@
   }
   .settime {
     width: 80px;
-    height: 40px;
+    height: 44px;
     background: green;
-    line-height: 40px;
+    line-height: 44px;
     color:white;
     border-radius: 5px;
    }
-   
+   .code {
+     width: 80px;
+     height: 44px;
+   }
 </style>

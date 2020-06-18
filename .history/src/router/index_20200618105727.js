@@ -114,9 +114,9 @@ Vue.use(VueRouter)
     component: () => import('../views/wine/wine.vue')
   },
   {
-    path: '/register',
-    name: 'register',
-    component: () => import('../views/register/register.vue')
+    path: '/wine',
+    name: 'wine',
+    component: () => import('../views/wine/wine.vue')
   },
 ]
 
