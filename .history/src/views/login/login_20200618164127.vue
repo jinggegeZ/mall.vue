@@ -15,7 +15,10 @@
             <div class="number">
               <van-field v-model="sms" center clearablelabel="短信验证码" placeholder="请输入短信验证码">
                 <template #button>
-                 <van-button size="small" type="primary">发送验证码</van-button>
+                  <van-button size="small" type="primary">发送验证码</van-button>
+                  <div>
+                    <van-count-down ref="countDown" millisecond :time="60000" :auto-start="false" format="ss" @finish="finish"/>
+                  </div>
                 </template>
               </van-field>
             </div>
@@ -95,6 +98,20 @@
        console.log(err);
      })
     },
+    // settime(){
+    //   if(countdown == 0){
+    //      obj.prop('disabled', false);
+    //      obj.text("点击获取验证码");
+    //      countdown = 60;
+    //      return;
+    //   }
+    //   else{
+    //     obj.prop('disabled', true);
+    //     obj.text("("+countdown+"s)后重新发送") ;
+    //     countdown--;
+    //   }
+    //   setTimeout(function() { setTime(obj) },1000)
+    // }
    },
    mounted() {
      this.getcode()
@@ -173,10 +190,5 @@
     color:white;
     border-radius: 5px;
    }
-   .b-box {
-     height: 30px;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-   }
+   
 </style>

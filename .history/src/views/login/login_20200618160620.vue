@@ -15,7 +15,7 @@
             <div class="number">
               <van-field v-model="sms" center clearablelabel="短信验证码" placeholder="请输入短信验证码">
                 <template #button>
-                 <van-button size="small" type="primary">发送验证码</van-button>
+                  <van-button size="small" type="primary">发送验证码</van-button>
                 </template>
               </van-field>
             </div>
@@ -43,7 +43,6 @@
 </template>
 
 <script>
-  let countdown = 60;
  export default {
    name: '',
    props: {
@@ -59,7 +58,6 @@
        sms:'',
        verify:'',
        code:'',
-       obj:''
      }
    },
    methods: {
@@ -76,7 +74,6 @@
       this.$api.login(this.nickname,this.password,this.verify).then(res => {
         if(res.code === 200 ){
           this.$dialog.alert({message:'登录成功'})
-          this.$router.push('my')
           console.log(res);
         }
         else if (res.code === -1 ){
@@ -91,10 +88,11 @@
     getcode(){
       this.$api.verify().then(res => {
        this.code = res
+       console.log(res);
      }).catch(err => {
        console.log(err);
      })
-    },
+    }
    },
    mounted() {
      this.getcode()
@@ -173,10 +171,5 @@
     color:white;
     border-radius: 5px;
    }
-   .b-box {
-     height: 30px;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-   }
+   
 </style>

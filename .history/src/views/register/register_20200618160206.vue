@@ -50,10 +50,10 @@
      register(){
        this.$api.register(this.nickname,this.password,this.verify).then(res => {
          if(res.code === -1){
-           this.$dialog.alert({message:'用户名已存在请直接登录'})
+           this.$dialog.alert({message:'请输入完整信息'})
          }
          else if(res.code === 200){
-           this.$dialog.alert({message:'恭喜您注册成功'})
+           this.$dialog.alert({message:'注册成功'})
            this.$router.push('login')
          }
          else if(res.code === -2){

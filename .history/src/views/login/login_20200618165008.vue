@@ -15,7 +15,10 @@
             <div class="number">
               <van-field v-model="sms" center clearablelabel="短信验证码" placeholder="请输入短信验证码">
                 <template #button>
-                 <van-button size="small" type="primary">发送验证码</van-button>
+                  <div class="t-box1"><van-button size="small" type="primary" @click="getVerification">发送验证码</van-button></div>
+                  <div class="t-box2">
+                    <van-count-down ref="countDown" millisecond :time="60000" :auto-start="false" format="ss" @finish="finish"/>
+                  </div>
                 </template>
               </van-field>
             </div>
@@ -94,6 +97,9 @@
      }).catch(err => {
        console.log(err);
      })
+    },
+    start() {
+      this.$refs.countDown.start();
     },
    },
    mounted() {

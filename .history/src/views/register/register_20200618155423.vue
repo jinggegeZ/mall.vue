@@ -12,12 +12,6 @@
           <van-field v-model="password" type="password" label="passwrod" placeholder="请输入密码" />
         </van-cell-group>
       </div>
-      <div class="r-box1">
-        <van-cell-group>
-          <van-field v-model="verify" label="验证码" placeholder="请输入验证码" />
-        </van-cell-group>
-        <div v-html="code" @click="getcode"></div>
-      </div>
       <div class="r-box2">
         <div>
           <van-button type="primary" @click="register">立即注册</van-button>
@@ -50,14 +44,11 @@
      register(){
        this.$api.register(this.nickname,this.password,this.verify).then(res => {
          if(res.code === -1){
-           this.$dialog.alert({message:'用户名已存在请直接登录'})
+           this.$dialog.alert({message:'请输入完整信息'})
          }
          else if(res.code === 200){
-           this.$dialog.alert({message:'恭喜您注册成功'})
+           this.$dialog.alert({message:'注册成功'})
            this.$router.push('login')
-         }
-         else if(res.code === -2){
-           this.$dialog.alert({message:'验证码有误请重新输入'})
          }
          console.log(res);
        }).catch(err => {

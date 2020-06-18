@@ -15,7 +15,7 @@
             <div class="number">
               <van-field v-model="sms" center clearablelabel="短信验证码" placeholder="请输入短信验证码">
                 <template #button>
-                 <van-button size="small" type="primary">发送验证码</van-button>
+                  <van-button size="small" type="primary" @click="settime">发送验证码</van-button>
                 </template>
               </van-field>
             </div>
@@ -43,7 +43,6 @@
 </template>
 
 <script>
-  let countdown = 60;
  export default {
    name: '',
    props: {
@@ -59,7 +58,6 @@
        sms:'',
        verify:'',
        code:'',
-       obj:''
      }
    },
    methods: {
@@ -95,6 +93,9 @@
        console.log(err);
      })
     },
+    settime(){
+      
+    }
    },
    mounted() {
      this.getcode()
@@ -173,10 +174,5 @@
     color:white;
     border-radius: 5px;
    }
-   .b-box {
-     height: 30px;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-   }
+   
 </style>

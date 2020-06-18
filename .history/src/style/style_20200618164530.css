@@ -15,4 +15,6 @@ html {
 .van-cell{
     height: 40px;
 }
-
+.van-count-down {
+    height: 30px;
+}
