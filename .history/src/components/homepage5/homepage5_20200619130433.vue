@@ -2,11 +2,11 @@
  <div>
     <div>
       <div class="floor">
-        <div class="f-font">2F</div>
-        <div class="f-font2">新鲜食品</div>
+        <div class="f-font">1F</div>
+        <div class="f-font2">休闲食品</div>
       </div>
-      <div v-for="(item,index) in floor2" :key="index">
-        <div :class="[{'left':(index==0)},{'right':(index>0)}]" class="div">
+      <div v-for="(item,index) in floor1" :key="index">
+        <div :class="[{'left':(index==0)},{'right':(index>0)}]">
           <img :src="item.image" alt="" />
         </div>
       </div>
@@ -18,7 +18,7 @@
  export default {
    name: '',
    props: {
-      floor2:{
+      floor1:{
         type:Array,
         default:() => {}
       }
@@ -76,9 +76,7 @@
   width: 50%;
 }
 img {
-  width: 100%;
-}
-.div {
- display: flex;
+  width: 200px;
+  height: 200px;
 }
 </style>

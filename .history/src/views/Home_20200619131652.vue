@@ -22,7 +22,7 @@ import homepage3 from '../components/homepage3/homepage3'
 import homepage4 from '../components/homepage4/homepage4'
 import homepage5 from '../components/homepage5/homepage5'
 import homepage6 from '../components/homepage6/homepage6'
-import homepage7 from '../components/homepage7/homepage7'
+import homepage7 from '../components/homepage7/'
  export default {
    name: '',
    props: {
@@ -35,7 +35,6 @@ import homepage7 from '../components/homepage7/homepage7'
      homepage4,
      homepage5,
      homepage6,
-     homepage7,
 
    },
    data () {
@@ -46,7 +45,6 @@ import homepage7 from '../components/homepage7/homepage7'
        advertesPicture:{},
        floor1:[],
        floor2:[],
-       floor3:[],
        hotGoods:[],
        recommend:[]
      }
@@ -67,7 +65,6 @@ import homepage7 from '../components/homepage7/homepage7'
         this.hotGoods = res.data.hotGoods
         this.floor1 = res.data.floor1
         this.floor2 = res.data.floor2
-        this.floor3 = res.data.floor3
         this.recommend = res.data.recommend
         console.log(res.data);
     }).catch(err => {

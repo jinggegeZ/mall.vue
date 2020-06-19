@@ -2,10 +2,10 @@
  <div>
     <div>
       <div class="floor">
-        <div class="f-font">2F</div>
+        <div class="f-font">3F</div>
         <div class="f-font2">新鲜食品</div>
       </div>
-      <div v-for="(item,index) in floor2" :key="index">
+      <div v-for="(item,index) in floor3" :key="index">
         <div :class="[{'left':(index==0)},{'right':(index>0)}]" class="div">
           <img :src="item.image" alt="" />
         </div>
@@ -18,7 +18,7 @@
  export default {
    name: '',
    props: {
-      floor2:{
+      floor3:{
         type:Array,
         default:() => {}
       }
