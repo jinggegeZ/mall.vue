@@ -10,14 +10,14 @@
         <van-sidebar-item  :title="category[4].mallCategoryName" />
       </van-sidebar>
       </div>
-      <!-- <div>
+      <div>
         <van-tabs v-model="active">
         <van-tab title="标签 1">内容 1<an-tab>
         <van-tab title="标签 2">内容 2<an-tab>
         <van-tab title="标签 3">内容 3<an-tab>
         <van-tab title="标签 4">内容 4<an-tab>
         <an-tabs>
-    </div> -->
+    </div>
     </div>
   </div>
 </template>
@@ -31,7 +31,7 @@ export default {
     return {
       activeKey:0,
       category:[],
-      active:0
+      active:''
     };
   },
   methods: {},

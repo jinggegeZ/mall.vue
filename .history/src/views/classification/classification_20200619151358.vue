@@ -1,7 +1,6 @@
 <template>
   <div>
     <div>
-      <div class="box">
       <van-sidebar v-model="activeKey">
         <van-sidebar-item  :title="category[0].mallCategoryName" />
         <van-sidebar-item  :title="category[1].mallCategoryName" />
@@ -9,15 +8,6 @@
         <van-sidebar-item  :title="category[3].mallCategoryName" />
         <van-sidebar-item  :title="category[4].mallCategoryName" />
       </van-sidebar>
-      </div>
-      <!-- <div>
-        <van-tabs v-model="active">
-        <van-tab title="标签 1">内容 1<an-tab>
-        <van-tab title="标签 2">内容 2<an-tab>
-        <van-tab title="标签 3">内容 3<an-tab>
-        <van-tab title="标签 4">内容 4<an-tab>
-        <an-tabs>
-    </div> -->
     </div>
   </div>
 </template>
@@ -30,15 +20,14 @@ export default {
   data() {
     return {
       activeKey:0,
-      category:[],
-      active:0
+      category:[]
     };
   },
   methods: {},
   mounted() {
     this.$api.recommend().then(res => {
       this.category =res.data.category
-      console.log(res);
+      console.log(this.category);
     }).catch(err => {
       console.log(err);
     })
@@ -48,8 +37,5 @@ export default {
 };
 </script>
 
-<style scoped>
- .box {
-   display: flex;
- }
+<style scoped lang='scss'>
 </style>

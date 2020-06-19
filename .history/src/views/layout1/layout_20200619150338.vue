@@ -24,12 +24,12 @@
    },
    data () {
      return {
-       active:0,
+
      }
    },
    methods: {
      home(){
-       this.$router.push('/')
+       this.$router.push('')
      },
      classification(){
        this.$router.push('classification')

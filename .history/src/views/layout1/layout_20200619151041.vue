@@ -24,7 +24,7 @@
    },
    data () {
      return {
-       active:0,
+       active:''
      }
    },
    methods: {

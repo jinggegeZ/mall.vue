@@ -4,7 +4,7 @@
         <div><router-view></router-view></div>
         <div class="foot">
           <van-tabbar v-model="active">
-          <van-tabbar-item icon="wap-home-o" @click="home">商城</van-tabbar-item>
+          <van-tabbar-item icon="wap-home-o">商城</van-tabbar-item>
           <van-tabbar-item icon="wap-nav" @click="classification" dot>分类</van-tabbar-item>
           <van-tabbar-item icon="shopping-cart" badge="5" @click="carts">购物车</van-tabbar-item>
           <van-tabbar-item icon="manager" badge="20" @click="my">我的</van-tabbar-item>
@@ -24,13 +24,10 @@
    },
    data () {
      return {
-       active:0,
+
      }
    },
    methods: {
-     home(){
-       this.$router.push('/')
-     },
      classification(){
        this.$router.push('classification')
      },
