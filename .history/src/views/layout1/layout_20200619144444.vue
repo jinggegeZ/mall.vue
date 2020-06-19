@@ -5,10 +5,11 @@
         <div class="foot">
           <van-tabbar v-model="active">
           <van-tabbar-item icon="wap-home-o">商城</van-tabbar-item>
-          <van-tabbar-item icon="wap-nav" dot>分类</van-tabbar-item>
-          <van-tabbar-item icon="shopping-cart" badge="5">购物车</van-tabbar-item>
-          <van-tabbar-item icon="manager" badge="20">我的</van-tabbar-item>
+          <van-tabbar-item icon="search" dot>分类</van-tabbar-item>
+          <van-tabbar-item icon="friends-o" badge="5">购物车</van-tabbar-item>
+          <van-tabbar-item icon="setting-o" badge="20">我的</van-tabbar-item>
           </van-tabbar>
+          
         </div>
     </div>
  </div>

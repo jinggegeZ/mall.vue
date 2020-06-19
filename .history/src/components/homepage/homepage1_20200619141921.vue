@@ -44,7 +44,7 @@
   .h1-box {
     width: 100%;
     box-shadow: 0 1px 2px 0 #ddd;
-    margin-top: 50px;
+    margin-top: 30px;
   }
   .van-swipe-item img {
     width: 100%;

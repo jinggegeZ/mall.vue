@@ -69,14 +69,13 @@
 
 <style scoped >
     .top {
-        height: 50px;
+        height: 30px;
         display: flex;
         align-items: center;
         justify-content: space-around;
         position: fixed;
         z-index: 99;
         width: 100%;
-        background: rgb(220,220,220);
     }
     .t-head {
         display: flex;
