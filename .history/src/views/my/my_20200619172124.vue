@@ -1,7 +1,7 @@
 <template>
  <div>
     <div class="box">
-      <div class="box1">
+      <div>
         <div class="header">会员中心</div>
         <div class="mybox">
           <div></div>
@@ -44,20 +44,12 @@
 <style scoped>
   .box {
     width: 100%;
-  }
-  .box1 {
-    width: 100%;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-  }
-  .header {
-    height: 40px;
-    line-height: 40px;
   }
   .mybox {
     width: 100%;
-    height: 200px;
+    height: 500px;
     background: rgb(227,12,123);
   }
 </style>

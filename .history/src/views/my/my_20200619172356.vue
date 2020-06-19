@@ -52,8 +52,8 @@
     flex-wrap: wrap;
   }
   .header {
-    height: 40px;
-    line-height: 40px;
+    height: 50px;
+    line-height: 50px;
   }
   .mybox {
     width: 100%;

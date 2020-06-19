@@ -1,6 +1,6 @@
 <template>
  <div>
-    <div class="box">123456</div>
+    <div class="box">4</div>
  </div>
 </template>
 
@@ -32,7 +32,7 @@
  }
 </script>
 
-<style scoped lang='scss'>
+<style scoped>
   .box {
     width: 100%;
     display: flex;

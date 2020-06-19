@@ -1,6 +1,6 @@
 <template>
  <div>
-    <div class="box">123456</div>
+    <div>都是对的</div>
  </div>
 </template>
 
@@ -33,9 +33,5 @@
 </script>
 
 <style scoped lang='scss'>
-  .box {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
+
 </style>

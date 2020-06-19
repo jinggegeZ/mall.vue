@@ -44,20 +44,15 @@
 <style scoped>
   .box {
     width: 100%;
+    display: flex;
+    justify-content: center;
   }
   .box1 {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  .header {
-    height: 40px;
-    line-height: 40px;
   }
   .mybox {
     width: 100%;
-    height: 200px;
+    height: 500px;
     background: rgb(227,12,123);
   }
 </style>
