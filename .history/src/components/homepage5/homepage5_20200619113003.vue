@@ -5,8 +5,8 @@
         <div class="f-font">1F</div>
         <div class="f-font2">休闲食品</div>
       </div>
-      
     </div>
+    
     </div>
 </template>
 
@@ -63,5 +63,36 @@
 .f-font2 {
   color: red;
 }
-
+.fl-box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+.fl-box1 {
+  width: 95%;
+  background: white;
+}
+.img {
+  box-shadow: 0 1px 2px 0 #ddd;
+  width: 200px;
+  height: 200px;
+}
+.img img {
+  width: 200px;
+  height: 200px;
+}
+.img1 {
+  box-shadow: 0 1px 2px 0 #ddd;
+  width: 160px;
+  height: 100px;
+}
+.img1 img {
+  width: 160px;
+  height: 100px;
+}
+.fl-box2 {
+  display: flex;
+  justify-content: space-between;
+}
 </style>

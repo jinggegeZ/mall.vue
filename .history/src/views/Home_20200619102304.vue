@@ -6,7 +6,7 @@
   <homepage :obj='obj'></homepage>
   <homepage2 :category='category'></homepage2>
   <homepage3 :advertesPicture='advertesPicture'></homepage3>
-  <homepage4 :recommend='recommend'></homepage4>
+  <homepage4 :hotGoods='hotGoods'></homepage4>
   <homepage5 :floor1='floor1'></homepage5>
  
  </div>
@@ -39,7 +39,6 @@ import homepage5 from '../components/homepage5/homepage5'
        advertesPicture:{},
        floor1:[],
        hotGoods:[],
-       recommend:[]
      }
    },
    methods: {
@@ -57,7 +56,6 @@ import homepage5 from '../components/homepage5/homepage5'
         this.advertesPicture = res.data.advertesPicture
         this.hotGoods = res.data.hotGoods
         this.floor1 = res.data.floor1
-        this.recommend = res.data.recommend
         console.log(res.data);
     }).catch(err => {
         console.log(err);

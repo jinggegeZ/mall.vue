@@ -5,7 +5,11 @@
         <div class="f-font">1F</div>
         <div class="f-font2">休闲食品</div>
       </div>
-      
+    </div>
+    <div class="fl-box">
+        <div class="fl-box1">
+          <div></div>
+        </div>
     </div>
     </div>
 </template>
@@ -14,7 +18,7 @@
  export default {
    name: '',
    props: {
-      floor1:{
+      floor:{
         type:Array,
         default:() => {}
       }
@@ -63,5 +67,15 @@
 .f-font2 {
   color: red;
 }
-
+.fl-box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+.fl-box1 {
+  width: 95%;
+  
+  background: white;
+}
 </style>

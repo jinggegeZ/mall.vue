@@ -12,7 +12,7 @@
                 </div>
               </div>
               <div>
-                <div class="h4-name">{{item.goodsName}}</div>
+                <div class="h4-name">{{item.name}}</div>
                 <div class="h4_a">
                 <span>￥{{item.mallPrice}}</span>
                 <span class="h4_b">￥{{item.price}}</span>
@@ -36,7 +36,7 @@
 export default {
   name: "",
   props: {
-    recommend: {
+    hotGoods: {
       type: Array,
       default: () => {}
     }

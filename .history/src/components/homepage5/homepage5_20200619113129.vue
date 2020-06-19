@@ -5,7 +5,7 @@
         <div class="f-font">1F</div>
         <div class="f-font2">休闲食品</div>
       </div>
-      
+      <div class="f-b"></div>
     </div>
     </div>
 </template>
@@ -63,5 +63,9 @@
 .f-font2 {
   color: red;
 }
-
+.f-b {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 </style>

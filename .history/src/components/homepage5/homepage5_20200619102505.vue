@@ -2,11 +2,11 @@
  <div>
     <div>
       <div class="floor">
-        <div class="f-font">1F</div>
-        <div class="f-font2">休闲食品</div>
+        <div>1f</div>
+        <div>休闲食品</div>
       </div>
-      
     </div>
+    <div class=""></div>
     </div>
 </template>
 
@@ -14,10 +14,6 @@
  export default {
    name: '',
    props: {
-      floor1:{
-        type:Array,
-        default:() => {}
-      }
    },
    components: {
 
@@ -42,7 +38,7 @@
  }
 </script>
 
-<style scoped>
+<style scoped lang='scss'>
 .floor{
   width: 100%;
   height: 50px;
@@ -50,18 +46,4 @@
   justify-content: center;
   align-items: center;
 }
-.f-font {
-  width: 30px;
-  height: 30px;
-  border-radius: 15px;
-  background: red;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-}
-.f-font2 {
-  color: red;
-}
-
 </style>

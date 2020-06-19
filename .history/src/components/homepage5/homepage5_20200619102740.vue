@@ -5,8 +5,8 @@
         <div class="f-font">1F</div>
         <div class="f-font2">休闲食品</div>
       </div>
-      
     </div>
+    <div class=""></div>
     </div>
 </template>
 
@@ -14,10 +14,6 @@
  export default {
    name: '',
    props: {
-      floor1:{
-        type:Array,
-        default:() => {}
-      }
    },
    components: {
 
@@ -63,5 +59,4 @@
 .f-font2 {
   color: red;
 }
-
 </style>
