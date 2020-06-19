@@ -56,21 +56,18 @@ export default {
 .h4-box {
   width: 100%;
   background: white;
-  margin-top: 10px;
 }
 .h4-font {
   height: 40px;
   line-height: 40px;
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #ddd;
       padding-left: 10px;
-      color: #333333;
 }
 .h4-box1 {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   margin-top: 10px;
-  padding-bottom: 10px;
 }
 .h4-box2 {
       width: 90%;

@@ -56,21 +56,17 @@ export default {
 .h4-box {
   width: 100%;
   background: white;
-  margin-top: 10px;
 }
 .h4-font {
   height: 40px;
   line-height: 40px;
-  border-bottom: 1px solid #dddddd;
-      padding-left: 10px;
-      color: #333333;
+  margin-left: 15px;
 }
 .h4-box1 {
+  border: 1px solid #dddddd;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin-top: 10px;
-  padding-bottom: 10px;
 }
 .h4-box2 {
       width: 90%;
@@ -109,8 +105,6 @@ text-overflow:ellipsis;
 .h4_a{
   font-size: 12px;
   color: #777777;
-  margin-top: 5px;
-  margin-bottom: 5px;
 }
 .chakan{
   color: #ffffff;

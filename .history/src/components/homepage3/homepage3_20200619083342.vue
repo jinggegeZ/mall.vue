@@ -1,6 +1,6 @@
 <template>
  <div>
-  <div class="h3-box"><img :src="advertesPicture.PICTURE_ADDRESS" alt=""></div>
+  <div class="h3-box"><img src="advertesPicture.PICTURE_ADDRESS" alt=""></div>
  </div>
 </template>
 
@@ -46,6 +46,6 @@
   }
   .h3-box img{
     width: 90%;
-    height: 80%;
+    height: 90%;
   }
 </style>

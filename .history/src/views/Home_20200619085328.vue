@@ -6,8 +6,7 @@
   <homepage :obj='obj'></homepage>
   <homepage2 :category='category'></homepage2>
   <homepage3 :advertesPicture='advertesPicture'></homepage3>
-  <homepage4 :hotGoods='hotGoods'></homepage4>
- 
+  <homepage4></homepage4>
  </div>
 </template>
 
@@ -17,7 +16,6 @@ import homepage from '../components/homepage/homepage1'
 import homepage2 from '../components/homepage2/homepage2'
 import homepage3 from '../components/homepage3/homepage3'
 import homepage4 from '../components/homepage4/homepage4'
-import homepage5 from '../components/homepage5/homepage5'
  export default {
    name: '',
    props: {
@@ -28,7 +26,6 @@ import homepage5 from '../components/homepage5/homepage5'
      homepage2,
      homepage3,
      homepage4,
-    homepage5,
    },
    data () {
      return {

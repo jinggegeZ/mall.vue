@@ -17,7 +17,7 @@ import homepage from '../components/homepage/homepage1'
 import homepage2 from '../components/homepage2/homepage2'
 import homepage3 from '../components/homepage3/homepage3'
 import homepage4 from '../components/homepage4/homepage4'
-import homepage5 from '../components/homepage5/homepage5'
+
  export default {
    name: '',
    props: {
@@ -28,7 +28,7 @@ import homepage5 from '../components/homepage5/homepage5'
      homepage2,
      homepage3,
      homepage4,
-    homepage5,
+
    },
    data () {
      return {

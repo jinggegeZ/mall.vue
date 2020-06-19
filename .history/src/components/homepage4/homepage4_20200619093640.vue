@@ -3,7 +3,7 @@
     <div class="h4-box">
       <div class="h4-font">商品推荐</div>
       <div class="h4-box1">
-        <van-swipe :loop="false" :width="125" :show-indicators="false">
+        <van-swipe :loop="false" :width="150">
           <van-swipe-item v-for="(item,index) in hotGoods" :key="index">
             <div class="h4-box2">
               <div class="h4-box5">
@@ -13,16 +13,13 @@
               </div>
               <div>
                 <div class="h4-name">{{item.name}}</div>
-                <div class="h4_a">
-                <span>￥{{item.mallPrice}}</span>
-                <span class="h4_b">￥{{item.price}}</span>
-                </div>
+                <div class="h4_a">{{item.price}}</div>
               </div>
               <div class="h4-box6">
                 <div class="h4-bg">
                   <van-icon name="cart-o" />
                 </div>
-                <div class="chakan">查看详情</div>
+                <div>查看详情</div>
               </div>
             </div>
           </van-swipe-item>
@@ -56,25 +53,20 @@ export default {
 .h4-box {
   width: 100%;
   background: white;
-  margin-top: 10px;
 }
 .h4-font {
   height: 40px;
   line-height: 40px;
-  border-bottom: 1px solid #dddddd;
-      padding-left: 10px;
-      color: #333333;
+  margin-left: 15px;
 }
 .h4-box1 {
+  border: 1px solid #dddddd;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin-top: 10px;
-  padding-bottom: 10px;
 }
 .h4-box2 {
-      width: 90%;
-    margin-left: 5%;
+  width: 100%;
 }
 .h4-box5 {
   display: flex;
@@ -87,7 +79,7 @@ export default {
 }
 .h4-bg {
   background: yellow;
-  width: 40px;
+  width: 30px;
   height: 30px;
   display: flex;
   justify-content: center;
@@ -95,33 +87,14 @@ export default {
 }
 .h4-name {
 font-size: 14px;
-overflow:hidden;
-white-space: nowrap;
-text-overflow:ellipsis;
+
 }
 .h4-box6{
   display: flex;
   align-items: center;
-  height: 30px;
-  border-radius: 6px;
-  overflow: hidden;
 }
 .h4_a{
   font-size: 12px;
-  color: #777777;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-.chakan{
-  color: #ffffff;
-  background-color: rgb(255,76,56);
-  font-size: 14px;
-  height: 100%;
-  line-height: 30px;
-  width:85px;
-  text-align: center;
-}
-.h4_b{
-  text-decoration: line-through;
+  color: #dddddd;
 }
 </style>

@@ -61,9 +61,8 @@ export default {
 .h4-font {
   height: 40px;
   line-height: 40px;
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #ddd;
       padding-left: 10px;
-      color: #333333;
 }
 .h4-box1 {
   display: flex;

@@ -46,6 +46,6 @@
   }
   .h3-box img{
     width: 90%;
-    height: 80%;
+    height: 90%;
   }
 </style>
