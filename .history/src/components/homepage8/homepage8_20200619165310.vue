@@ -112,6 +112,5 @@ img {
 }
 .fllfoot {
   height: 100px;
-  width: 100%;
 }
 </style>

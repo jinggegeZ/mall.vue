@@ -10,10 +10,13 @@
         <van-sidebar-item  :title="category[4].mallCategoryName" />
         </van-sidebar>
       </div>
-      <div class="r-box">
-        <van-tabs v-model="active" v-for="(item,index) in bxMallSubDto" :key="index">
-          <van-tab title="item.mallSubName">内容 1</van-tab>
-        </van-tabs>
+      <div>
+        <van-tabs v-model="active">
+          <van-tab title="标签 1">内容 1<an-tab>
+          <van-tab title="标签 2">内容 2<an-tab>
+          <van-tab title="标签 3">内容 3<an-tab>
+          <van-tab title="标签 4">内容 4<an-tab>
+        <an-tabs>
       </div>
     </div>
   </div>
@@ -28,15 +31,13 @@ export default {
     return {
       activeKey:0,
       category:[],
-      active:0,
-      bxMallSubDto:[]
+      active:0
     };
   },
   methods: {},
   mounted() {
     this.$api.recommend().then(res => {
       this.category =res.data.category
-      this.bxMallSubDto = res.data.category.bxMallSubDto
       console.log(res);
     }).catch(err => {
       console.log(err);
@@ -50,8 +51,5 @@ export default {
 <style scoped>
  .box {
    display: flex;
- }
- .r-box {
-   width: 80%;
  }
 </style>

@@ -13,9 +13,10 @@
                 <div class="img-font">¥{{item.price}}</div>
               </div>
               </div>
+              
             </div>
       </div>
-      <div class="fllfoot">这是一个秘密哦</div>
+      <div class="fllfoot"></div>
  </div>
 </template>
 
@@ -111,7 +112,6 @@ img {
   align-items: center;
 }
 .fllfoot {
-  height: 100px;
-  width: 100%;
+  height: 50px;
 }
 </style>

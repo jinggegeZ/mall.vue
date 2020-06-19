@@ -12,7 +12,7 @@
       </div>
       <div class="r-box">
         <van-tabs v-model="active" v-for="(item,index) in bxMallSubDto" :key="index">
-          <van-tab title="item.mallSubName">内容 1</van-tab>
+          <van-tab :title="mallSubName">内容 1</van-tab>
         </van-tabs>
       </div>
     </div>

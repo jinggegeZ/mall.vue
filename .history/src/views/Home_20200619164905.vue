@@ -1,5 +1,5 @@
 <template>
- <div>
+ <div class="home">
   <van-pull-refresh v-model="isLoading" @refresh="onRefresh">
   </van-pull-refresh>
   <top></top>
@@ -11,7 +11,6 @@
   <homepage6 :floor2='floor2'></homepage6>
   <homepage7 :floor3='floor3'></homepage7>
   <homepage8 :hotGoods='hotGoods'></homepage8>
-
  
  </div>
 </template>
@@ -87,5 +86,7 @@ import homepage8 from '../components/homepage8/homepage8'
 </script>
 
 <style scoped lang='scss'>
- 
+  .home {
+    margin-bottom: 50px;
+  }
 </style>

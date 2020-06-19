@@ -1,5 +1,5 @@
 <template>
- <div class="flbox">
+ <div>
       <div class="floor">
         <div class="f-font2">热销商品</div>
       </div>
@@ -13,9 +13,9 @@
                 <div class="img-font">¥{{item.price}}</div>
               </div>
               </div>
+              
             </div>
       </div>
-      <div class="fllfoot">这是一个秘密哦</div>
  </div>
 </template>
 
@@ -52,16 +52,13 @@
 </script>
 
 <style scoped lang='scss'>
-.fff{
-  margin-bottom: 30px;
-}
   .floor{
   width: 100%;
   height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-  
+  margin-bottom: 50px;
 }
 .f-font2 {
   color: red;
@@ -109,9 +106,5 @@ img {
 .img-style {
   display: flex;
   align-items: center;
-}
-.fllfoot {
-  height: 100px;
-  width: 100%;
 }
 </style>

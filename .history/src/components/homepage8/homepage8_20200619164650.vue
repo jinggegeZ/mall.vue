@@ -3,7 +3,7 @@
       <div class="floor">
         <div class="f-font2">热销商品</div>
       </div>
-      <div v-for="(item,index) in hotGoods" :key="index" >
+      <div class="fff" v-for="(item,index) in hotGoods" :key="index" >
         <div :class="[{'left':(index==0)},{'right':(index>0)}]" class="div">
               <div class="img-box">
               <div><img :src="item.image" alt="" /></div>
@@ -13,9 +13,9 @@
                 <div class="img-font">¥{{item.price}}</div>
               </div>
               </div>
+              
             </div>
       </div>
-      <div class="fllfoot">这是一个秘密哦</div>
  </div>
 </template>
 
@@ -109,9 +109,5 @@ img {
 .img-style {
   display: flex;
   align-items: center;
-}
-.fllfoot {
-  height: 100px;
-  width: 100%;
 }
 </style>

@@ -111,7 +111,6 @@ img {
   align-items: center;
 }
 .fllfoot {
-  height: 100px;
-  width: 100%;
+  height: 80px;
 }
 </style>

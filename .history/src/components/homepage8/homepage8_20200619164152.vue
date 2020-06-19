@@ -13,9 +13,9 @@
                 <div class="img-font">¥{{item.price}}</div>
               </div>
               </div>
+              
             </div>
       </div>
-      <div class="fllfoot">这是一个秘密哦</div>
  </div>
 </template>
 
@@ -52,9 +52,9 @@
 </script>
 
 <style scoped lang='scss'>
-.fff{
-  margin-bottom: 30px;
-}
+  .flbox{
+    height: 320px;
+  }
   .floor{
   width: 100%;
   height: 50px;
@@ -109,9 +109,5 @@ img {
 .img-style {
   display: flex;
   align-items: center;
-}
-.fllfoot {
-  height: 100px;
-  width: 100%;
 }
 </style>
