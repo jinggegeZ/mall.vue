@@ -7,8 +7,8 @@
         <div :class="[{'left':(index==0)},{'right':(index>0)}]" class="div">
               <div class="img-box">
               <div><img :src="item.image" alt="" /></div>
-              <div class="imgfont">{{item.name}}</div>
-              <div class="img-style">
+              <div>{{item.name}}</div>
+              <div>
                 <div>¥{{item.price}}</div>
                 <div class="img-font">¥{{item.price}}</div>
               </div>
@@ -89,21 +89,9 @@ img {
   justify-content: center;
   flex-wrap: wrap;
 }
-.imgfont {
-  width: 180px;
-  font-size: 14px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
 .img-font {
+  display: flex;
   color: red;
   text-decoration: line-through;
-  font-size: 12px;
-  margin-left: 10px;
-}
-.img-style {
-  display: flex;
-  align-items: center;
 }
 </style>

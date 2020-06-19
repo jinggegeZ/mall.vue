@@ -100,10 +100,8 @@ img {
   color: red;
   text-decoration: line-through;
   font-size: 12px;
-  margin-left: 10px;
 }
 .img-style {
   display: flex;
-  align-items: center;
 }
 </style>

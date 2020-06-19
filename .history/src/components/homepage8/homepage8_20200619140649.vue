@@ -90,7 +90,6 @@ img {
   flex-wrap: wrap;
 }
 .imgfont {
-  width: 180px;
   font-size: 14px;
   overflow: hidden;
   white-space: nowrap;
@@ -99,11 +98,8 @@ img {
 .img-font {
   color: red;
   text-decoration: line-through;
-  font-size: 12px;
-  margin-left: 10px;
 }
 .img-style {
   display: flex;
-  align-items: center;
 }
 </style>

@@ -5,15 +5,7 @@
       </div>
       <div v-for="(item,index) in hotGoods" :key="index" >
         <div :class="[{'left':(index==0)},{'right':(index>0)}]" class="div">
-              <div class="img-box">
-              <div><img :src="item.image" alt="" /></div>
-              <div class="imgfont">{{item.name}}</div>
-              <div class="img-style">
-                <div>¥{{item.price}}</div>
-                <div class="img-font">¥{{item.price}}</div>
-              </div>
-              </div>
-              
+              <img :src="item.image" alt="" />
             </div>
       </div>
  </div>
@@ -75,8 +67,8 @@
 }
 .right {
   float: right;
-  background: white;
   width: 50%;
+  background: white;
 }
 img {
   width: 80%;
@@ -84,26 +76,5 @@ img {
 .div {
  display: flex;
 }
-.img-box {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.imgfont {
-  width: 180px;
-  font-size: 14px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-.img-font {
-  color: red;
-  text-decoration: line-through;
-  font-size: 12px;
-  margin-left: 10px;
-}
-.img-style {
-  display: flex;
-  align-items: center;
-}
+
 </style>
