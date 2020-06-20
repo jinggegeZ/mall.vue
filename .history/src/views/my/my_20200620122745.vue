@@ -46,10 +46,10 @@
           </div>
           <div><van-icon name="arrow" size="30" /></div>
         </div>
-        <div class="foot-box" @click="editAddress">
+        <div class="foot-box">
           <div class="foot-box1">
             <div><van-icon name="label-o" size="25" /></div>
-            <div>地址管理</div>
+            <div @click="">地址管理</div>
           </div>
           <div><van-icon name="arrow" size="30" /></div>
         </div>
@@ -79,9 +79,7 @@
      }
    },
    methods: {
-     editAddress(){
-       this.$router.push('/editAddress')
-     }
+
    },
    mounted() {
      this.$api.queryUser({}).then(res => {

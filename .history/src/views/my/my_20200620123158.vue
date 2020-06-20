@@ -46,8 +46,8 @@
           </div>
           <div><van-icon name="arrow" size="30" /></div>
         </div>
-        <div class="foot-box" @click="editAddress">
-          <div class="foot-box1">
+        <div class="foot-box">
+          <div class="foot-box1" @click="editAddress">
             <div><van-icon name="label-o" size="25" /></div>
             <div>地址管理</div>
           </div>

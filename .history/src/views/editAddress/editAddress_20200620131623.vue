@@ -19,7 +19,7 @@
       </van-button>
     </div>
     <div style="margin: 16px;">
-      <van-button round block type="default" native-type="submit">
+      <van-button round block type="" native-type="submit">
        删除
       </van-button>
     </div>

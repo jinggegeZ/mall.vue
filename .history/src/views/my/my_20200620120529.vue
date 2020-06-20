@@ -34,32 +34,12 @@
       <div class="foot">
         <div class="foot-box">
           <div class="foot-box1">
-            <div><van-icon name="send-gift-o" size="25" /></div>
+            <div><van-icon name="send-gift-o" size="30" /></div>
             <div>全部订单</div>
           </div>
           <div><van-icon name="arrow" size="30" /></div>
         </div>
-        <div class="foot-box">
-          <div class="foot-box1">
-            <div><van-icon name="gift-o" size="25" /></div>
-            <div>收藏商品</div>
-          </div>
-          <div><van-icon name="arrow" size="30" /></div>
-        </div>
-        <div class="foot-box" @click="editAddress">
-          <div class="foot-box1">
-            <div><van-icon name="label-o" size="25" /></div>
-            <div>地址管理</div>
-          </div>
-          <div><van-icon name="arrow" size="30" /></div>
-        </div>
-        <div class="foot-box">
-          <div class="foot-box1">
-            <div><van-icon name="notes-o" size="25" /></div>
-            <div>全部订单</div>
-          </div>
-          <div><van-icon name="arrow" size="30" /></div>
-        </div>
+        
       </div>
     </div>
  </div>
@@ -79,9 +59,7 @@
      }
    },
    methods: {
-     editAddress(){
-       this.$router.push('/editAddress')
-     }
+
    },
    mounted() {
      this.$api.queryUser({}).then(res => {
@@ -170,6 +148,5 @@
   }
   .foot-box1 {
     display: flex;
-    align-items: center;
   }
 </style>
