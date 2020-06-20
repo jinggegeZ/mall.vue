@@ -9,7 +9,7 @@
       <div class="pcbox">
         <div>头像</div>
         <div class="pc1box">
-          <div @click="uploader"><img :src="userInfo.avatar" alt="" width="50px" height="50px"></div>
+          <div><img :src="userInfo.avatar" alt="" width="50px" height="50px"></div>
           <div><van-icon name="arrow" /></div>
         </div>
      </div>
@@ -34,19 +34,9 @@
     </van-cell-group>
     <van-cell-group>
       <van-field v-model="text" label="出生年月" >
-        <template>{{this.text}}</template>
+        <template>{{text}}</template>
       </van-field>
     </van-cell-group>
-    <div class="btn">
-      <van-button round block type="info" native-type="submit">
-        保存
-      </van-button>
-    </div>
-    <div class="btn">
-      <van-button round block type="default" native-type="submit">
-        取消
-      </van-button>
-    </div>
  </div>
 </template>
 
@@ -73,16 +63,11 @@
      }
    },
    methods: {
-      back(){
-      this.$router.push('my')
-     },
-     uploader(){
-       this.$router.push('/uploader')
+        back(){
+       this.$router.push('my')
      }
-
    },
    mounted() {
-
       this.$api.queryUser({}).then(res => {
         this.userInfo = res.userInfo
         this.username = res.userInfo.username
@@ -91,7 +76,8 @@
         this.year = res.userInfo.year
         this.month = res.userInfo.month
         this.day = res.userInfo.day
-        this.text = `${this.year}年${this.month}月${this.day}日`
+        this.text = `${year}年${month}月${day}日`
+        console.log(this.year);
         console.log(res.userInfo);
       }).catch(err => {
         console.log(err);
@@ -141,8 +127,5 @@
   .pc1box {
     display: flex;
     align-items: center;
-  }
-  .btn {
-    margin: 16px;
   }
 </style>

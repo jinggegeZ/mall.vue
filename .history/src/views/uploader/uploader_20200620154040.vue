@@ -1,0 +1,37 @@
+<template>
+ <div>
+    <van-uploader v-model="fileList" multiple />
+ </div>
+</template>
+
+<script>
+ export default {
+   name: '',
+   props: {
+   },
+   components: {
+
+   },
+   data () {
+     return {
+
+     }
+   },
+   methods: {
+
+   },
+   mounted() {
+
+   },
+   watch: {
+
+   },
+   computed: {
+
+   }
+ }
+</script>
+
+<style scoped lang='scss'>
+
+</style>

@@ -9,7 +9,7 @@
       <div class="pcbox">
         <div>头像</div>
         <div class="pc1box">
-          <div @click="uploader"><img :src="userInfo.avatar" alt="" width="50px" height="50px"></div>
+          <div><img :src="userInfo.avatar" alt="" width="50px" height="50px"></div>
           <div><van-icon name="arrow" /></div>
         </div>
      </div>
@@ -37,16 +37,11 @@
         <template>{{this.text}}</template>
       </van-field>
     </van-cell-group>
-    <div class="btn">
-      <van-button round block type="info" native-type="submit">
-        保存
-      </van-button>
-    </div>
-    <div class="btn">
-      <van-button round block type="default" native-type="submit">
-        取消
-      </van-button>
-    </div>
+    <div style="margin: 16px;">
+    <van-button round block type="info" native-type="submit">
+      提交
+    </van-button>
+  </div>
  </div>
 </template>
 
@@ -73,13 +68,9 @@
      }
    },
    methods: {
-      back(){
-      this.$router.push('my')
-     },
-     uploader(){
-       this.$router.push('/uploader')
+        back(){
+       this.$router.push('my')
      }
-
    },
    mounted() {
 
@@ -141,8 +132,5 @@
   .pc1box {
     display: flex;
     align-items: center;
-  }
-  .btn {
-    margin: 16px;
   }
 </style>

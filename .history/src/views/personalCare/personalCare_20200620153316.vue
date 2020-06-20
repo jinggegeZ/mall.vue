@@ -9,7 +9,7 @@
       <div class="pcbox">
         <div>头像</div>
         <div class="pc1box">
-          <div @click="uploader"><img :src="userInfo.avatar" alt="" width="50px" height="50px"></div>
+          <div @click="avatar"><img :src="userInfo.avatar" alt="" width="50px" height="50px"></div>
           <div><van-icon name="arrow" /></div>
         </div>
      </div>
@@ -76,8 +76,8 @@
       back(){
       this.$router.push('my')
      },
-     uploader(){
-       this.$router.push('/uploader')
+     avatar(){
+       this.$router.
      }
 
    },
