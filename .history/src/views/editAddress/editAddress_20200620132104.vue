@@ -24,7 +24,7 @@
       </van-button>
     </div>
   </div>
-  <div class="icon" @click="back"><van-icon name="arrow-left" size="25" /></div>
+  <div class="icon"><van-icon name="arrow-left" size="25" /></div>
  </div>
 </template>
 
@@ -49,9 +49,7 @@ import province_list from '../../../area'
      }
    },
    methods: {
-     back(){
-       this.$router.push('my')
-     }
+
    },
    mounted() {
 

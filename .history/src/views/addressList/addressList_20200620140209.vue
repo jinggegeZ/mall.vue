@@ -57,7 +57,7 @@
   }
   .icon {
     position: absolute;
-    top: 10px;
-    left: 8px;
+    top: 5px;
+    left: 5px;
   }
 </style>

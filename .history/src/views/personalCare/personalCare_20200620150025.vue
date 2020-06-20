@@ -16,7 +16,7 @@
     </div>
     <van-cell-group>
       <van-field v-model="username" label="用户名" >
-        <template>{{username}}</template>
+        <template>{{uesrname}}</template>
       </van-field>
     </van-cell-group>
     <van-cell-group>
@@ -33,7 +33,7 @@
       <div><van-field v-model="email" label="邮箱" placeholder="请输入邮箱" /></div>
     </van-cell-group>
     <van-cell-group>
-      <van-field v-model="br" label="出生年月" >
+      <van-field v-model="gender" label="性别" >
         <template>{{year}}年{{month}}月{{day}}日</template>
       </van-field>
     </van-cell-group>
@@ -58,8 +58,7 @@
        email:'',
        year:'',
        month:'',
-       day:'',
-       br:''
+       day:''
      }
    },
    methods: {

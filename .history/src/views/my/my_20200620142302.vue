@@ -185,7 +185,7 @@
   }
   .icn {
     position: absolute;
-    top: 50px;
+    top: 60px;
     right: 10px;
   }
 </style>

@@ -33,7 +33,7 @@
       <div><van-field v-model="email" label="邮箱" placeholder="请输入邮箱" /></div>
     </van-cell-group>
     <van-cell-group>
-      <van-field v-model="br" label="出生年月" >
+      <van-field v-model="br" label="生日" >
         <template>{{year}}年{{month}}月{{day}}日</template>
       </van-field>
     </van-cell-group>

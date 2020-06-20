@@ -24,9 +24,7 @@
      }
    },
    methods: {
-      back(){
-       this.$router.push('my')
-     }
+
    },
    mounted() {
 
@@ -54,10 +52,5 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  .icon {
-    position: absolute;
-    top: 10px;
-    left: 8px;
   }
 </style>

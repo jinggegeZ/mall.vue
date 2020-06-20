@@ -61,7 +61,7 @@
           <div><van-icon name="arrow" size="30" /></div>
         </div>
       </div>
-      <div @click="personalCare" class="icn"><van-icon name="setting" size="25" color="#fff" /></div>
+      <div @click="personalCare"><van-icon name="setting-o" size="25" /></div>
     </div>
  </div>
 </template>
@@ -182,10 +182,5 @@
   .foot-box1 {
     display: flex;
     align-items: center;
-  }
-  .icn {
-    position: absolute;
-    top: 50px;
-    right: 10px;
   }
 </style>

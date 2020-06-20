@@ -15,27 +15,7 @@
      </div>
     </div>
     <van-cell-group>
-      <van-field v-model="username" label="用户名" >
-        <template>{{username}}</template>
-      </van-field>
-    </van-cell-group>
-    <van-cell-group>
-      <van-field v-model="nickname" label="昵称" >
-        <template>{{nickname}}</template>
-      </van-field>
-    </van-cell-group>
-    <van-cell-group>
-      <van-field v-model="gender" label="性别" >
-        <template>{{gender}}</template>
-      </van-field>
-    </van-cell-group>
-    <van-cell-group>
-      <div><van-field v-model="email" label="邮箱" placeholder="请输入邮箱" /></div>
-    </van-cell-group>
-    <van-cell-group>
-      <van-field v-model="br" label="出生年月" >
-        <template>{{year}}年{{month}}月{{day}}日</template>
-      </van-field>
+      <van-field v-model="value" label="文本" placeholder="请输入用户名" />
     </van-cell-group>
  </div>
 </template>
@@ -52,14 +32,6 @@
      return {
        value:'',
        userInfo:{},
-       username:'',
-       nickname:'',
-       gender:'',
-       email:'',
-       year:'',
-       month:'',
-       day:'',
-       br:''
      }
    },
    methods: {
@@ -70,12 +42,6 @@
    mounted() {
       this.$api.queryUser({}).then(res => {
         this.userInfo = res.userInfo
-        this.username = res.userInfo.username
-        this.nickname = res.userInfo.nickname
-        this.gender = res.userInfo.gender
-        this.year = res.userInfo.year
-        this.month = res.userInfo.month
-        this.day = res.userInfo.day
         console.log(res.userInfo);
       }).catch(err => {
         console.log(err);

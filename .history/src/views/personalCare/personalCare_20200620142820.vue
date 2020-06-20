@@ -1,12 +1,8 @@
 <template>
  <div class="box">
-    <div class="head">我的订单</div>
-    <div>
-      <van-tabs v-model="active" animated>
-        
-      </van-tabs>
-    </div>
-     <div class="icon" @click="back"><van-icon name="arrow-left" size="25" /></div>
+    <div class="head">个人资料</div>
+    <div class="icon" @click="back"><van-icon name="arrow-left" size="20" /></div>
+    <div> <van-field v-model="value" label="Github" placeholder="githubName" /></div>
  </div>
 </template>
 
@@ -20,11 +16,11 @@
    },
    data () {
      return {
-
+       value:'',
      }
    },
    methods: {
-      back(){
+        back(){
        this.$router.push('my')
      }
    },
@@ -41,7 +37,7 @@
 </script>
 
 <style scoped>
-  .box {
+   .box {
     width: 100%;
     height: 100%;
     background: white;

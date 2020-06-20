@@ -3,11 +3,11 @@
     <div class="box">
       <div class="box1">
         <div class="header">会员中心</div>
-          <div class="mybox">
+        <div class="mybox">
             <div class="b-img"><img :src="userInfo.avatar" alt=""></div>
             <div class="b-font">{{userInfo.nickname}}</div>
             <div class="b-back">退出登录</div>
-          </div>
+        </div>
       </div>
       <div class="nav">
             <div>
@@ -61,7 +61,6 @@
           <div><van-icon name="arrow" size="30" /></div>
         </div>
       </div>
-      <div @click="personalCare" class="icn"><van-icon name="setting" size="25" color="#fff" /></div>
     </div>
  </div>
 </template>
@@ -88,9 +87,6 @@
      },
      myCollection(){
        this.$router.push('/myCollection')
-     },
-     personalCare(){
-       this.$router.push('/personalCare')
      }
    },
    mounted() {
@@ -128,7 +124,6 @@
     width: 100%;
     height: 200px;
     background: rgb(227,12,123);
-    position: relative;
   }
   .b-font {
     color: white;
@@ -182,10 +177,5 @@
   .foot-box1 {
     display: flex;
     align-items: center;
-  }
-  .icn {
-    position: absolute;
-    top: 50px;
-    right: 10px;
   }
 </style>

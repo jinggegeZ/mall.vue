@@ -1,12 +1,7 @@
 <template>
  <div class="box">
     <div class="head">我的订单</div>
-    <div>
-      <van-tabs v-model="active" animated>
-        
-      </van-tabs>
-    </div>
-     <div class="icon" @click="back"><van-icon name="arrow-left" size="25" /></div>
+    <div class="icon" @click="back"><van-icon name="arrow-left" size="25" /></div>
  </div>
 </template>
 
@@ -24,9 +19,7 @@
      }
    },
    methods: {
-      back(){
-       this.$router.push('my')
-     }
+
    },
    mounted() {
 
@@ -41,7 +34,7 @@
 </script>
 
 <style scoped>
-  .box {
+    .box {
     width: 100%;
     height: 100%;
     background: white;
@@ -55,9 +48,5 @@
     align-items: center;
     justify-content: center;
   }
-  .icon {
-    position: absolute;
-    top: 10px;
-    left: 8px;
-  }
+  
 </style>

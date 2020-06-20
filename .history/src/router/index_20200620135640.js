@@ -119,9 +119,9 @@ Vue.use(VueRouter)
     component: () => import('../views/register/register.vue')
   },
   {
-    path: '/myCollection',
-    name: 'myCollection',
-    component: () => import('../views/myCollection/myCollection')
+    path: '/register',
+    name: 'register',
+    component: () => import('../views/register/register.vue')
   },
 ]
 
