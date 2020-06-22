@@ -6,10 +6,10 @@
         <div class="cartfont">您需要登录后才可以查看哦</div>
       </div>
     </div>
-    <div class="carbtn"> 
-        <div @click="primary"><van-button type="primary">立即登录</van-button></div>
-        <div @click="warning"><van-button type="warning">现在注册</van-button></div>
-    </div>
+    <div> 
+          <div @click="primary"><van-button type="primary">立即登录</van-button></div>
+          <div @click="warning"><van-button type="warning">现在注册</van-button></div>
+        </div>
  </div>
 </template>
 
@@ -31,7 +31,7 @@
        this.$router.push('login')
      },
      warning(){
-       this.$router.push('/register')
+       this.$router.push('resgister')
      }
    },
    mounted() {
@@ -65,13 +65,6 @@
     height: 80px;
     display: flex;
     justify-content: center;
-    align-items: center;
-  }
-  .carbtn {
-    width: 100%;
-    height: 150px;
-    display: flex;
-    justify-content:space-around;
     align-items: center;
   }
 </style>

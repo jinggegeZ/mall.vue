@@ -31,7 +31,7 @@
        this.$router.push('login')
      },
      warning(){
-       this.$router.push('/register')
+       this.$router.push('resgister')
      }
    },
    mounted() {

@@ -2,13 +2,10 @@
  <div>
     <div class="box">
       <div class="carbox">
+        <div>您需要登录后才可以查看哦</div>
         <div><img src="../../../public/loading.gif" alt="" width="300px"></div>
-        <div class="cartfont">您需要登录后才可以查看哦</div>
+        <div></div>
       </div>
-    </div>
-    <div class="carbtn"> 
-        <div @click="primary"><van-button type="primary">立即登录</van-button></div>
-        <div @click="warning"><van-button type="warning">现在注册</van-button></div>
     </div>
  </div>
 </template>
@@ -27,12 +24,7 @@
      }
    },
    methods: {
-     primary(){
-       this.$router.push('login')
-     },
-     warning(){
-       this.$router.push('/register')
-     }
+
    },
    mounted() {
 
@@ -58,20 +50,6 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    
-  }
-  .cartfont {
-    width: 100%;
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .carbtn {
-    width: 100%;
-    height: 150px;
-    display: flex;
-    justify-content:space-around;
     align-items: center;
   }
 </style>

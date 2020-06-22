@@ -6,16 +6,16 @@
       <div v-for="(item,index) in hotGoods" :key="index" >
         <div :class="[{'left':(index==0)},{'right':(index>0)}]" class="div">
               <div class="img-box">
-                  <div><img :src="item.image" alt="" /></div>
-                  <div class="imgfont">{{item.name}}</div>
-                <div class="img-style">
-                  <div class="prifont">¥{{item.price}}</div>
-                  <div class="img-font">¥{{item.price}}</div>
-                </div>
+              <div><img :src="item.image" alt="" /></div>
+              <div class="imgfont">{{item.name}}</div>
+              <div class="img-style">
+                <div class="prifont">¥{{item.price}}</div>
+                <div class="img-font">¥{{item.price}}</div>
               </div>
-        </div>
+              </div>
+            </div>
       </div>
-       <div class="fllfoot">这是一个秘密哦</div>
+      <div class="fllfoot">这是一个秘密哦</div>
  </div>
 </template>
 
@@ -52,10 +52,6 @@
 </script>
 
 <style scoped lang='scss'>
-.flbox {
-  width: 100%;
-  margin-bottom: 50px;
-}
 .fff{
   margin-bottom: 30px;
 }
