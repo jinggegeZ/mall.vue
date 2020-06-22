@@ -5,7 +5,7 @@
         <div class="header">会员中心</div>
           <div class="mybox">
             <div class="b-img"><img :src="userInfo.avatar" alt=""></div>
-            <div class="b-font" >欢迎您：{{userInfo.nickname}}</div>
+            <div class="b-font">欢迎您：{{userInfo.nickname}}</div>
             <div class="b-back" @click="logout">退出登录</div>
           </div>
       </div>
@@ -91,13 +91,6 @@
      },
      personalCare(){
        this.$router.push('/personalCare')
-     },
-     logout(){
-       this.$api.loginOut({}).then(res => {
-         localStorage.removeItem('nickname')
-       }).catch(err => {
-         console.log(err);
-       })
      }
    },
    mounted() {

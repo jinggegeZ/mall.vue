@@ -16,7 +16,7 @@
               <div class="r-box1">
                 <div class="r-box2">123</div>
                 <div>
-                  <div class="rbox2-font">华南圣女果</div>
+                  <div rbox2-font>华南圣女果</div>
                   <div class="r-box3">
                     <div class="rbox2-font">¥156</div>
                     <div class="rbox3-font">¥115</div>
@@ -44,8 +44,7 @@ export default {
       active: 0,
       bxMallSubDto: [],
       mallCategoryName: "",
-      category: [],
-      id: '',
+      category: []
     };
   },
   methods: {},
@@ -53,13 +52,6 @@ export default {
     this.category = JSON.parse(localStorage.getItem("category"));
     this.bxMallSubDto = this.category[0].bxMallSubDto
 
-    this.$api.classification(id)
-    .then(res => {
-      console.log(res);
-    })
-    .catch(err => {
-      console.log(err);
-    })
   },
   watch: {},
   computed: {}
@@ -76,7 +68,7 @@ export default {
 .r-box1 {
   height: 120px;
   display: flex;
-  border-bottom: 1px solid rgb(238,238,238);
+  
   background: white;
   align-items: center;
 } 
@@ -87,24 +79,16 @@ export default {
   justify-content: center;
   align-items: center;
   background: skyblue;
-  margin-right: 15px;
-  margin-left: 15px;
-  border: 1px solid rgb(238,238,238);
 }
 .r-box3 {
   display: flex;
   align-items: center;
   
 }
-.rbox2-font {
+.rbox-font {
   color: red;
-  height: 40px;
-  line-height: 40px;
 }
 .rbox3-font {
   text-decoration: line-through;
-  height: 40px;
-  line-height: 40px;
-  font-size: 14px;
 }
 </style>

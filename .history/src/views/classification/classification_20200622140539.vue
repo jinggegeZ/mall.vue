@@ -44,20 +44,16 @@ export default {
       active: 0,
       bxMallSubDto: [],
       mallCategoryName: "",
-      category: [],
-      id: '',
+      category: []
     };
   },
   methods: {},
   mounted() {
     this.category = JSON.parse(localStorage.getItem("category"));
     this.bxMallSubDto = this.category[0].bxMallSubDto
-
-    this.$api.classification(id)
-    .then(res => {
+    this.$api.classification(id).then(res => {
       console.log(res);
-    })
-    .catch(err => {
+    }).catch(err => {
       console.log(err);
     })
   },

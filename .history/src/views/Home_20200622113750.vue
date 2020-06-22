@@ -67,7 +67,7 @@ import homepage8 from '../components/homepage8/homepage8'
         this.obj = res.data.slides
         this.category = res.data.category
 
-        localStorage.setItem('category', JSON.stringify(this.category))
+        localStorage.setItem('category', this.category)
         this.advertesPicture = res.data.advertesPicture
         this.hotGoods = res.data.hotGoods
         this.floor1 = res.data.floor1

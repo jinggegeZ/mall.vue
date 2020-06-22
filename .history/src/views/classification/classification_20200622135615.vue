@@ -44,8 +44,7 @@ export default {
       active: 0,
       bxMallSubDto: [],
       mallCategoryName: "",
-      category: [],
-      id: '',
+      category: []
     };
   },
   methods: {},
@@ -53,13 +52,6 @@ export default {
     this.category = JSON.parse(localStorage.getItem("category"));
     this.bxMallSubDto = this.category[0].bxMallSubDto
 
-    this.$api.classification(id)
-    .then(res => {
-      console.log(res);
-    })
-    .catch(err => {
-      console.log(err);
-    })
   },
   watch: {},
   computed: {}
@@ -76,7 +68,7 @@ export default {
 .r-box1 {
   height: 120px;
   display: flex;
-  border-bottom: 1px solid rgb(238,238,238);
+  border-bottom: 1px solid ;
   background: white;
   align-items: center;
 } 
@@ -89,7 +81,6 @@ export default {
   background: skyblue;
   margin-right: 15px;
   margin-left: 15px;
-  border: 1px solid rgb(238,238,238);
 }
 .r-box3 {
   display: flex;

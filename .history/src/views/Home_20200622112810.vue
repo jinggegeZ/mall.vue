@@ -66,7 +66,6 @@ import homepage8 from '../components/homepage8/homepage8'
      this.$api.recommend().then(res => {
         this.obj = res.data.slides
         this.category = res.data.category
-
         localStorage.setItem('category', JSON.stringify(this.category))
         this.advertesPicture = res.data.advertesPicture
         this.hotGoods = res.data.hotGoods
@@ -75,7 +74,6 @@ import homepage8 from '../components/homepage8/homepage8'
         this.floor3 = res.data.floor3
         this.recommend = res.data.recommend
         console.log(res.data);
-        console.log(this.category);
     }).catch(err => {
         console.log(err);
     })

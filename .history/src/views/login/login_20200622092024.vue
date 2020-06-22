@@ -78,7 +78,7 @@
       this.$api.login(this.nickname,this.password,this.verify).then(res => {
         if(res.code === 200 ){
           this.$dialog.alert({message:'登录成功'})
-          localStorage.setItem("nickname",this.nickname)
+          localStorage.setItem("nick",this.nickname)
           this.$router.push('my')
           console.log(res);
         }
