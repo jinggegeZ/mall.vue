@@ -94,9 +94,8 @@
      },
      logout(){
        this.$api.loginOut({}).then(res => {
-         this.$toast('退出成功')
          localStorage.removeItem('nickname')
-         
+         this.$dialog('退出成功')
        }).catch(err => {
          console.log(err);
        })

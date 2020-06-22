@@ -32,8 +32,8 @@
    methods: {
      classfaction(item,index){
        this.$router.push({
-        path: "/classification",
-        query: { index: index },
+        path: "/classfaction",
+        params: { index: index },
       });
        
      }

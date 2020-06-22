@@ -51,21 +51,14 @@ export default {
   },
   methods: {
     getData(){
-      this.$api.classification(this.id)
+      this.$api.getCategory(this.id)
     }
   },
   mounted() {
     this.category = JSON.parse(localStorage.getItem("category"));
     this.bxMallSubDto = this.category[0].bxMallSubDto
-    console.log(this.category);
-    if(this.$route.query.index){
-      this.activeIndex = this.$route.query.index
-      this.id = this.category[this.activeIndex].bxMallSubDto[0].mallSubId
-      this.getData()
-    } else{
-      this.id = this.category[0].bxMallSubDto[0].mallSubId
-      this.getData()
-    }
+    console.log(category);
+    
 
     
   },

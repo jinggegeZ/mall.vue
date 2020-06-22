@@ -27,7 +27,7 @@
    },
    methods: {
      details(){
-       this.$router.push('details')
+       this.$router.push()
      }
    },
    mounted() {

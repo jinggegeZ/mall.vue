@@ -32,7 +32,7 @@
    methods: {
      classfaction(item,index){
        this.$router.push({
-        path: "/classification",
+        path: "/classfaction",
         query: { index: index },
       });
        

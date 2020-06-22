@@ -1,7 +1,7 @@
 <template>
  <div>
   <div class="h2-box">
-    <div class="h21-box" v-for="(item,index) in category" :key="index" @click="classfaction(item,index)">
+    <div class="h21-box" v-for="(item,index) in category" :key="index" @click="classfaction">
       <div>
         <div><img :src="item.image" alt=""></div>
         <div class="h2-font">{{item.mallCategoryName}}</div>
@@ -30,9 +30,9 @@
      }
    },
    methods: {
-     classfaction(item,index){
+     classfaction(index){
        this.$router.push({
-        path: "/classification",
+        path: "/classfaction",
         query: { index: index },
       });
        

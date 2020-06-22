@@ -51,7 +51,7 @@ export default {
   },
   methods: {
     getData(){
-      this.$api.classification(this.id)
+      this.$api.getCategory(this.id)
     }
   },
   mounted() {
