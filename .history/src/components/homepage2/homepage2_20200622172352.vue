@@ -26,8 +26,7 @@
    data () {
      return {
        obj:{},
-       index:'',
-       id: ""
+       index:''
      }
    },
    methods: {
@@ -40,9 +39,7 @@
      }
    },
    mounted() {
-    //  this.category.map(item => {
-    //    this.id =
-    //  })
+     
    },
    watch: {
 

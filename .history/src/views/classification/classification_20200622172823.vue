@@ -59,6 +59,7 @@ export default {
     }
   },
   mounted() {
+    this.id = 
     this.category = JSON.parse(localStorage.getItem("category"));
     this.bxMallSubDto = this.category[0].bxMallSubDto
     console.log(this.category);
