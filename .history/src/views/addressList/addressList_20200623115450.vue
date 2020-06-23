@@ -29,7 +29,6 @@ export default {
     return {
       chosenAddressId: "1",
       list: []
-
     };
   },
   methods: {
@@ -43,9 +42,9 @@ export default {
     onEdit(item, index) {
       this.$router.push({
         path: "/editAddress",
-        query: { obj: JSON.stringify(item) }
+        query: { id: this.chosenAddressId }
       });
-      this.$toast("编辑地址");
+      this.$toast("编辑地址" + index);
     }
   },
   mounted() {

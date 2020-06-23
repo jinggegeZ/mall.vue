@@ -120,7 +120,6 @@ export default {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  width: 70%;
 }
 .rbox2-font1 {
   color: red;

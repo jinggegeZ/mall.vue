@@ -34,12 +34,12 @@ export default {
       this.$router.push("/addressList");
     },
     onSave(content) {
-      this.content = this.content; // content：表单内容
+      this.content = this.content;
       this.$api
         .address({
           name: content.name,
           tel: content.tel,
-          address: `${content.province}${content.city}${content.county}${content.addressDetail}`,
+          address: content.address,
           isDefault: content.isDefault,
           province: content.province,
           city: content.city,
@@ -53,8 +53,8 @@ export default {
         .catch(err => {
           console.log(err);
         });
-      this.$toast("res.msg");
-      this.$router.push('/addressList')
+      this.$toast("保存");
+      this.$router.push("/addressList");
     },
     onDelete() {
       this.$toast("删除");

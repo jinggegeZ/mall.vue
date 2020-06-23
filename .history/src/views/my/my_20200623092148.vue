@@ -80,9 +80,9 @@
      }
    },
    methods: {
-    //  editAddress(){
-    //    this.$router.push('/editAddress')
-    //  },
+     editAddress(){
+       this.$router.push('/editAddress')
+     },
      addressList(){
        this.$router.push('/addressList')
      },

@@ -39,7 +39,7 @@ export default {
         .address({
           name: content.name,
           tel: content.tel,
-          address: `${content.province}${content.city}${content.county}${content.addressDetail}`,
+          address: content.address,
           isDefault: content.isDefault,
           province: content.province,
           city: content.city,

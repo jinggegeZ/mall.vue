@@ -29,7 +29,6 @@ export default {
     return {
       chosenAddressId: "1",
       list: []
-
     };
   },
   methods: {
@@ -42,10 +41,10 @@ export default {
     },
     onEdit(item, index) {
       this.$router.push({
-        path: "/editAddress",
-        query: { obj: JSON.stringify(item) }
+        path: "/addressEdit",
+        query: { id: this.chosenAddressId }
       });
-      this.$toast("编辑地址");
+      this.$toast("编辑地址" + index);
     }
   },
   mounted() {
@@ -53,7 +52,7 @@ export default {
       .getAddress()
       .then(res => {
         res.address.map((item, index) => {
-          this.$set(item, "id", (index + 1).toString());
+          this.$set(item, "id", (index + 1).toString0);
         });
         this.list = res.address;
         console.log(res);

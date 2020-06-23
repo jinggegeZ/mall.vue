@@ -18,7 +18,7 @@
                 <div>
                   <div class="rbox2-font">{{item.name}}</div>
                   <div class="r-box3">
-                    <div class="rbox2-font1">¥{{item.present_price}}</div>
+                    <div class="rbox2-font">¥{{item.present_price}}</div>
                     <div class="rbox3-font">{{item.orl_price}}</div>
                   </div>
                 </div>
@@ -120,13 +120,6 @@ export default {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  width: 70%;
-}
-.rbox2-font1 {
-  color: red;
-  height: 40px;
-  line-height: 40px;
-  font-size: 14px;
 }
 .rbox3-font {
   text-decoration: line-through;

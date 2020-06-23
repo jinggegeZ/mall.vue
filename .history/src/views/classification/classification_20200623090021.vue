@@ -14,11 +14,11 @@
             <template>
             <div>
               <div class="r-box1" v-for="(item,index) in dataList" :key="index">
-                <div class="r-box2"><img :src="item.image" alt="" width="80px"></div>
+                <div class="r-box2"><img :src="item.image" alt=""></div>
                 <div>
-                  <div class="rbox2-font">{{item.name}}</div>
+                  <div class="rbox2-font">{{item.name}}}</div>
                   <div class="r-box3">
-                    <div class="rbox2-font1">¥{{item.present_price}}</div>
+                    <div class="rbox2-font">¥156</div>
                     <div class="rbox3-font">{{item.orl_price}}</div>
                   </div>
                 </div>
@@ -52,9 +52,8 @@ export default {
   },
   methods: {
     classification(){
-      this.$api.classification(this.id)
-      .then(res => {
-        this.dataList = res.dataList
+      this.$api.classification(this.id).then(res => {
+        this.dataList = res.dataListdataList
         console.log(res);
       }).catch(err => {
         console.log(err);
@@ -116,23 +115,11 @@ export default {
   color: red;
   height: 40px;
   line-height: 40px;
-  font-size: 14px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  width: 70%;
-}
-.rbox2-font1 {
-  color: red;
-  height: 40px;
-  line-height: 40px;
-  font-size: 14px;
 }
 .rbox3-font {
   text-decoration: line-through;
   height: 40px;
   line-height: 40px;
-  font-size: 12px;
-  margin-left: 10px;
+  font-size: 14px;
 }
 </style>
