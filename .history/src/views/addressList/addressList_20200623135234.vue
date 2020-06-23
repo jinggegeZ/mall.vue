@@ -38,7 +38,7 @@ export default {
     },
     onAdd() {
       this.$toast("新增地址");
-      this.$router.push("/editAddresss");
+      this.$router.push("/editAddress");
     },
     onEdit(item, index) {
       this.$router.push({

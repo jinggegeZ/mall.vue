@@ -7,7 +7,6 @@
         show-delete
         show-set-default
         show-search-result
-        :address-info='obj'
         :area-columns-placeholder="['请选择', '请选择', '请选择']"
         @save="onSave"
         @delete="onDelete"
@@ -27,8 +26,7 @@ export default {
   components: {},
   data() {
     return {
-      area: area,
-      obj:{},
+      area: area
     };
   },
   methods: {
@@ -64,13 +62,11 @@ export default {
       }).catch(err => {
         console.log(err);
       })
-      this.$toast("删除成功");
+      this.$toast("删除");
       this.$router.push('/addressList')
     }
   },
-  mounted() {
-    this.obj = JSON.parse(this.$route.query.obj)
-  },
+  mounted() {},
   watch: {},
   computed: {
     setName() {

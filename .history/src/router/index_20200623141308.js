@@ -136,11 +136,6 @@ Vue.use(VueRouter)
     name: 'uploader',
     component: () => import('../views/uploader/uploader')
   },
-  {
-    path: '/city',
-    name: 'city',
-    component: () => import('../views/city/city')
-  },
 ]
 
 const router = new VueRouter({

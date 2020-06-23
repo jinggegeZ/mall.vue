@@ -1,9 +1,9 @@
 <template>
  <div>
     <div class="top">
-        <div class="t-head" @click="postion">
+        <div class="t-head">
             <div>{{city}}</div>
-            <div><van-icon name="location-o" /></div>
+            <div><van-icon name="location-o" @click="city" /></div>
         </div>
         <div class="ipt"><van-search v-model="value" placeholder="请输入搜索关键词" /></div>
         <div class="t-font">搜索</div>
@@ -27,9 +27,7 @@
      }  
    },
    methods: {
-       postion(){
-           this.$router.push('/city')
-       }
+       this.$router.push('/city')
    },
    mounted() {
     // let _this = this;

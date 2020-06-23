@@ -1,7 +1,6 @@
 <template>
  <div>
   <div class="box">123</div>
-  <div></div>
  </div>
 </template>
 
@@ -35,11 +34,8 @@
 
 <style scoped lang='scss'>
   .box {
-    width: 100%;
-    height: 350px;
+    width: 400px;
+    height: 400px;
     background: skyblue;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 </style>

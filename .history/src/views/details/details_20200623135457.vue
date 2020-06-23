@@ -1,7 +1,6 @@
 <template>
  <div>
   <div class="box">123</div>
-  <div></div>
  </div>
 </template>
 
@@ -35,7 +34,7 @@
 
 <style scoped lang='scss'>
   .box {
-    width: 100%;
+    width: 350px;
     height: 350px;
     background: skyblue;
     display: flex;

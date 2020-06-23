@@ -7,7 +7,6 @@
         show-delete
         show-set-default
         show-search-result
-        :address-info='obj'
         :area-columns-placeholder="['请选择', '请选择', '请选择']"
         @save="onSave"
         @delete="onDelete"
@@ -28,7 +27,7 @@ export default {
   data() {
     return {
       area: area,
-      obj:{},
+      
     };
   },
   methods: {
@@ -69,7 +68,7 @@ export default {
     }
   },
   mounted() {
-    this.obj = JSON.parse(this.$route.query.obj)
+    
   },
   watch: {},
   computed: {

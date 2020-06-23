@@ -1,7 +1,7 @@
 <template>
  <div>
     <div class="top">
-        <div class="t-head" @click="postion">
+        <div class="t-head" @click="city">
             <div>{{city}}</div>
             <div><van-icon name="location-o" /></div>
         </div>
@@ -27,7 +27,7 @@
      }  
    },
    methods: {
-       postion(){
+       city(){
            this.$router.push('/city')
        }
    },
