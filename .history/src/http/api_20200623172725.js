@@ -42,8 +42,8 @@ export default {
         })
     },
     // 8.单个商品详情(get)
-    one({id}){
-        return service.get(`/goods/one?id=${id}`)
+    one{id){
+        return service.get('/goods/one?id=${id}')
     },
     // 9.收藏单个商品(post)
     collection(goods){

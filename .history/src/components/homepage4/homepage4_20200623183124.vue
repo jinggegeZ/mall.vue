@@ -22,7 +22,7 @@
                 <div class="h4-bg">
                   <van-icon name="cart-o" />
                 </div>
-                <div class="chakan" @click="details(index)">查看详情</div>
+                <div class="chakan" @click="chakan">查看详情</div>
               </div>
             </div>
           </van-swipe-item>
@@ -48,8 +48,8 @@ export default {
     };
   },
   methods: {
-    details(index){
-       this.$router.push({path:'/details',query:{id: this.recommend[index].goodsId}})
+    chakan(index){
+       this.$router.push({path:'/details',query:{id: this.floor2[index].goodsId}})
     }
   },
   mounted() {},

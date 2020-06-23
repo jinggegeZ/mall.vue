@@ -2,7 +2,7 @@
  <div>
   <div class="h1-box">
       <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
-      <van-swipe-item v-for="(item,index) in obj" :key="index"><img :src="item.image" alt="" @click="details(index)"></van-swipe-item>
+      <van-swipe-item v-for="(item,index) in obj" :key="index"><img :src="item.image" alt="" @click="details(item,index)"></van-swipe-item>
       </van-swipe>
   </div>
  </div>
@@ -26,10 +26,10 @@
      }
    },
    methods: {
-     details(index){
+     details(item,index){
        this.$router
        .push({path:'details',
-       query:{id : this.obj[index].goodsId}})
+       query:{id:this.obj[index].goodsId}})
      }
    },
    mounted() {

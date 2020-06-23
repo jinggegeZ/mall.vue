@@ -4,7 +4,7 @@
       <div class="h4-font">商品推荐</div>
       <div class="h4-box1">
         <van-swipe :loop="false" :width="125" :show-indicators="false">
-          <van-swipe-item v-for="(item,index) in recommend" :key="index" @click="details(index)">
+          <van-swipe-item v-for="(item,index) in recommend" :key="index" @click="chakan(index)">
             <div class="h4-box2">
               <div class="h4-box5">
                 <div>
@@ -22,7 +22,7 @@
                 <div class="h4-bg">
                   <van-icon name="cart-o" />
                 </div>
-                <div class="chakan" @click="details(index)">查看详情</div>
+                <div class="chakan" @click="chakan">查看详情</div>
               </div>
             </div>
           </van-swipe-item>
@@ -43,13 +43,11 @@ export default {
   },
   components: {},
   data() {
-    return {
-      id:'',
-    };
+    return {};
   },
   methods: {
-    details(index){
-       this.$router.push({path:'/details',query:{id: this.recommend[index].goodsId}})
+    chakan(index){
+       this.$router.push({path:'/details',query:{id: this.floor2[index].goodsId}})
     }
   },
   mounted() {},

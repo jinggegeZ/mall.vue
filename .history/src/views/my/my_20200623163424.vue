@@ -87,7 +87,7 @@
        this.$router.push('/addressList')
      },
      myCollection(){
-       this.$router.push('/collect')
+       this.$router.push('/myCollection')
      },
      personalCare(){
        this.$router.push('/personalCare')

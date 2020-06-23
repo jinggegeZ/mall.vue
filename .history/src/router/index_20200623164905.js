@@ -127,6 +127,11 @@ Vue.use(VueRouter)
     component: () => import('../views/register/register.vue')
   },
   {
+    path: '/myCollection',
+    name: 'myCollection',
+    component: () => import('../views/myCollection/myCollection')
+  },
+  {
     path: '/uploader',
     name: 'uploader',
     component: () => import('../views/uploader/uploader')
@@ -178,8 +183,8 @@ Vue.use(VueRouter)
   },
   {
     path: '/collect',
-    name: 'mcollect',
-    component: () => import('../views/myCollection/collect'),
+    name: 'collect',
+    component: () => import('../views/collect/collect'),
     meta:{
       title:'收藏'
     }

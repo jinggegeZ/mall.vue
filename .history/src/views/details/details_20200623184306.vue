@@ -145,7 +145,7 @@ export default {
   height: 30px;
   font-size: 12px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   border-top: 1px solid #999;
   border-bottom: 1px solid #999;

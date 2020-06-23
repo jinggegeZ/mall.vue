@@ -30,11 +30,11 @@
         </div>
       </div>
     </div>
-   <div class="deta_f">
+    <div class="deta_f">
       <van-tabs v-model="active">
         <van-tab title="商品详情">
             <div class="deta_g"></div>
-        </van-tab>
+        <an-tab>
         <van-tab title="商品评论">
             <div class="deta_pin">
                 <div class="deta_h">
@@ -68,8 +68,8 @@
                 </div>
             </div>
             </div>
-        </van-tab>
-      </van-tabs>
+        <van-tab>
+      <van-tabs>
     </div>
     <div class="foot">
       <van-goods-action>
@@ -96,7 +96,6 @@ export default {
       ],
       ids:'',
       obj:{},
-      value:'2'
     };
   },
   methods: {
@@ -145,7 +144,7 @@ export default {
   height: 30px;
   font-size: 12px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   border-top: 1px solid #999;
   border-bottom: 1px solid #999;

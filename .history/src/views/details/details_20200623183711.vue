@@ -30,11 +30,12 @@
         </div>
       </div>
     </div>
-   <div class="deta_f">
+    <div class="">
+       <div class="deta_f">
       <van-tabs v-model="active">
         <van-tab title="商品详情">
             <div class="deta_g"></div>
-        </van-tab>
+        <an-tab>
         <van-tab title="商品评论">
             <div class="deta_pin">
                 <div class="deta_h">
@@ -68,8 +69,11 @@
                 </div>
             </div>
             </div>
-        </van-tab>
-      </van-tabs>
+        <an-tab>
+      <an-tabs>
+    </div>
+
+      <div></div>
     </div>
     <div class="foot">
       <van-goods-action>
@@ -96,7 +100,6 @@ export default {
       ],
       ids:'',
       obj:{},
-      value:'2'
     };
   },
   methods: {
@@ -145,7 +148,7 @@ export default {
   height: 30px;
   font-size: 12px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   border-top: 1px solid #999;
   border-bottom: 1px solid #999;
@@ -174,50 +177,5 @@ export default {
 }
 .font{
   color: red;
-}
-.deta_f {
-  margin-top: 30px;
-    border-top: 1px solid #eeeeee;
-}
-.deta_h{
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-    border-bottom: 1px solid #eeeeee;
-    padding-bottom: 10px;
-}
-.deta_i{
-    display: flex;
-    justify-content: space-between;
-    width: 94%;
-}
-.deta_j{
-    height: 42px;
-    width: 42px;
-    border: 1px solid #eeeeee;
-    border-radius: 50px;
-    overflow: hidden;
-}
-.deta_j img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.deta_K{
-    width: 84%;
-    font-size: 14px;
-}
-.deta_K div{
-    line-height: 26px;
-}
-.deta_l{
-    display: flex;
-    justify-content: space-between;
-}
-.deta_m{
-    color: #666666;
-}
-.deta_pin{
-    margin-bottom: 80px;
 }
 </style>

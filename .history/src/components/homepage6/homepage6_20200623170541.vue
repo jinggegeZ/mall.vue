@@ -2,10 +2,10 @@
  <div>
     <div>
       <div class="floor">
-        <div class="f-font">3F</div>
-        <div class="f-font2">营养奶品</div>
+        <div class="f-font">2F</div>
+        <div class="f-font2">新鲜食品</div>
       </div>
-      <div v-for="(item,index) in floor3" :key="index" @click="details(index)">
+      <div v-for="(item,index) in floor2" :key="index" @click="details">
         <div :class="[{'left':(index==0)},{'right':(index>0)}]" class="div">
           <img :src="item.image" alt="" />
         </div>
@@ -18,7 +18,7 @@
  export default {
    name: '',
    props: {
-      floor3:{
+      floor2:{
         type:Array,
         default:() => {}
       }
@@ -28,12 +28,12 @@
    },
    data () {
      return {
-       id:'',
+
      }
    },
    methods: {
-     details(index){
-       this.$router.push({path:'/details',query:{id: this.floor3[index].goodsId}})
+     details(){
+       this.$router.push('/details')
      }
    },
    mounted() {

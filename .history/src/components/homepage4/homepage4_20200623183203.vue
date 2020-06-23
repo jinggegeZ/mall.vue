@@ -49,7 +49,7 @@ export default {
   },
   methods: {
     details(index){
-       this.$router.push({path:'/details',query:{id: this.recommend[index].goodsId}})
+       this.$router.push({path:'/details',query:{id: this.floor2[index].goodsId}})
     }
   },
   mounted() {},

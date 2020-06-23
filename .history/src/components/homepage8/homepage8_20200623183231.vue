@@ -38,7 +38,7 @@
    },
    methods: {
      details(index){
-       this.$router.push({path:'/details',query:{id: this.hotGoods[index].goodsId}})
+       this.$router.push({path:'/details',query:{id: this.floor2[index].goodsId}})
      }
    },
    mounted() {

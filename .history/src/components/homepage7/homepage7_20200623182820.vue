@@ -28,12 +28,12 @@
    },
    data () {
      return {
-       id:'',
+
      }
    },
    methods: {
      details(index){
-       this.$router.push({path:'/details',query:{id: this.floor3[index].goodsId}})
+       this.$router.push({path:'/details',query:{id: this.floor2[index].goodsId}})
      }
    },
    mounted() {

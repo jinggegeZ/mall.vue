@@ -3,7 +3,7 @@
       <div class="floor">
         <div class="f-font2">热销商品</div>
       </div>
-      <div v-for="(item,index) in hotGoods" :key="index"  @click="details(index)">
+      <div v-for="(item,index) in hotGoods" :key="index"  @click="details">
         <div :class="[{'left':(index==0)},{'right':(index>0)}]" class="div">
               <div class="img-box">
                   <div><img :src="item.image" alt="" /></div>
@@ -33,12 +33,12 @@
    },
    data () {
      return {
-       id:'',
+
      }
    },
    methods: {
-     details(index){
-       this.$router.push({path:'/details',query:{id: this.hotGoods[index].goodsId}})
+     details(){
+       this.$router.push('/details')
      }
    },
    mounted() {
