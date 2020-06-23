@@ -165,14 +165,6 @@ Vue.use(VueRouter)
       title:'写评论'
     }
   },
-  {
-    path: '/order',
-    name: 'order',
-    component: () => import('../views/order/order.vue'),
-    meta:{
-      title:'全部订单'
-    }
-  },
 ]
 
 const router = new VueRouter({

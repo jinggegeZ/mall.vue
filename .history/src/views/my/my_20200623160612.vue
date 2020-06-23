@@ -23,19 +23,19 @@
               <div class="nav-font">代收货</div>
             </div>
             <div>
-              <div class="nav-img" @click="evaluate"><van-icon name="records" size="30" /></div>
+              <div class="nav-img" @click="elutaE"><van-icon name="records" size="30" /></div>
               <div class="nav-font">评价</div>
             </div>
             <div>
               <div class="nav-img"><van-icon name="flag-o" size="30" /></div>
-              <div class="nav-font" @click="order">已完成</div>
+              <div class="nav-font">已完成</div>
             </div>
       </div>
       <div class="foot">
         <div class="foot-box">
           <div class="foot-box1">
             <div><van-icon name="send-gift-o" size="25" /></div>
-            <div @click="order">全部订单</div>
+            <div>全部订单</div>
           </div>
           <div><van-icon name="arrow" size="30" /></div>
         </div>
@@ -91,12 +91,6 @@
      },
      personalCare(){
        this.$router.push('/personalCare')
-     },
-     evaluate(){
-       this.$router.push('/evaluate')
-     },
-     order(){
-       this.$router.push('/order')
      },
      logout(){
        this.$api.loginOut({}).then(res => {

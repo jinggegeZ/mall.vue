@@ -17,30 +17,14 @@
     </div>
     <div class="bb2">
       <div class="bb3">
-        <div class="img1">
-          <van-icon name="thumb-circle" color="red" size="25" />
-        </div>
+        <div class="img1"><van-icon name="thumb-circle" color="red" size="25" /></div>
         <div>有赞的店</div>
       </div>
       <div class="bb4">123</div>
       <div class="bb3">
         <div>进入店铺</div>
-        <div class="img2">
-          <van-icon name="shop-collect" color="red" size="25" />
-        </div>
+        <div class="img2"><van-icon name="shop-collect" color="red" size="25" /></div>
       </div>
-    </div>
-    <div class="">
-      <div></div>
-      <div></div>
-    </div>
-    <div class="foot">
-      <van-goods-action>
-        <van-goods-action-icon icon="chat-o" text="客服" />
-        <van-goods-action-icon icon="cart-o" text="购物车" badge="5" />
-        <van-goods-action-button color="orange" type="warning" text="加入购物车" />
-        <van-goods-action-button color="red" type="danger" text="立即购买" />
-      </van-goods-action>
     </div>
   </div>
 </template>
@@ -49,7 +33,8 @@
 export default {
   name: "",
   props: {},
-  components: {},
+  components: {
+  },
   data() {
     return {
       show: false,
@@ -66,11 +51,12 @@ export default {
     },
     onChange(index) {
       this.index = index;
-    }
+    },
   },
   mounted() {},
   watch: {},
-  computed: {}
+  computed: {
+  }
 };
 </script>
 
@@ -107,21 +93,18 @@ export default {
   display: flex;
   justify-content: space-around;
   align-items: center;
-
+  
   border-bottom: 1px solid #999;
 }
 .bb3 {
   display: flex;
   align-items: center;
+  
 }
 .bb4 {
   color: white;
 }
 .img1 {
-  margin-right: 5px;
-}
-.img2 {
   margin-left: 5px;
 }
-
 </style>

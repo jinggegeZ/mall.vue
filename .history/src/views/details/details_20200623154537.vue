@@ -30,11 +30,7 @@
         </div>
       </div>
     </div>
-    <div class="">
-      <div></div>
-      <div></div>
-    </div>
-    <div class="foot">
+    <div>
       <van-goods-action>
         <van-goods-action-icon icon="chat-o" text="客服" />
         <van-goods-action-icon icon="cart-o" text="购物车" badge="5" />
@@ -123,5 +119,4 @@ export default {
 .img2 {
   margin-left: 5px;
 }
-
 </style>

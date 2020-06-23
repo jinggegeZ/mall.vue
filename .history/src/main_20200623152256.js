@@ -5,6 +5,7 @@ import store from './store'
 import Vant from 'vant';
 import 'vant/lib/index.css';
 import api from './http/api'
+import { ImagePreview } from 'vant';
 
 Vue.use(Vant);
 Vue.prototype.$api = api

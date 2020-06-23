@@ -30,10 +30,6 @@
         </div>
       </div>
     </div>
-    <div class="">
-      <div></div>
-      <div></div>
-    </div>
     <div class="foot">
       <van-goods-action>
         <van-goods-action-icon icon="chat-o" text="客服" />

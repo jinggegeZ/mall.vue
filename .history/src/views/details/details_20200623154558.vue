@@ -30,10 +30,6 @@
         </div>
       </div>
     </div>
-    <div class="">
-      <div></div>
-      <div></div>
-    </div>
     <div class="foot">
       <van-goods-action>
         <van-goods-action-icon icon="chat-o" text="客服" />
@@ -123,5 +119,4 @@ export default {
 .img2 {
   margin-left: 5px;
 }
-
 </style>

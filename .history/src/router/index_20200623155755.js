@@ -159,18 +159,10 @@ Vue.use(VueRouter)
   },
   {
     path: '/writeEva',
-    name: 'writeEva',
-    component: () => import('../views/evaluate/writeEva'),
+    name: 'evaluate',
+    component: () => import('../views/evaluate/evaluate'),
     meta:{
-      title:'写评论'
-    }
-  },
-  {
-    path: '/order',
-    name: 'order',
-    component: () => import('../views/order/order.vue'),
-    meta:{
-      title:'全部订单'
+      title:'评论'
     }
   },
 ]
