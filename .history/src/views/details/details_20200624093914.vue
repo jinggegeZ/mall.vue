@@ -31,7 +31,7 @@
         </div>
       </div>
     </div>
-    <div class="deta_f">
+   <div class="deta_f">
       <van-tabs v-model="active">
         <van-tab title="商品详情">
 
@@ -75,7 +75,8 @@
         </van-tab>
       </van-tabs>
     </div>
-    <div class="foot">
+  </div>
+  <div class="foot">
       <van-goods-action>
         <van-goods-action-icon icon="chat-o" text="客服" />
         <van-goods-action-icon icon="cart-o" text="购物车" badge="5" />
@@ -83,8 +84,6 @@
         <van-goods-action-button color="red" type="danger" text="立即购买" />
       </van-goods-action>
     </div>
-  </div>
-  
 </template>
 
 <script>

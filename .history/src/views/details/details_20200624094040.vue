@@ -235,6 +235,6 @@ export default {
     color: #666666;
 }
 .deta_pin{
-    margin-bottom: 80px;
+    margin-bottom: 60px;
 }
 </style>

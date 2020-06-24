@@ -1,10 +1,9 @@
 <template>
-  <div class="box">
+  <div>
     <div class="top" @click="comeback">
       <van-icon name="diamond" size="25" />
     </div>
     <div class="nav">
-    <img :src="obj.image" alt="" width="80%" @click="cka">
       <van-image-preview v-model="show" :images="images" @change="onChange">
         <template v-slot:index>第{{ index }}页</template>
       </van-image-preview>
@@ -31,13 +30,10 @@
         </div>
       </div>
     </div>
-    <div class="deta_f">
+   <div class="deta_f">
       <van-tabs v-model="active">
         <van-tab title="商品详情">
-
-            <div class="deta_g">
-              <div v-html="obj.detail"></div>
-            </div>
+            <div class="deta_g"></div>
         </van-tab>
         <van-tab title="商品评论">
             <div class="deta_pin">
@@ -66,7 +62,7 @@
                             <span>用户名</span>
                             <span class="deta_m">2002-15-453</span>
                         </div>
-                        <div><van-rate  readonly /></div>
+                        <div><van-rate v-model="value" readonly /></div>
                         <div>评价内容。。。。</div>
                     </div>
                 </div>
@@ -84,7 +80,6 @@
       </van-goods-action>
     </div>
   </div>
-  
 </template>
 
 <script>
@@ -100,7 +95,6 @@ export default {
         
       ],
       ids:'',
-      active:'1',
       obj:{},
       value:'2'
     };
@@ -112,20 +106,13 @@ export default {
     onChange(index) {
       this.index = index;
     },
-    cka(){
-      this.show = true
-    }
    
   },
   mounted() {
     this.ids = this.$route.query.id
-    console.log(this.ids);
-    this.$api.one(this.ids)
+    this.$api.one({id : this.ids})
     .then(res => {
       this.obj = res.goods.goodsOne
-      this.images.push(this.obj.image)
-      this.images.push(this.obj.image_path)
-      console.log(this.images);
       console.log(res);
     }).catch(err => {
       console.log(err);
@@ -137,10 +124,6 @@ export default {
 </script>
 
 <style scoped lang='scss'>
-.box {
-  background:white;
-}
-
 .top {
   height: 30px;
   line-height: 30px;

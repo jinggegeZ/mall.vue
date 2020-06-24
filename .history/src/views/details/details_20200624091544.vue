@@ -1,10 +1,10 @@
 <template>
-  <div class="box">
+  <div>
     <div class="top" @click="comeback">
       <van-icon name="diamond" size="25" />
     </div>
     <div class="nav">
-    <img :src="obj.image" alt="" width="80%" @click="cka">
+    <img :src="obj.image" alt="" width="100%" @click="cka">
       <van-image-preview v-model="show" :images="images" @change="onChange">
         <template v-slot:index>第{{ index }}页</template>
       </van-image-preview>
@@ -31,13 +31,10 @@
         </div>
       </div>
     </div>
-    <div class="deta_f">
+   <div class="deta_f">
       <van-tabs v-model="active">
         <van-tab title="商品详情">
-
-            <div class="deta_g">
-              <div v-html="obj.detail"></div>
-            </div>
+            <div class="deta_g"></div>
         </van-tab>
         <van-tab title="商品评论">
             <div class="deta_pin">
@@ -84,7 +81,6 @@
       </van-goods-action>
     </div>
   </div>
-  
 </template>
 
 <script>
@@ -137,10 +133,6 @@ export default {
 </script>
 
 <style scoped lang='scss'>
-.box {
-  background:white;
-}
-
 .top {
   height: 30px;
   line-height: 30px;

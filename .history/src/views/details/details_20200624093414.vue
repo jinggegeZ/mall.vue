@@ -31,7 +31,7 @@
         </div>
       </div>
     </div>
-    <div class="deta_f">
+   <div class="deta_f">
       <van-tabs v-model="active">
         <van-tab title="商品详情">
 
@@ -84,7 +84,6 @@
       </van-goods-action>
     </div>
   </div>
-  
 </template>
 
 <script>

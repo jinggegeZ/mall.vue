@@ -31,13 +31,10 @@
         </div>
       </div>
     </div>
-    <div class="deta_f">
+   <div class="deta_f">
       <van-tabs v-model="active">
         <van-tab title="商品详情">
-
-            <div class="deta_g">
-              <div v-html="obj.detail"></div>
-            </div>
+            <div class="deta_g"></div>
         </van-tab>
         <van-tab title="商品评论">
             <div class="deta_pin">
@@ -84,7 +81,6 @@
       </van-goods-action>
     </div>
   </div>
-  
 </template>
 
 <script>
