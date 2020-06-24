@@ -15,13 +15,7 @@
       <div class="bb5">
         <div>运费：0</div>
         <div>剩余：10000</div>
-        <div class="bb6">
-          <!-- 判断是否登录 -->
-          <div v-if="nickname === ''" @click="collection" >收藏<van-icon name="like" size="20" void-color="white" color="red" /></div>
-          <!-- 是否已经收藏 -->
-          <div v-else-if="iscollect === 0" @click="collection">收藏<van-icon name="like" size="20" void-color="white" color="red" /></div>
-          <div v-else @click="delcollection">取消收藏<van-icon name="like" size="20" void-color="white" color="red" /></div>
-        </div>
+        <div class="bb6" @click="get">{{text}}<van-icon name="like" size="20" void-color="white" color="red" /></div>
       </div>
     </div>
     <div class="bb2">
@@ -167,9 +161,7 @@ export default {
       obj: {},
       value: 2,
       text:'收藏',
-      color:'',
-      iscollect:'',
-      nickname:'',
+      color:''
 
     };
   },
@@ -207,28 +199,6 @@ export default {
     gotocarts(){
       this.$router.push('carts')
     },
-    collection(){
-      this.$api.collection(this.obj).then(res => {
-        console.log(this.obj);
-      }).catch(err => {
-        console.log(err);
-      })
-    },
-    delcollection(){
-      this.$api.cancelCollection(this.obj._id).then(res => {
-        console.log(res);
-      }).catch(err => {
-        console.log(err);
-      })
-    },
-    isCollection(){
-      this.$api.isCollection(this.obj._id).then(res => {
-        this.iscollect = res.isCollection
-        console.log(res);
-      }).catch(err => {
-        console.log(err);
-      })
-    }
   },
   mounted() {
     this.ids = this.$route.query.id;
@@ -243,7 +213,6 @@ export default {
       .catch(err => {
         console.log(err);
       });
-    this.isCollection()
   },
   watch: {},
   computed: {}

@@ -167,9 +167,7 @@ export default {
       obj: {},
       value: 2,
       text:'收藏',
-      color:'',
-      iscollect:'',
-      nickname:'',
+      color:''
 
     };
   },
@@ -215,19 +213,7 @@ export default {
       })
     },
     delcollection(){
-      this.$api.cancelCollection(this.obj._id).then(res => {
-        console.log(res);
-      }).catch(err => {
-        console.log(err);
-      })
-    },
-    isCollection(){
-      this.$api.isCollection(this.obj._id).then(res => {
-        this.iscollect = res.isCollection
-        console.log(res);
-      }).catch(err => {
-        console.log(err);
-      })
+      this.$api.
     }
   },
   mounted() {
@@ -243,7 +229,6 @@ export default {
       .catch(err => {
         console.log(err);
       });
-    this.isCollection()
   },
   watch: {},
   computed: {}
