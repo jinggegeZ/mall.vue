@@ -15,7 +15,7 @@
       <div class="bb5">
         <div>运费：0</div>
         <div>剩余：10000</div>
-        <div class="bb6" @click="get">{{text}}<van-icon name="like" size="20" void-color="white" color="red" /></div>
+        <div>收藏</div>
       </div>
     </div>
     <div class="bb2">
@@ -23,10 +23,7 @@
         <div class="img1">
           <van-icon name="thumb-circle" color="red" size="25" />
         </div>
-        <div class="bb3-1"> 
-          <div>有赞的店</div>
-          <div class="bb3-2">官方</div>
-        </div>
+        <div>有赞的店</div>
       </div>
       <div class="bb4">123</div>
       <div class="bb3">
@@ -88,27 +85,18 @@
         <van-goods-action-icon icon="chat-o" text="客服" />
         <van-goods-action-icon icon="cart-o" text="购物车" badge="5" />
         <van-goods-action-button color="orange" type="warning" text="加入购物车" @click="addShop" />
-        <van-action-sheet v-model="show2" title="加入购物车">
-          <div class="content">
-            <div class="conbox">
-              <div class="conbox1">
-                <div class="conimg">
-                  <img :src="obj.image" alt width="80px" />
-                </div>
-                <div>
-                  <div class="foot5">{{obj.name}}</div>
-                  <div class="font">¥{{obj.present_price}}元</div>
-                  <div>剩余：706件</div>
-                </div>
-              </div>
-              <div class="conbox2">
-                <div class="conbox3">
-                  <div class="foot4">请选择规格：</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </van-action-sheet>
+        <van-sku
+          v-model="show2"
+          :sku="sku"
+          :goods="goods"
+          :goods-id="goodsId"
+          :quota="quota"
+          :quota-used="quotaUsed"
+          :hide-stock="sku.hide_stock"
+          :message-config="messageConfig"
+          @buy-clicked="onBuyClicked"
+          @add-cart="onAddCartClicked"
+        />
         <van-goods-action-button color="red" type="danger" text="立即购买" @click="buynow" />
         <van-action-sheet v-model="show1" title="立即购买" color="red">
           <div class="content">
@@ -123,14 +111,16 @@
                 </div>
               </div>
               <div class="foot1">
-                    <div>
-                      <div class="foot4">购买数量</div>
-                      <div class="foo6">
-                        <div class="foot3">数量{{obj.amount}}件</div>
-                        <div class="foot7">每人限购50件</div>
-                      </div>
-                    </div>
-                    <div><van-stepper v-model="number" max="50" /></div>
+                <div>
+                  <div class="foot4">购买数量</div>
+                  <div class="foo6">
+                    <div class="foot3">数量{{obj.amount}}件</div>
+                    <div class="foot7">每人限购50件</div>
+                  </div>
+                </div>
+                <div>
+                  <van-stepper v-model="number" max="50" />
+                </div>
               </div>
               <div>
                 <div class="foot2">立即购买</div>
@@ -153,16 +143,13 @@ export default {
       show: false,
       show1: false,
       show2: false,
-      number:1,
+      number: 1,
       index: 0,
       images: [],
       ids: "",
       active: "1",
       obj: {},
-      value: 2,
-      text:'收藏',
-      color:''
-
+      value: 2
     };
   },
   methods: {
@@ -179,7 +166,7 @@ export default {
     },
     //点击购物车
     addShop(id) {
-      this.show2 = true
+      this.show2 = true;
       // this.$api
       //   .addShop(this.ids)
       //   .then(res => {
@@ -192,9 +179,6 @@ export default {
     },
     buynow() {
       this.show1 = true;
-    },
-    get(){
-      this.text = '取消收藏'
     }
   },
   mounted() {
@@ -355,7 +339,6 @@ export default {
   height: 100px;
   display: flex;
   justify-content: center;
-  
 }
 .conbox3 {
   width: 95%;
@@ -394,20 +377,5 @@ export default {
 .foot7 {
   font-size: 12px;
   color: red;
-}
-.bb3-1 {
-  display: flex;
-  
-}
-.bb3-2 {
-  width: 40px;
-  color: white;
-  background: red ;
-  display: flex;
-  justify-content: space-around;
-}
-.bb6 {
-  display: flex;
-  align-items: center;
 }
 </style>

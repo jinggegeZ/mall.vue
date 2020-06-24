@@ -15,7 +15,7 @@
       <div class="bb5">
         <div>运费：0</div>
         <div>剩余：10000</div>
-        <div class="bb6" @click="get">{{text}}<van-icon name="like" size="20" void-color="white" color="red" /></div>
+        <div>收藏</div>
       </div>
     </div>
     <div class="bb2">
@@ -23,10 +23,7 @@
         <div class="img1">
           <van-icon name="thumb-circle" color="red" size="25" />
         </div>
-        <div class="bb3-1"> 
-          <div>有赞的店</div>
-          <div class="bb3-2">官方</div>
-        </div>
+        <div>有赞的店</div>
       </div>
       <div class="bb4">123</div>
       <div class="bb3">
@@ -96,21 +93,18 @@
                   <img :src="obj.image" alt width="80px" />
                 </div>
                 <div>
-                  <div class="foot5">{{obj.name}}</div>
                   <div class="font">¥{{obj.present_price}}元</div>
                   <div>剩余：706件</div>
                 </div>
               </div>
               <div class="conbox2">
-                <div class="conbox3">
-                  <div class="foot4">请选择规格：</div>
-                </div>
+                <div class="conbox3">123</div>
               </div>
             </div>
           </div>
         </van-action-sheet>
         <van-goods-action-button color="red" type="danger" text="立即购买" @click="buynow" />
-        <van-action-sheet v-model="show1" title="立即购买" color="red">
+        <van-action-sheet v-model="show1" title="立即带走" color="red">
           <div class="content">
             <div class="conbox">
               <div class="conbox1">
@@ -118,19 +112,16 @@
                   <img :src="obj.image" alt width="80px" />
                 </div>
                 <div>
-                  <div class="foot5">{{obj.name}}</div>
+                  <div>{{obj.name}}</div>
                   <div class="font">¥{{obj.present_price}}元</div>
                 </div>
               </div>
               <div class="foot1">
                     <div>
-                      <div class="foot4">购买数量</div>
-                      <div class="foo6">
-                        <div class="foot3">数量{{obj.amount}}件</div>
-                        <div class="foot7">每人限购50件</div>
-                      </div>
+                      <div>购买数量</div>
+                      <div>数量{{obj.amount}}件</div>
                     </div>
-                    <div><van-stepper v-model="number" max="50" /></div>
+                    <div><van-stepper v-model="number" /></div>
               </div>
               <div>
                 <div class="foot2">立即购买</div>
@@ -159,10 +150,7 @@ export default {
       ids: "",
       active: "1",
       obj: {},
-      value: 2,
-      text:'收藏',
-      color:''
-
+      value: 2
     };
   },
   methods: {
@@ -192,9 +180,6 @@ export default {
     },
     buynow() {
       this.show1 = true;
-    },
-    get(){
-      this.text = '取消收藏'
     }
   },
   mounted() {
@@ -377,37 +362,5 @@ export default {
   justify-content: center;
   align-items: center;
   background: hsl(0, 80%, 50%);
-  color: white;
-}
-.foot3 {
-  font-size: 12px;
-}
-.foot5 {
-  font-size: 14px;
-}
-.foot4 {
-  font-weight: 700;
-}
-.foo6 {
-  display: flex;
-}
-.foot7 {
-  font-size: 12px;
-  color: red;
-}
-.bb3-1 {
-  display: flex;
-  
-}
-.bb3-2 {
-  width: 40px;
-  color: white;
-  background: red ;
-  display: flex;
-  justify-content: space-around;
-}
-.bb6 {
-  display: flex;
-  align-items: center;
 }
 </style>

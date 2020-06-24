@@ -15,7 +15,7 @@
       <div class="bb5">
         <div>运费：0</div>
         <div>剩余：10000</div>
-        <div class="bb6" @click="get">{{text}}<van-icon name="like" size="20" void-color="white" color="red" /></div>
+        <div>收藏</div>
       </div>
     </div>
     <div class="bb2">
@@ -23,10 +23,7 @@
         <div class="img1">
           <van-icon name="thumb-circle" color="red" size="25" />
         </div>
-        <div class="bb3-1"> 
-          <div>有赞的店</div>
-          <div class="bb3-2">官方</div>
-        </div>
+        <div>有赞的店</div>
       </div>
       <div class="bb4">123</div>
       <div class="bb3">
@@ -159,10 +156,7 @@ export default {
       ids: "",
       active: "1",
       obj: {},
-      value: 2,
-      text:'收藏',
-      color:''
-
+      value: 2
     };
   },
   methods: {
@@ -192,9 +186,6 @@ export default {
     },
     buynow() {
       this.show1 = true;
-    },
-    get(){
-      this.text = '取消收藏'
     }
   },
   mounted() {
@@ -394,20 +385,5 @@ export default {
 .foot7 {
   font-size: 12px;
   color: red;
-}
-.bb3-1 {
-  display: flex;
-  
-}
-.bb3-2 {
-  width: 40px;
-  color: white;
-  background: red ;
-  display: flex;
-  justify-content: space-around;
-}
-.bb6 {
-  display: flex;
-  align-items: center;
 }
 </style>

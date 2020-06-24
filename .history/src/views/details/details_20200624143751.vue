@@ -15,7 +15,7 @@
       <div class="bb5">
         <div>运费：0</div>
         <div>剩余：10000</div>
-        <div class="bb6" @click="get">{{text}}<van-icon name="like" size="20" void-color="white" color="red" /></div>
+        <div class="bb6">收藏<van-icon name="like-o" size="20" /></div>
       </div>
     </div>
     <div class="bb2">
@@ -159,10 +159,7 @@ export default {
       ids: "",
       active: "1",
       obj: {},
-      value: 2,
-      text:'收藏',
-      color:''
-
+      value: 2
     };
   },
   methods: {
@@ -192,9 +189,6 @@ export default {
     },
     buynow() {
       this.show1 = true;
-    },
-    get(){
-      this.text = '取消收藏'
     }
   },
   mounted() {

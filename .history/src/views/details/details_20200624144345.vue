@@ -15,7 +15,7 @@
       <div class="bb5">
         <div>运费：0</div>
         <div>剩余：10000</div>
-        <div class="bb6" @click="get">{{text}}<van-icon name="like" size="20" void-color="white" color="red" /></div>
+        <div class="bb6" @click="get">{{text}}<van-icon name="like-o" size="20" /></div>
       </div>
     </div>
     <div class="bb2">
