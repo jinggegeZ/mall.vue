@@ -9,11 +9,11 @@
         </van-sidebar>
       </div>
       <div class="r-box">
-        <van-tabs @change="change" v-model="active" v-if="bxMallSubDto.length > 0">
-          <van-tab v-for="(item, index) in bxMallSubDto" :key="index" :name="item.mallSubId" :title="item.mallSubName" >
+        <van-tabs v-model="active" v-if="bxMallSubDto.length > 0">
+          <van-tab v-for="(item, index) in bxMallSubDto" :key="index" :title="item.mallSubName" @click="details(index)">
             <template>
             <div>
-              <div class="r-box1" v-for="(item,index) in dataList" :key="index" @click="details(item)">
+              <div class="r-box1" v-for="(item,index) in dataList" :key="index">
                 <div class="r-box2"><img :src="item.image" alt="" width="80px"></div>
                 <div>
                   <div class="rbox2-font">{{item.name}}</div>
@@ -60,15 +60,13 @@ export default {
       })
     },
     click(item){
-      this.ids = item.bxMallSubDto[0].mallSubId
+      console.log(item);
+      this.ids = this.category[0].bxMallSubDto[0].mallSubId
+      this.bxMallSubDto = this.category[this.activeIndex].bxMallSubDto
       this.classification()
     },
-    details(item){
-      this.$router.push({path:'/details',query:{id: item.id}})
-    },
-    change(name){
-      this.ids = name
-      this.classification()
+    details(index){
+      this.$router.push({path:'/details',query:{id: this.bxMallSubDto[index].id}})
     }
   },
   mounted() {

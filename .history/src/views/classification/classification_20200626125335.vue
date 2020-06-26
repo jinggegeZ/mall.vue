@@ -9,12 +9,12 @@
         </van-sidebar>
       </div>
       <div class="r-box">
-        <van-tabs @change="change" v-model="active" v-if="bxMallSubDto.length > 0">
-          <van-tab v-for="(item, index) in bxMallSubDto" :key="index" :name="item.mallSubId" :title="item.mallSubName" >
+        <van-tabs v-model="active" v-if="bxMallSubDto.length > 0">
+          <van-tab v-for="(item, index) in bxMallSubDto" :key="index" :title="item.mallSubName" >
             <template>
             <div>
-              <div class="r-box1" v-for="(item,index) in dataList" :key="index" @click="details(item)">
-                <div class="r-box2"><img :src="item.image" alt="" width="80px"></div>
+              <div class="r-box1" v-for="(item,index) in dataList" :key="index" >
+                <div class="r-box2" @click="details(item)"><img :src="item.image" alt="" width="80px"></div>
                 <div>
                   <div class="rbox2-font">{{item.name}}</div>
                   <div class="r-box3">
@@ -60,15 +60,12 @@ export default {
       })
     },
     click(item){
+      console.log(item);
       this.ids = item.bxMallSubDto[0].mallSubId
       this.classification()
     },
     details(item){
       this.$router.push({path:'/details',query:{id: item.id}})
-    },
-    change(name){
-      this.ids = name
-      this.classification()
     }
   },
   mounted() {

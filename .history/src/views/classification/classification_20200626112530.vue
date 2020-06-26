@@ -1,19 +1,19 @@
 <template>
   <div>
-    <div class="container">
-      <div class="box">
-        <van-sidebar v-model="activeIndex">
-        <div v-for="(item,index) in category" :key="index">
-          <van-sidebar-item :title="item.mallCategoryName" @click="click(item)" />
-        </div>
-        </van-sidebar>
-      </div>
+    <div class="box">
+      <van-sidebar v-model="activeIndex" @click="click">
+        <van-sidebar-item
+          v-for="(item,index) in category"
+          :key="index"
+          :title="item.mallCategoryName"
+        />
+      </van-sidebar>
       <div class="r-box">
-        <van-tabs @change="change" v-model="active" v-if="bxMallSubDto.length > 0">
-          <van-tab v-for="(item, index) in bxMallSubDto" :key="index" :name="item.mallSubId" :title="item.mallSubName" >
+        <van-tabs v-model="active" v-if="bxMallSubDto.length > 0">
+          <van-tab v-for="(item, index) in bxMallSubDto" :key="index" :title="item.mallSubName">
             <template>
             <div>
-              <div class="r-box1" v-for="(item,index) in dataList" :key="index" @click="details(item)">
+              <div class="r-box1" v-for="(item,index) in dataList" :key="index">
                 <div class="r-box2"><img :src="item.image" alt="" width="80px"></div>
                 <div>
                   <div class="rbox2-font">{{item.name}}</div>
@@ -44,14 +44,14 @@ export default {
       bxMallSubDto: [],
       mallCategoryName: "",
       category: [],
-      ids: '',
+      id: '',
       activeIndex:0,
       dataList:[],
     };
   },
   methods: {
     classification(){
-      this.$api.classification(this.ids)
+      this.$api.classification(this.id)
       .then(res => {
         this.dataList = res.dataList
         console.log(res);
@@ -59,16 +59,9 @@ export default {
         console.log(err);
       })
     },
-    click(item){
-      this.ids = item.bxMallSubDto[0].mallSubId
-      this.classification()
-    },
-    details(item){
-      this.$router.push({path:'/details',query:{id: item.id}})
-    },
-    change(name){
-      this.ids = name
-      this.classification()
+    click(){
+      this.category = JSON.parse(localStorage.getItem("category"));
+      this.bxMallSubDto = this.category[this.activeIndex].bxMallSubDto
     }
   },
   mounted() {
@@ -76,10 +69,10 @@ export default {
     this.bxMallSubDto = this.category[this.activeIndex].bxMallSubDto
     if(this.$route.query.index){
       this.activeIndex = this.$route.query.index
-      this.ids = this.category[this.activeIndex].bxMallSubDto[0].mallSubId
+      this.id = this.category[this.activeIndex].bxMallSubDto[0].mallSubId
       this.classification()
     } else{
-      this.ids = this.category[0].bxMallSubDto[0].mallSubId
+      this.id = this.category[0].bxMallSubDto[0].mallSubId
       this.classification()
     }
 
@@ -91,19 +84,19 @@ export default {
 </script>
 
 <style scoped>
-.container {
+.box {
   display: flex;
 }
 .r-box {
-  width: 100%;
+  width: 80%;
 }
 .r-box1 {
   height: 120px;
   display: flex;
-  border-bottom: 1px solid rgb(238, 238, 238);
+  border-bottom: 1px solid rgb(238,238,238);
   background: white;
   align-items: center;
-}
+} 
 .r-box2 {
   width: 80px;
   height: 80px;
@@ -113,11 +106,12 @@ export default {
   background: skyblue;
   margin-right: 15px;
   margin-left: 15px;
-  border: 1px solid rgb(238, 238, 238);
+  border: 1px solid rgb(238,238,238);
 }
 .r-box3 {
   display: flex;
   align-items: center;
+  
 }
 .rbox2-font {
   color: red;
@@ -128,14 +122,12 @@ export default {
   white-space: nowrap;
   text-overflow: ellipsis;
   width: 70%;
-  font-weight: 700;
 }
 .rbox2-font1 {
   color: red;
   height: 40px;
   line-height: 40px;
   font-size: 14px;
-  font-weight: 700;
 }
 .rbox3-font {
   text-decoration: line-through;
@@ -143,9 +135,5 @@ export default {
   line-height: 40px;
   font-size: 12px;
   margin-left: 10px;
-  color: rgb(165, 165, 165);
-}
-.van-sidebar-item {
-  margin-top: -8px;
 }
 </style>

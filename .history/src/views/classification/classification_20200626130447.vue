@@ -10,7 +10,7 @@
       </div>
       <div class="r-box">
         <van-tabs @change="change" v-model="active" v-if="bxMallSubDto.length > 0">
-          <van-tab v-for="(item, index) in bxMallSubDto" :key="index" :name="item.mallSubId" :title="item.mallSubName" >
+          <van-tab v-for="(item, index) in bxMallSubDto" :key="index" :name="item.mallsubId" :title="item.mallSubName" >
             <template>
             <div>
               <div class="r-box1" v-for="(item,index) in dataList" :key="index" @click="details(item)">
