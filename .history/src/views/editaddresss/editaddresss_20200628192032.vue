@@ -27,7 +27,7 @@ export default {
   data() {
     return {
       area: area,
-      list:[]
+      
     };
   },
   methods: {
@@ -49,17 +49,14 @@ export default {
           areaCode: content.areaCode
         })
         .then(res => {
-          this.list = res.address
-          console.log(this.list);
-          this.$toast(res.msg);
-          localStorage.setItem('list',JSON.stringify(this.list))
-          this.$router.push('/addressList')
-          
+          console.log(res);
         })
         .catch(err => {
           console.log(err);
         });
-      
+      this.$toast("res.msg");
+      this.$router.push('/addressList')
+      localStorage.setItem()
     },
     onDelete(id) {
       this.$api.deleteAddress({id}).then(res => {

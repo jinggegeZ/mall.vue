@@ -27,7 +27,7 @@ export default {
   data() {
     return {
       area: area,
-      list:[]
+      content:[]
     };
   },
   methods: {
@@ -49,10 +49,10 @@ export default {
           areaCode: content.areaCode
         })
         .then(res => {
-          this.list = res.address
-          console.log(this.list);
+          this.content = res.address
+          console.log(this.content);
           this.$toast(res.msg);
-          localStorage.setItem('list',JSON.stringify(this.list))
+          localStorage.setItem('content',JSON.stringify(this.content))
           this.$router.push('/addressList')
           
         })

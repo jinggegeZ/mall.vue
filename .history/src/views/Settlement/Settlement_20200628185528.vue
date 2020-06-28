@@ -7,11 +7,11 @@
                 <div class="headfont">Order settlement</div>
             </div>
             <div class="nav">
-                <div class="nav1" v-if="isDefault === true">
+                <div class="nav1">
                     <div class="nav1img"><van-icon name="location-o" size="30" /></div>
-                    <div class="nav1box" v-for="(item,index) in address" :key="index">
-                        <div>收货人:{{item.name}}</div>
-                        <div class="nav1font">收货地址：{{item.address}}</div>
+                    <div class="nav1box">
+                        <div>收货人:</div>
+                        <div class="nav1font">收货地址：</div>
                     </div>
                     <div class="nav1phone">13582653116</div>
                     <div @click="addresslist" class="nav1boxfoot"><van-icon name="arrow" size="20" /></div>
@@ -28,9 +28,7 @@
             </div>
         </div>
         <div class="foot">
-            <div>合计：
-            <span class="footfont">159元</span>
-            </div>
+            <div>合计¥：{}</div>
             <div class="placeOrder">提交订单</div>
         </div>
     </div>
@@ -47,10 +45,7 @@
    },
    data () {
      return {
-         value:'x1',
-         isDefault:'',
-         address:[],
-         
+         value:'x1'
      }
    },
    methods: {
@@ -62,12 +57,7 @@
        }
    },
    mounted() {
-      this.$api.getAddress().then(res => {
-          this.address = res.address
-          console.log(res);
-      }).catch(err => {
-          console.log(err);
-      })
+
    },
    watch: {
 
@@ -180,10 +170,5 @@
        display: flex;
        justify-content: center;
        align-items: center;
-       margin-left: 5px;
-   }
-   .footfont {
-       color: red;
-       font-size: 14px;
    }
 </style>

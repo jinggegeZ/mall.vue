@@ -52,7 +52,7 @@ export default {
           this.list = res.address
           console.log(this.list);
           this.$toast(res.msg);
-          localStorage.setItem('list',JSON.stringify(this.list))
+          localStorage.setItem('content',JSON.stringify(this.content))
           this.$router.push('/addressList')
           
         })

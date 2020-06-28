@@ -9,9 +9,9 @@
             <div class="nav">
                 <div class="nav1" v-if="isDefault === true">
                     <div class="nav1img"><van-icon name="location-o" size="30" /></div>
-                    <div class="nav1box" v-for="(item,index) in address" :key="index">
-                        <div>收货人:{{item.name}}</div>
-                        <div class="nav1font">收货地址：{{item.address}}</div>
+                    <div class="nav1box">
+                        <div>收货人:{{name}}</div>
+                        <div class="nav1font">收货地址：{{address}}</div>
                     </div>
                     <div class="nav1phone">13582653116</div>
                     <div @click="addresslist" class="nav1boxfoot"><van-icon name="arrow" size="20" /></div>
@@ -64,6 +64,7 @@
    mounted() {
       this.$api.getAddress().then(res => {
           this.address = res.address
+          this.isDefault = res.address.isDefault
           console.log(res);
       }).catch(err => {
           console.log(err);
