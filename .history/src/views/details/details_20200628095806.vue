@@ -93,7 +93,7 @@
       <van-goods-action>
         <van-goods-action-icon icon="chat-o" text="客服" />
         <van-goods-action-icon icon="cart-o" text="购物车" badge="5" @click="gotocarts" />
-        <van-goods-action-button color="orange" type="warning" text="加入购物车" @click="addShop(index)" />
+        <van-goods-action-button color="orange" type="warning" text="加入购物车" @click="addShop" />
         <van-action-sheet v-model="show2" title="加入购物车">
           <div class="content">
             <div class="conbox">
@@ -189,7 +189,7 @@ export default {
      addShop(index){
        this.show = true
         this.$api
-        .addShop(this.ids)
+        .addShop(this.recommend[index].goodsId)
         .then(res => {
           console.log(res);
           
@@ -199,12 +199,12 @@ export default {
           message: "您还没有登录，是否要登录？"
         })
         .then(res => {
-           this.$router.push('/login')
+           this.$router.push('/sigon')
         })
         .catch(() => {
           // on cancel
         });
-          }else if(this.nickname !=null){
+          }else if(this.nackname !=null){
              this.$toast('加入购物车成功') 
              console.log(res);
           }

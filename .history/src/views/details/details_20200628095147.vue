@@ -93,7 +93,7 @@
       <van-goods-action>
         <van-goods-action-icon icon="chat-o" text="客服" />
         <van-goods-action-icon icon="cart-o" text="购物车" badge="5" @click="gotocarts" />
-        <van-goods-action-button color="orange" type="warning" text="加入购物车" @click="addShop(index)" />
+        <van-goods-action-button color="orange" type="warning" text="加入购物车" @click="addShop" />
         <van-action-sheet v-model="show2" title="加入购物车">
           <div class="content">
             <div class="conbox">
@@ -186,32 +186,21 @@ export default {
       this.show = true;
     },
     //点击购物车
-     addShop(index){
-       this.show = true
-        this.$api
-        .addShop(this.ids)
-        .then(res => {
-          console.log(res);
-          
-          if(this.nickname ===null){
-              this.$dialog
-        .confirm({
-          message: "您还没有登录，是否要登录？"
-        })
-        .then(res => {
-           this.$router.push('/login')
-        })
-        .catch(() => {
-          // on cancel
-        });
-          }else if(this.nickname !=null){
-             this.$toast('加入购物车成功') 
-             console.log(res);
-          }
-        })
-        .catch(err => {
-          console.log(err);
-        });
+    addShop(index) {
+      this.$api.addShop(this.recommend[index].goodsId)
+      .then(res => {
+        console.log(res);
+        if(this.nickname === null ){
+          this.$dialog.confirm({
+            message:'您还没有登录，是否立即登录'
+          }).then(res => {
+            this.$router.push('/login')
+          })
+          .catch(() => {
+
+          });
+        }else if(this.nickname)
+      })
     },
     buynow() {
       this.show1 = true;

@@ -13,18 +13,14 @@
       <div class="box3">
         <div class="bx2head">购物车</div>
         <div class="box4">
-          <div v-if="checkAll === false ">
-            <van-checkbox v-model="checkAll" checked-color="#87CEFA"  shape="square" @click="checkAll">全选</van-checkbox>
-          </div>
-          <div v-else-if="checkAll === true ">
-            <van-checkbox v-model="checkAll" checked-color="#87CEFA"  shape="square" @click="checkAll">取消全选</van-checkbox>
-          </div>
+          <div v-if="checkedAll === false"><van-checkbox v-model="checkedAll" checked-color="#FF0000"  shape="square">全选</van-checkbox></div>
+          <div v-else-if="checkedAll === true"><van-checkbox v-model="checkedAll" checked-color="#FF0000"  shape="square">取消全选</van-checkbox></div>
           <div>
-              <div class="box4font">
-                <span>合计:</span>
-                <span class="box4font1">￥{{total | fixed }}</span>
-              </div>
-            <div class="box4font">请确认订单</div>
+            <div class="box4font">
+              <span>合计:</span>
+              <span class="box4font1">￥{{total | fixed }}</span>
+            </div>
+          <div class="box4font">请确认订单</div>
           </div>
         </div>
         <div class="box5">

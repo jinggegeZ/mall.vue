@@ -53,7 +53,7 @@ export default {
     },
     addshop(index){
       this.$api.addShop(this.recommend[index].goodsId).then(res => {
-        this.$dialog.confirm({message:"加入成功"})
+        this.$dialog.confirm(message:"")
         console.log(res);
       }).catch(err => {
         console.log(err);

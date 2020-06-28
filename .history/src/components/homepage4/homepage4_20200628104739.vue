@@ -4,16 +4,16 @@
       <div class="h4-font">商品推荐</div>
       <div class="h4-box1">
         <van-swipe :loop="false" :width="125" :show-indicators="false">
-          <van-swipe-item v-for="(item,index) in recommend" :key="index">
+          <van-swipe-item v-for="(item,index) in recommend" :key="index" @click="details(index)">
             <div class="h4-box2">
               <div class="h4-box5">
-                <div @click="details(index)">
+                <div>
                   <img :src="item.image" alt />
                 </div>
               </div>
               <div>
-                <div class="h4-name" @click="details(index)">{{item.goodsName}}</div>
-                <div class="h4_a" @click="details(index)">
+                <div class="h4-name">{{item.goodsName}}</div>
+                <div class="h4_a">
                 <span>￥{{item.mallPrice}}</span>
                 <span class="h4_b">￥{{item.price}}</span>
                 </div>
@@ -52,13 +52,7 @@ export default {
        this.$router.push({path:'/details',query:{id: this.recommend[index].goodsId}})
     },
     addshop(index){
-      this.$api.addShop(this.recommend[index].goodsId).then(res => {
-        this.$dialog.confirm({message:"加入成功"})
-        console.log(res);
-      }).catch(err => {
-        console.log(err);
-      })
-      
+      this.$api.addShop
     }
   },
   mounted() {},

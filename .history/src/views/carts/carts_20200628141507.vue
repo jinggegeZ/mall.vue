@@ -13,18 +13,14 @@
       <div class="box3">
         <div class="bx2head">购物车</div>
         <div class="box4">
-          <div v-if="checkAll === false ">
-            <van-checkbox v-model="checkAll" checked-color="#87CEFA"  shape="square" @click="checkAll">全选</van-checkbox>
-          </div>
-          <div v-else-if="checkAll === true ">
-            <van-checkbox v-model="checkAll" checked-color="#87CEFA"  shape="square" @click="checkAll">取消全选</van-checkbox>
-          </div>
+          <div v-if="checkedAll === false"><van-checkbox v-model="checkedAll" checked-color="#FF0000"  shape="square">全选</van-checkbox></div>
+          <div v-else-if="checkedAll === true"><van-checkbox v-model="checkedAll" checked-color="#FF0000"  shape="square">取消全选</van-checkbox></div>
           <div>
-              <div class="box4font">
-                <span>合计:</span>
-                <span class="box4font1">￥{{total | fixed }}</span>
-              </div>
-            <div class="box4font">请确认订单</div>
+            <div class="box4font">
+              <span>合计:</span>
+              <span class="box4font1">￥{{total | fixed }}</span>
+            </div>
+          <div class="box4font">请确认订单</div>
           </div>
         </div>
         <div class="box5">
@@ -33,8 +29,8 @@
             <div><van-button type="primary" @click="goto">去结算</van-button></div>
           </div>
         </div>
-        <div class="box5" v-for="item in shopList" :key="item.id">
-          <div class="box7" > 
+        <div class="box5">
+          <div class="box7" v-for="item in shopList" :key="item.id"> 
             <div class="box10"><van-checkbox v-model="item.check" shape="square" @click="check(item)"></van-checkbox></div>
             <div class="box8"><img :src="item.image_path" alt="" width="80px"></div>
             <div class="box9">
@@ -62,102 +58,29 @@
    data () {
      return {
        nickname:'',
-       checkAll:'false',
-       shopList:[],
-       arr:'',
-       ass:''
+       checked:'false',
+       value:'全选',
+       money:'123',
+       number:''
      }
    },
    methods: {
      primary(){
        this.$router.push('login')
      },
-     getData(){
-       this.$api.Card().then(res => {
-         this.shopList = res.shopList
-         console.log(res);
-       }).catch(err => {
-         console.log(err);
-       })
-     },
-     //全选
-     checkedAll(){
-       this.shopList.map(item => {
-         item.check = this.checkAll
-       })
-     },
-     //是否全选
-     check(item){
-       this.$api.editCart({count: item.count,id: item.cid,mallPrice: item.mallPrice})
-       .then(res => {})
-       .catch(err => {})
-     },
-     //修改数据
-     add(item){
-       this.$api.editCart({count: item.count,id: item.cid,mallPrice: item.mallPrice})
-       .then(res => {})
-       .catch(err => {})
-     },
-     //删除
-     del() {
-      this.ass = this.shopList.filter(item => {
-        return item.check === true;
-      });
-      if (this.ass.length > 0) {
-        this.$dialog
-          .confirm({
-            title: "注意",
-            message: "您确定删除？"
-          })
-          .then(() => {
-            this.ass.map(item => {
-              this.arr.push(item.cid);
-            });
-            this.$api
-              .deleteShop(this.arr)
-              .then(res => {
-                this.$toast.success("删除成功");
-                this.getData();
-              })
-              .catch(err => {});
-          })
-          .catch(() => {});
-      } else {
-        this.$toast({
-          message: "你还没有选择要删除的内容",
-          icon: "warning-o",
-        });
-      }
-    },
-    //结算
-    goto(){
-       this.$router.push("/");
-    },
-
+     all(){
+       this.checked = true
+       this.value = '取消全选'
+     }
    },
    mounted() {
      this.nickname = localStorage.getItem('nickname')
-     this.getData()
    },
    watch: {
 
    },
    computed: {
-     //定义总价
-     total(){
-       let sum = 0
-       this.shopList.map(item => {
-         if(item.check){
-           sum += item.mallPrice*item.count
-         }
-       })
-       return sum 
-     },
-     filters:{
-       fixed(val) {
-         return '¥'+ Number(val).toFixed(2)
-       }
-     }
+
    }
  }
 </script>

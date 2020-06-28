@@ -189,7 +189,7 @@ export default {
      addShop(index){
        this.show = true
         this.$api
-        .addShop(this.ids)
+        .addShop(this.recommend[index].goodsId)
         .then(res => {
           console.log(res);
           

@@ -13,18 +13,14 @@
       <div class="box3">
         <div class="bx2head">购物车</div>
         <div class="box4">
-          <div v-if="checkAll === false ">
-            <van-checkbox v-model="checkAll" checked-color="#87CEFA"  shape="square" @click="checkAll">全选</van-checkbox>
-          </div>
-          <div v-else-if="checkAll === true ">
-            <van-checkbox v-model="checkAll" checked-color="#87CEFA"  shape="square" @click="checkAll">取消全选</van-checkbox>
-          </div>
+          <div v-if="checkedAll === false"><van-checkbox v-model="checkedAll" checked-color="#FF0000"  shape="square">全选</van-checkbox></div>
+          <div v-else-if="checkedAll === true"><van-checkbox v-model="checkedAll" checked-color="#FF0000"  shape="square">取消全选</van-checkbox></div>
           <div>
-              <div class="box4font">
-                <span>合计:</span>
-                <span class="box4font1">￥{{total | fixed }}</span>
-              </div>
-            <div class="box4font">请确认订单</div>
+            <div class="box4font">
+              <span>合计:</span>
+              <span class="box4font1">￥{{total | fixed }}</span>
+            </div>
+          <div class="box4font">请确认订单</div>
           </div>
         </div>
         <div class="box5">
@@ -33,8 +29,8 @@
             <div><van-button type="primary" @click="goto">去结算</van-button></div>
           </div>
         </div>
-        <div class="box5" v-for="item in shopList" :key="item.id">
-          <div class="box7" > 
+        <div class="box5">
+          <div class="box7" v-for="item in shopList" :key="item.id"> 
             <div class="box10"><van-checkbox v-model="item.check" shape="square" @click="check(item)"></van-checkbox></div>
             <div class="box8"><img :src="item.image_path" alt="" width="80px"></div>
             <div class="box9">
@@ -73,9 +69,9 @@
        this.$router.push('login')
      },
      getData(){
-       this.$api.Card().then(res => {
+       this.$api.getCard().then(res => {
          this.shopList = res.shopList
-         console.log(res);
+         localStorage.setItem('shopList',this.shopList.length)
        }).catch(err => {
          console.log(err);
        })
@@ -146,7 +142,7 @@
      //定义总价
      total(){
        let sum = 0
-       this.shopList.map(item => {
+       this.shoplist.map(item => {
          if(item.check){
            sum += item.mallPrice*item.count
          }
