@@ -11,10 +11,6 @@ Vue.use(Vant);
 Vue.prototype.$api = api
 Vue.config.productionTip = false
 
-const originalPush = Router.prototype.push;
-Router.prototype.push = function push(location) {
-  return originalPush.call(this, location).catch(err => err);
-}
 new Vue({
   router,
   store,

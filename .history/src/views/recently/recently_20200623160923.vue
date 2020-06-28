@@ -28,7 +28,7 @@ export default {
   components: {},
   methods: {
     backmine() {
-      this.$router.push("/my");
+      this.$router.push("/mine");
     }
   },
   mounted() {},

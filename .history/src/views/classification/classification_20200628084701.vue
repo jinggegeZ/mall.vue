@@ -4,7 +4,7 @@
       <div class="box boxhead" >
         <van-sidebar v-model="activeIndex">
         <div v-for="(item,index) in category" :key="index">
-          <van-sidebar-item :title="item.mallCategoryName" @click="click(index)" />
+          <van-sidebar-item :title="item.mallCategoryName" @click="click(item)" />
         </div>
         </van-sidebar>
       </div>
@@ -59,11 +59,8 @@ export default {
         console.log(err);
       })
     },
-    click(index){
-      this.active = 0
-      this.ids = this.category[index].bxMallSubDto[this.active].mallSubId
-      this.category = JSON.parse(localStorage.getItem('category'))
-      this.bxMallSubDto = this.category[index].bxMallSubDto
+    click(item){
+      this.ids = item.bxMallSubDto[0].mallSubId
       this.classification()
     },
     details(item){
@@ -131,7 +128,7 @@ export default {
   white-space: nowrap;
   text-overflow: ellipsis;
   font-weight: 700;
-  
+  width: 60%;
 }
 .rbox2-font1 {
   color: red;

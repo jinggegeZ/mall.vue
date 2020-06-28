@@ -59,11 +59,9 @@ export default {
         console.log(err);
       })
     },
-    click(index){
+    click(item){
       this.active = 0
-      this.ids = this.category[index].bxMallSubDto[this.active].mallSubId
-      this.category = JSON.parse(localStorage.getItem('category'))
-      this.bxMallSubDto = this.category[index].bxMallSubDto
+      this.ids = item.bxMallSubDto[0].mallSubId
       this.classification()
     },
     details(item){

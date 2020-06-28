@@ -63,7 +63,7 @@ export default {
       this.active = 0
       this.ids = this.category[index].bxMallSubDto[this.active].mallSubId
       this.category = JSON.parse(localStorage.getItem('category'))
-      this.bxMallSubDto = this.category[index].bxMallSubDto
+      this.bxMallSubDto = this.category[index0].bxMallSubDto
       this.classification()
     },
     details(item){

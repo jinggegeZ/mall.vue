@@ -1,10 +1,10 @@
 <template>
   <div>
     <div class="container">
-      <div class="box boxhead" >
+      <div class="box">
         <van-sidebar v-model="activeIndex">
         <div v-for="(item,index) in category" :key="index">
-          <van-sidebar-item :title="item.mallCategoryName" @click="click(index)" />
+          <van-sidebar-item :title="item.mallCategoryName" @click="click(item)" />
         </div>
         </van-sidebar>
       </div>
@@ -15,7 +15,7 @@
             <div>
               <div class="r-box1" v-for="(item,index) in dataList" :key="index" @click="details(item)">
                 <div class="r-box2"><img :src="item.image" alt="" width="80px"></div>
-                <div class="r-box4">
+                <div>
                   <div class="rbox2-font">{{item.name}}</div>
                   <div class="r-box3">
                     <div class="rbox2-font1">¥{{item.present_price}}</div>
@@ -59,11 +59,8 @@ export default {
         console.log(err);
       })
     },
-    click(index){
-      this.active = 0
-      this.ids = this.category[index].bxMallSubDto[this.active].mallSubId
-      this.category = JSON.parse(localStorage.getItem('category'))
-      this.bxMallSubDto = this.category[index].bxMallSubDto
+    click(item){
+      this.ids = item.bxMallSubDto[0].mallSubId
       this.classification()
     },
     details(item){
@@ -98,7 +95,7 @@ export default {
   display: flex;
 }
 .r-box {
-  width: 80%;
+  width: 100%;
 }
 .r-box1 {
   height: 120px;
@@ -131,7 +128,6 @@ export default {
   white-space: nowrap;
   text-overflow: ellipsis;
   font-weight: 700;
-  
 }
 .rbox2-font1 {
   color: red;
@@ -150,11 +146,5 @@ export default {
 }
 .van-sidebar-item {
   margin-top: -8px;
-}
-.boxhead {
-  width: 20%;
-}
-.r-box4 {
-  width: 60%;
 }
 </style>
