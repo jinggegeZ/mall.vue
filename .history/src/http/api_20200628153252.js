@@ -19,7 +19,7 @@ export default {
         return service.post('/getCard')
     },
     //5. 购物车加减商品(post)
-    editCart({count,id,mallPrice}){
+    editCart(count,id,mallPrice){
         return service.post('/editCart',{
             count:count,
             id:id,
@@ -47,7 +47,7 @@ export default {
     },
     // 9.收藏单个商品(post)
     collection(goods){
-        return service.post('collection',goods)
+        return service.post('/collection',goods)
     },
     // 10. 取消收藏(post)
     cancelCollection(id){
@@ -122,7 +122,7 @@ export default {
         return service.post('/deleteAddress',{id})
     },
     // 24. 查询我的收藏(get)
-    getcollection(){
+    collection(){
         return service.post('/collection/list')
     },
     // 25. 注册(post)

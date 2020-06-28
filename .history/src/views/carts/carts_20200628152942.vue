@@ -1,6 +1,6 @@
 <template>
-  <div class="allbox">
-    <div>
+  <div>
+    <div class="box">
       <div class="cart">购物车</div>
       <div v-if="shopList.length <= 0">
         <div class="cart-item1">
@@ -91,8 +91,14 @@ export default {
     },
     //  修改数量
     add(item) {
-      this.$api.editCart({count: item.count, id: item.cid, mallPrice: item.mallPrice
-        }).then(res => {}).catch(err => {});
+      this.$api
+        .editCart({
+          count: item.count,
+          id: item.cid,
+          mallPrice: item.mallPrice
+        })
+        .then(res => {})
+        .catch(err => {});
     },
     // 删除
     del() {
@@ -158,8 +164,8 @@ export default {
 </script>
 
 <style scoped lang='scss'>
-.allbox {
-  background: white;
+.box {
+  color: white;
 }
 .cart {
   font-size: 18px;

@@ -240,9 +240,8 @@ export default {
       else{
         this.$api.collection(this.obj)
         .then(res => {
-          
+          this.$dialog.success(res.msg)
           this.flag = true
-          this.$$toast.success(res.msg)
         }).catch(() => {})
       }
     },

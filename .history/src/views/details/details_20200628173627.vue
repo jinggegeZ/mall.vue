@@ -242,7 +242,7 @@ export default {
         .then(res => {
           
           this.flag = true
-          this.$$toast.success(res.msg)
+          this.$dialog.success(res.msg)
         }).catch(() => {})
       }
     },
@@ -250,6 +250,7 @@ export default {
     cancelCollection(){
       this.$api.cancelCollection(this.ids).then(res => {
         this.flag = false
+        this.$toast.success(res.msg)
       }).catch(err => {
         console.log(err);
       })

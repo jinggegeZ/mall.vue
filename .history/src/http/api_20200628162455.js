@@ -122,7 +122,7 @@ export default {
         return service.post('/deleteAddress',{id})
     },
     // 24. 查询我的收藏(get)
-    getcollection(){
+    collection(){
         return service.post('/collection/list')
     },
     // 25. 注册(post)

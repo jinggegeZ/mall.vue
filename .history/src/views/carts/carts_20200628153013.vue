@@ -91,8 +91,14 @@ export default {
     },
     //  修改数量
     add(item) {
-      this.$api.editCart({count: item.count, id: item.cid, mallPrice: item.mallPrice
-        }).then(res => {}).catch(err => {});
+      this.$api
+        .editCart({
+          count: item.count,
+          id: item.cid,
+          mallPrice: item.mallPrice
+        })
+        .then(res => {})
+        .catch(err => {});
     },
     // 删除
     del() {
@@ -159,7 +165,7 @@ export default {
 
 <style scoped lang='scss'>
 .allbox {
-  background: white;
+  color: white;
 }
 .cart {
   font-size: 18px;

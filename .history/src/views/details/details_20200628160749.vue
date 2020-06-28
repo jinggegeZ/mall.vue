@@ -15,14 +15,12 @@
       <div class="bb5">
         <div>运费：{{obj.__v}}</div>
         <div>剩余：{{obj.amount}}</div>
-
         <div class="bb6">
           <!-- 判断是否登录 -->
-          <div v-if="nickname === '' && flag === false" @click="collection" >收藏<van-icon name="like" size="18" void-color="white" color="#dddddd" /></div>
+          <div v-if="nickname === '' && flag === false" @click="collection" >收藏<van-icon name="like" size="20" void-color="white" color="red" /></div>
           <!-- 是否已经收藏 -->
-          <div v-else-if="iscollect === 0 && flag === false" @click="collection">收藏<van-icon name="like" size="18" void-color="white" color="#dddddd" /></div>
-          <!-- 再次点击取消-->
-          <div v-else @click="cancelCollection">取消收藏<van-icon name="like" size="18" void-color="white" color="red" /></div>
+          <div v-else-if="iscollect === 0 && flag === false" @click="collection">收藏<van-icon name="like" size="20" void-color="white" color="red" /></div>
+          <div v-else @click="delcollection">取消收藏<van-icon name="like" size="20" void-color="white" color="red" /></div>
         </div>
       </div>
     </div>
@@ -141,7 +139,7 @@
                     <div><van-stepper v-model="number" max="50" /></div>
               </div>
               <div>
-                <div class="foot2" @click="rightnow">立即购买</div>
+                <div class="foot2">立即购买</div>
               </div>
             </div>
           </div>
@@ -168,11 +166,11 @@ export default {
       active: "1",
       obj: {},
       value: 2,
+      text:'收藏',
       color:'',
       iscollect:'',
       nickname:'',
       flag : false,
-
     };
   },
   methods: {
@@ -221,51 +219,43 @@ export default {
     buynow() {
       this.show1 = true;
     },
-    
+    get(){
+      this.text = '取消收藏'
+    },
     gotocarts(){
       this.$router.push('carts')
     },
     //收藏商品
     collection(){
-      if(this.nickname === ""){
+      if(this.nickname === null){
         this.$dialog.confirm({
           title:'提示',
           message:'未登录请登录后使用哦！'
-        })
-        .then(res => {
+        }).then(res => {
           this.$router.push('/login')
-        })
-        .catch(() => {})
+        }).catch(() => {})
       }
       else{
-        this.$api.collection(this.obj)
-        .then(res => {
-          
+        this.$api.collection(this.obj).then(res => {
+          this.$dialog.success('res.msg')
           this.flag = true
-          this.$$toast.success(res.msg)
         }).catch(() => {})
       }
     },
-    //取消收藏
-    cancelCollection(){
-      this.$api.cancelCollection(this.ids).then(res => {
-        this.flag = false
+    delcollection(){
+      this.$api.cancelCollection(this.obj._id).then(res => {
+        console.log(res);
       }).catch(err => {
         console.log(err);
       })
     },
-    //查询是否收藏
     isCollection(){
-      this.$api.isCollection(this.ids).then(res => {
-        console.log(res);
+      this.$api.isCollection(this.obj._id).then(res => {
         this.iscollect = res.isCollection
         console.log(res);
       }).catch(err => {
         console.log(err);
       })
-    },
-    rightnow(){
-      this.$router.push('/Settlement')
     }
   },
   mounted() {
@@ -482,6 +472,5 @@ export default {
 .bb6 {
   display: flex;
   align-items: center;
-  height: 40px;
 }
 </style>

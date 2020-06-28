@@ -242,7 +242,7 @@ export default {
         .then(res => {
           
           this.flag = true
-          this.$$toast.success(res.msg)
+          this.$dialog.success(res.msg)
         }).catch(() => {})
       }
     },

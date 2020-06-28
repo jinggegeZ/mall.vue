@@ -18,11 +18,11 @@
 
         <div class="bb6">
           <!-- 判断是否登录 -->
-          <div v-if="nickname === '' && flag === false" @click="collection" >收藏<van-icon name="like" size="18" void-color="white" color="#dddddd" /></div>
+          <div v-if="nickname === '' && flag === false" @click="collection" >收藏<van-icon name="like" size="18" void-color="white" color="red" /></div>
           <!-- 是否已经收藏 -->
-          <div v-else-if="iscollect === 0 && flag === false" @click="collection">收藏<van-icon name="like" size="18" void-color="white" color="#dddddd" /></div>
+          <div v-else-if="iscollect === 0 && flag === false" @click="collection">收藏<van-icon name="like" size="18" void-color="white" color="red" /></div>
           <!-- 再次点击取消-->
-          <div v-else @click="cancelCollection">取消收藏<van-icon name="like" size="18" void-color="white" color="red" /></div>
+          <div v-else @click="cancelCollection">取消收藏<van-icon name="like" size="18" void-color="white" color="blue" /></div>
         </div>
       </div>
     </div>
@@ -240,9 +240,8 @@ export default {
       else{
         this.$api.collection(this.obj)
         .then(res => {
-          
           this.flag = true
-          this.$$toast.success(res.msg)
+          this.$dialog.success(res.msg)
         }).catch(() => {})
       }
     },
@@ -250,6 +249,7 @@ export default {
     cancelCollection(){
       this.$api.cancelCollection(this.ids).then(res => {
         this.flag = false
+        this.$toast.success(res.msg)
       }).catch(err => {
         console.log(err);
       })

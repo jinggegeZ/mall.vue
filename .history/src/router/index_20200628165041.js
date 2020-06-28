@@ -185,9 +185,9 @@ Vue.use(VueRouter)
     }
   },
   {
-    path: '/Settlement',
-    name: 'Settlement',
-    component: () => import('../views/Settlement/Settlement'),
+    path: '/collect',
+    name: 'mcollect',
+    component: () => import('../views/myCollection/collect'),
     meta:{
       title:'收藏'
     }
