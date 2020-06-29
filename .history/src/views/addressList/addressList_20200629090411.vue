@@ -30,8 +30,7 @@ export default {
     return {
       chosenAddressId: "1",
       list: [],
-      obj:{},
-      item:{}
+      obj:{}
     };
   },
   methods: {
@@ -50,7 +49,7 @@ export default {
       this.$toast("编辑地址");
     },
     select(item){
-      this.$router.push({path:'/Settlement',query:{item: item}})
+      this.$router.push({path: '/Settlement',query:{item: item}})
     }
   },
   mounted() {

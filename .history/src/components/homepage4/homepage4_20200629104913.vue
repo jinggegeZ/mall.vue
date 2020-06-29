@@ -49,8 +49,7 @@ export default {
   },
   methods: {
     details(index){
-       this.$router.push({path:'/details',query:{id: this.recommend[index].goodsId}});
-       this.$utils.details(this.recommend[index])
+       this.$router.push({path:'/details',query:{id: this.recommend[index].goodsId}})
     },
     addshop(index){
       this.$api.addShop(this.recommend[index].goodsId).then(res => {

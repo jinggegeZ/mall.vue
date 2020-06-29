@@ -21,13 +21,13 @@
                 </div>
             </div>
             <div class="img"><img src="../../..//public/caitiao.jpg" alt="" height="8px" width="100%"></div>
-            <div class="baby" v-for="(item,index) in ass" :key="index">
-                <div class="baby1"><img :src="item.image_path" alt="" width="80px"></div>
+            <div class="baby">
+                <div class="baby1">123</div>
                 <div class="baby2">
-                    <div>{{item.name}}</div>
-                    <div class="number">￥{{item.mallPrice}}</div>
+                    <div>159842445</div>
+                    <div class="number">￥15.26</div>
                 </div>
-                <div>x{{item.count}}</div>
+                <div>{{value}}</div>
             </div>
         </div>
         <div class="foot">
@@ -50,10 +50,10 @@
    },
    data () {
      return {
+         value:'x1',
          isDefault:'',
          address:[],
-         item:{},
-         ass:[]
+         item:{}
          
      }
    },
@@ -66,8 +66,6 @@
        }
    },
    mounted() {
-    this.ass = JSON.parse(localStorage.getItem("ass"))
-            console.log(this.ass);
      if(this.$route.query.item){
          console.log(this.item);
          this.item = this.$route.query.item
@@ -77,7 +75,7 @@
              this.item = res.defaultAdd
          }).catch(err => {})
      }
-     
+     this.ass = JSON.parse(localStorage.getItem('ass'))
    },
    watch: {
 

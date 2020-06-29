@@ -68,7 +68,7 @@ export default {
     },
     details(item,index){
       this.$router.push({path:'/details',query:{id: item.id}});
-      this.$utils.details(this.dataList[index])
+      this.$utils.details(this.dataList[index]
     },
     change(name){
       this.ids = name

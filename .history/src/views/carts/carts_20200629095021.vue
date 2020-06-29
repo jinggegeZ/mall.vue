@@ -99,7 +99,8 @@ export default {
       this.ass = this.shopList.filter(item => {
         return item.check === true
       });
-      localStorage.setItem('ass', JSON.stringify(this.ass))
+        localStorage.setItem('ass', JSON.stringify(this.ass))
+        console.log(this.ass);
       if (this.ass.length > 0) {
         this.$dialog
           .confirm({

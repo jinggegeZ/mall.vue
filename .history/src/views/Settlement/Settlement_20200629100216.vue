@@ -22,7 +22,7 @@
             </div>
             <div class="img"><img src="../../..//public/caitiao.jpg" alt="" height="8px" width="100%"></div>
             <div class="baby" v-for="(item,index) in ass" :key="index">
-                <div class="baby1"><img :src="item.image_path" alt="" width="80px"></div>
+                <div class="baby1"><img :src="item.image_path" alt=""></div>
                 <div class="baby2">
                     <div>{{item.name}}</div>
                     <div class="number">￥{{item.mallPrice}}</div>

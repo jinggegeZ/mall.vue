@@ -13,7 +13,7 @@
           <van-tab v-for="(item, index) in bxMallSubDto" :key="index" :name="item.mallSubId" :title="item.mallSubName" >
             <template>
             <div>
-              <div class="r-box1" v-for="(item,index) in dataList" :key="index" @click="details(item,index)">
+              <div class="r-box1" v-for="(item,index) in dataList" :key="index" @click="details(item)">
                 <div class="r-box2"><img :src="item.image" alt="" width="80px"></div>
                 <div class="r-box4">
                   <div class="rbox2-font">{{item.name}}</div>
@@ -66,7 +66,7 @@ export default {
       this.bxMallSubDto = this.category[index].bxMallSubDto
       this.classification()
     },
-    details(item,index){
+    details(item){
       this.$router.push({path:'/details',query:{id: item.id}});
       this.$utils.details(this.dataList[index])
     },

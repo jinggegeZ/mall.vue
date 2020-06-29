@@ -12,7 +12,7 @@
         default-tag-text="默认"
         @add="onAdd"
         @edit="onEdit"
-        @select='select'
+        @
       />
     </div>
     <div class="icon" @click="back">
@@ -30,8 +30,7 @@ export default {
     return {
       chosenAddressId: "1",
       list: [],
-      obj:{},
-      item:{}
+      obj:{}
     };
   },
   methods: {
@@ -48,9 +47,6 @@ export default {
         query: { obj: JSON.stringify(item) }
       });
       this.$toast("编辑地址");
-    },
-    select(item){
-      this.$router.push({path:'/Settlement',query:{item: item}})
     }
   },
   mounted() {

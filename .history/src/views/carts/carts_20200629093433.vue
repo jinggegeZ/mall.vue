@@ -97,9 +97,9 @@ export default {
     // 删除
     del() {
       this.ass = this.shopList.filter(item => {
-        return item.check === true
+        return item.check === true;
+        
       });
-      localStorage.setItem('ass', JSON.stringify(this.ass))
       if (this.ass.length > 0) {
         this.$dialog
           .confirm({

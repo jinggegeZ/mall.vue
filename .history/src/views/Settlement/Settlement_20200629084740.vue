@@ -9,10 +9,10 @@
             <div class="nav">
                 <div class="nav1" >
                     <div class="nav1img"><van-icon name="location-o" size="30" /></div>
-                    <div class="nav1box">
+                    <div class="nav1box" v-for="(item,index) in address" :key="index">
                         <div class="nav2box">
-                            <div >收货人:{{item.name}}</div>
-                            <div class="nav1font">收货地址：{{item.address}}</div>
+                            <div v-if="item.isDefault === true">收货人:{{item.name}}</div>
+                            <div class="nav1font" v-if="item.isDefault === true">收货地址：{{item.address}}</div>
                         </div>
                         <div class="nav1phone">{{item.tel}}</div>
                     </div>
@@ -21,13 +21,13 @@
                 </div>
             </div>
             <div class="img"><img src="../../..//public/caitiao.jpg" alt="" height="8px" width="100%"></div>
-            <div class="baby" v-for="(item,index) in ass" :key="index">
-                <div class="baby1"><img :src="item.image_path" alt="" width="80px"></div>
+            <div class="baby">
+                <div class="baby1">123</div>
                 <div class="baby2">
-                    <div>{{item.name}}</div>
-                    <div class="number">￥{{item.mallPrice}}</div>
+                    <div>159842445</div>
+                    <div class="number">￥15.26</div>
                 </div>
-                <div>x{{item.count}}</div>
+                <div>{{value}}</div>
             </div>
         </div>
         <div class="foot">
@@ -50,10 +50,9 @@
    },
    data () {
      return {
+         value:'x1',
          isDefault:'',
          address:[],
-         item:{},
-         ass:[]
          
      }
    },
@@ -66,18 +65,12 @@
        }
    },
    mounted() {
-    this.ass = JSON.parse(localStorage.getItem("ass"))
-            console.log(this.ass);
-     if(this.$route.query.item){
-         console.log(this.item);
-         this.item = this.$route.query.item
-     }
-     else{
-         this.$api.getDefaultAddress().then(res => {
-             this.item = res.defaultAdd
-         }).catch(err => {})
-     }
-     
+      this.$api.getAddress().then(res => {
+          this.address = res.address
+          console.log(res);
+      }).catch(err => {
+          console.log(err);
+      })
    },
    watch: {
 

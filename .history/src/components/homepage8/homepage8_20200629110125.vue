@@ -3,7 +3,7 @@
       <div class="floor">
         <div class="f-font2">热销商品</div>
       </div>
-      
+      <div @click="addviews">
         <div v-for="(item,index) in hotGoods" :key="index"  @click="details(index)">
         <div :class="[{'left':(index==0)},{'right':(index>0)}]" class="div">
               <div class="img-box">
@@ -16,7 +16,7 @@
               </div>
         </div>
       </div>
-      
+      </div>
        <div class="fllfoot">这是一个秘密哦</div>
  </div>
 </template>
@@ -40,10 +40,11 @@
    },
    methods: {
      details(index){
-       this.$router.push({path:'/details',query:{id: this.hotGoods[index].goodsId}});
-       this.$utils.details(this.hotGoods[index])
+       this.$router.push({path:'/details',query:{id: this.hotGoods[index].goodsId}})
      },
-    
+     addviews(){
+       console.log(this.addviews);
+     }
    },
    mounted() {
 

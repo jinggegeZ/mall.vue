@@ -40,7 +40,7 @@
    },
    methods: {
      details(index){
-       this.$router.push({path:'/details',query:{id: this.hotGoods[index].goodsId}});
+       this.$router.push({path:'/details',query:{id: this.hotGoods[index].goodsId}})
        this.$utils.details(this.hotGoods[index])
      },
     

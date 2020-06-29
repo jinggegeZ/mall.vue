@@ -6,11 +6,10 @@ import Vant from 'vant';
 import 'vant/lib/index.css';
 import api from './http/api';
 import Router from 'vue-router'
-import utils from './utils'
+import
 
 Vue.use(Vant);
 Vue.prototype.$api = api
-Vue.prototype.$utils = utils
 Vue.config.productionTip = false
 
 const originalPush = Router.prototype.push;

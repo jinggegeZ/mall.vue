@@ -30,8 +30,7 @@ export default {
     return {
       chosenAddressId: "1",
       list: [],
-      obj:{},
-      item:{}
+      obj:{}
     };
   },
   methods: {

@@ -10,7 +10,7 @@ import utils from './utils'
 
 Vue.use(Vant);
 Vue.prototype.$api = api
-Vue.prototype.$utils = utils
+vue.prototype.$utils = utils
 Vue.config.productionTip = false
 
 const originalPush = Router.prototype.push;
