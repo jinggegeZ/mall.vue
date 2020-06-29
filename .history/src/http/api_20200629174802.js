@@ -33,12 +33,12 @@ export default {
     // 7. 购物车支付页面(post)
     order({address,tel,orderId,totalPrice,idDirect,count}){
         return service.post('/order',{
-            address:address,
-            tel:tel,
-            orderId:orderId,
-            totalPrice:totalPrice,
-            idDirect:idDirect,
-            count:count
+            address,
+            tel,
+            orderId,
+            totalPrice,
+            idDirect,
+            count
         })
     },
     // 8.单个商品详情(get)

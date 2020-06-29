@@ -172,7 +172,7 @@ export default {
       iscollect:'',
       nickname:'',
       flag : false,
-      flags:0
+
     };
   },
   methods: {
@@ -266,9 +266,10 @@ export default {
       })
     },
     rightnow(){
+      localStorage.setItem("count", this.value);
       this.$router.push({
-        path: "/Settlement",
-        query: { goodsOne:this.obj,count: this.value, flags: this.flags }
+        path: "Settlement",
+        query: { goodsOne: this.goodsOne, count: this.value, flags: this.flags }
       });
     }
   },

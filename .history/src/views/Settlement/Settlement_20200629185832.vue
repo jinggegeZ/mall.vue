@@ -242,7 +242,4 @@ export default {
 .price {
     color: red;
 }
-.name {
-    color: red;
-}
 </style>

@@ -64,8 +64,7 @@ export default {
       checkAll: false,
       shopList: [],
       arr: [],
-      ass: [],
-      flag:1
+      ass: []
     };
   },
   methods: {
@@ -74,7 +73,7 @@ export default {
         .Card()
         .then(res => {
           this.shopList = res.shopList;
-          localStorage.setItem("length", this.shopList.length);
+          localStorage.setItem("shopList", this.shopList.length);
         })
         .catch(err => {});
     },
@@ -137,7 +136,7 @@ export default {
       });
       if (this.ass.length > 0) {
         this.$router.push({
-          path: "/Settlement",
+          path: "Settlement",
           query: { flag: this.flag, total: this.total }
         });
         localStorage.setItem("shopList", JSON.stringify(this.ass));

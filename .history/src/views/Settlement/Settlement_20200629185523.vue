@@ -223,13 +223,8 @@ export default {
 
 }
 .d-flex {
-    width: 100%;
     display: flex;
-    height: 120px;
-    align-items: center;
-    justify-content: space-around;
 }
-
 .Inconvenience {
     font-size: 12px;
     color: orange;
@@ -238,11 +233,5 @@ export default {
     display: flex;
     justify-content: space-between;
     margin-top: 15px;
-}
-.price {
-    color: red;
-}
-.name {
-    color: red;
 }
 </style>

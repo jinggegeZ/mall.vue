@@ -15,11 +15,11 @@
             </div>
             <div class="nav1box">
               <div class="nav2box">
-                <div>收货人:{{defaultAdd.name}}</div>
-                <div class="nav1font">收货地址：{{defaultAdd.address}}</div>
+                <div>收货人:{{item.name}}</div>
+                <div class="nav1font">收货地址：{{item.address}}</div>
                 <div class="Inconvenience">(收货不便时，可选择免费待收货服务)</div>
               </div>
-              <div class="nav1phone">{{defaultAdd.tel}}</div>
+              <div class="nav1phone">{{item.tel}}</div>
             </div>
             <div @click="addresslist" class="nav1boxfoot">
               <van-icon name="arrow" size="20" />
@@ -30,35 +30,36 @@
           <img src="../../../public/caitiao.jpg" alt height="8px" width="100%" />
         </div>
         <div v-if="flag===1">
-          <div v-for="(item,index) in shopList" :key="index" class="d-flex">
-            <img :src="item.image_path" class="img" />
+            <div v-for="(item,index) in shopList" :key="index" class="d-flex">
+                <img :src="item.image_path" class="img" />
             <div class="item">
-              <div class="name">{{item.name}}</div>
-              <div class="flex-j-sb">
+                <div class="name">{{item.name}}</div>
+                <div class="flex-j-sb">
                 <div class="price">￥{{item.present_price}}</div>
                 <div class="count">X{{item.count}}</div>
-              </div>
+                </div>
             </div>
-          </div>
-          <div class="foot">
-            <van-submit-bar :price="totals*100" button-text="提交订单" @submit="onSubmit" />
-          </div>
+            </div>
         </div>
         <div v-if="flags===0" class="d-flex">
-          <img :src="this.goodsOne.image" class="img1" />
-          <div class="item">
-            <div class="name">{{this.goodsOne.name}}</div>
-            <div class="flex-j-sb">
-              <div class="price">￥{{this.goodsOne.present_price}}</div>
-              <div class="count">X{{this.counts}}</div>
-            </div>
-          </div>
-          <div class="foot">
-            <van-submit-bar :price="totals*100" button-text="提交订单" @submit="onSubmit" />
+        <img :src="this.goodsOne.image_path" class="img" />
+        <div class="item">
+          <div class="name">{{this.goodsOne.name}}</div>
+          <div class="flex-j-sb">
+            <div class="price">￥{{this.goodsOne.present_price}}</div>
+            <div class="count">X{{this.counts}}</div>
           </div>
         </div>
       </div>
+      <div class="foot">
+        <div>
+          合计：
+          <span class="footfont">{{totals*100}}</span>
+        </div>
+        <div class="placeOrder" @click="placeOrder">提交订单</div>
+      </div>
     </div>
+  </div>
   </div>
 </template>
 
@@ -69,15 +70,11 @@ export default {
   components: {},
   data() {
     return {
+      isDefault: "",
+      address: [],
+      item: {},
       shopList: [],
-      defaultAdd: {},
-      arr: [],
-      count: "",
-      goodsOne: {},
-      counts: "",
-      flag: 0,
-      flags: 1,
-      total: ""
+      total:''
     };
   },
   methods: {
@@ -87,8 +84,8 @@ export default {
     addresslist() {
       this.$router.push("/addressList");
     },
-    onSubmit() {
-      if (this.flag === 1) {
+    placeOrder(){
+        if (this.flag === 1) {
         this.shopList.map(item => {
           this.arr.push(item.cid);
         });
@@ -109,7 +106,7 @@ export default {
           .catch(err => {});
       }
       if (this.flags === 0) {
-        this.arr.push(this.goodsOne.id);
+        this.arr.push(this.goodsOne.id)
         this.$api
           .order({
             address: this.defaultAdd.address,
@@ -130,14 +127,12 @@ export default {
   },
   mounted() {
     this.goodsOne = this.$route.query.goodsOne;
-    console.log(this.goodsOne);
     this.counts = this.$route.query.count;
     this.shopList = JSON.parse(localStorage.getItem("shopList"));
-    console.log(this.shopList);
     this.flag = this.$route.query.flag;
     this.flags = this.$route.query.flags;
     this.total = this.$route.query.total;
-    this.$api
+   this.$api
       .getDefaultAddress()
       .then(res => {
         this.defaultAdd = res.defaultAdd;
@@ -146,8 +141,8 @@ export default {
   },
   watch: {},
   computed: {
-    totals() {
-        return this.goodsOne.present_price*this.counts
+      totals() {
+      return this.goodsOne.present_price * this.counts;
     }
   }
 };
@@ -218,31 +213,56 @@ export default {
 .img {
   height: 8px;
 }
-.img1 {
-    width: 80px;
-
+.baby {
+  width: 100%;
+  height: 130px;
+  background: white;
+  display: flex;
+  align-items: center;
 }
-.d-flex {
-    width: 100%;
-    display: flex;
-    height: 120px;
-    align-items: center;
-    justify-content: space-around;
+.baby1 {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dddddd;
+  margin-left: 20px;
+  margin-right: 15px;
 }
-
 .Inconvenience {
-    font-size: 12px;
-    color: orange;
+  font-size: 12px;
+  margin-top: 5px;
+  color: orange;
 }
-.flex-j-sb {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 15px;
+.baby2 {
+  width: 200px;
 }
-.price {
-    color: red;
+.number {
+  margin-top: 15px;
 }
-.name {
-    color: red;
+.foot {
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.placeOrder {
+  height: 50px;
+  width: 100px;
+  color: white;
+  background: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5px;
+}
+.footfont {
+  color: red;
+  font-size: 14px;
 }
 </style>

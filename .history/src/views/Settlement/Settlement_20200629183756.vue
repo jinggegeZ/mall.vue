@@ -41,11 +41,15 @@
             </div>
           </div>
           <div class="foot">
-            <van-submit-bar :price="totals*100" button-text="提交订单" @submit="onSubmit" />
+            <div>
+              合计：
+              <span class="footfont">{{total}}</span>
+            </div>
+            <div class="placeOrder" @click="placeOrder">提交订单</div>
           </div>
         </div>
         <div v-if="flags===0" class="d-flex">
-          <img :src="this.goodsOne.image" class="img1" />
+          <img :src="this.goodsOne.image" class="img" />
           <div class="item">
             <div class="name">{{this.goodsOne.name}}</div>
             <div class="flex-j-sb">
@@ -54,7 +58,11 @@
             </div>
           </div>
           <div class="foot">
-            <van-submit-bar :price="totals*100" button-text="提交订单" @submit="onSubmit" />
+            <div>
+              合计：
+              <span class="footfont">{{totals}}</span>
+            </div>
+            <div class="placeOrder" @click="placeOrder">提交订单</div>
           </div>
         </div>
       </div>
@@ -87,7 +95,7 @@ export default {
     addresslist() {
       this.$router.push("/addressList");
     },
-    onSubmit() {
+    placeOrder() {
       if (this.flag === 1) {
         this.shopList.map(item => {
           this.arr.push(item.cid);
@@ -146,9 +154,7 @@ export default {
   },
   watch: {},
   computed: {
-    totals() {
-        return this.goodsOne.present_price*this.counts
-    }
+    totals() {}
   }
 };
 </script>
@@ -218,31 +224,56 @@ export default {
 .img {
   height: 8px;
 }
-.img1 {
-    width: 80px;
-
+.baby {
+  width: 100%;
+  height: 130px;
+  background: white;
+  display: flex;
+  align-items: center;
 }
-.d-flex {
-    width: 100%;
-    display: flex;
-    height: 120px;
-    align-items: center;
-    justify-content: space-around;
+.baby1 {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dddddd;
+  margin-left: 20px;
+  margin-right: 15px;
 }
-
 .Inconvenience {
-    font-size: 12px;
-    color: orange;
+  font-size: 12px;
+  margin-top: 5px;
+  color: orange;
 }
-.flex-j-sb {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 15px;
+.baby2 {
+  width: 200px;
 }
-.price {
-    color: red;
+.number {
+  margin-top: 15px;
 }
-.name {
-    color: red;
+.foot {
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.placeOrder {
+  height: 50px;
+  width: 100px;
+  color: white;
+  background: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5px;
+}
+.footfont {
+  color: red;
+  font-size: 14px;
 }
 </style>

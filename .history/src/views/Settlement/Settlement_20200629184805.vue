@@ -41,7 +41,11 @@
             </div>
           </div>
           <div class="foot">
-            <van-submit-bar :price="totals*100" button-text="提交订单" @submit="onSubmit" />
+            <div>
+              合计：
+              <span class="footfont">{{total}}</span>
+            </div>
+            <div class="placeOrder" @click="placeOrder">提交订单</div>
           </div>
         </div>
         <div v-if="flags===0" class="d-flex">
@@ -54,7 +58,11 @@
             </div>
           </div>
           <div class="foot">
-            <van-submit-bar :price="totals*100" button-text="提交订单" @submit="onSubmit" />
+            <div>
+              合计：
+              <span class="footfont">{{totals}}</span>
+            </div>
+            <div class="placeOrder" @click="placeOrder">提交订单</div>
           </div>
         </div>
       </div>
@@ -87,7 +95,7 @@ export default {
     addresslist() {
       this.$router.push("/addressList");
     },
-    onSubmit() {
+    placeOrder() {
       if (this.flag === 1) {
         this.shopList.map(item => {
           this.arr.push(item.cid);
@@ -223,26 +231,10 @@ export default {
 
 }
 .d-flex {
-    width: 100%;
     display: flex;
-    height: 120px;
-    align-items: center;
-    justify-content: space-around;
 }
-
 .Inconvenience {
     font-size: 12px;
     color: orange;
-}
-.flex-j-sb {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 15px;
-}
-.price {
-    color: red;
-}
-.name {
-    color: red;
 }
 </style>

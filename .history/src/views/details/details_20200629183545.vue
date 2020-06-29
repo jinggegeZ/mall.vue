@@ -172,7 +172,7 @@ export default {
       iscollect:'',
       nickname:'',
       flag : false,
-      flags:0
+
     };
   },
   methods: {
@@ -268,7 +268,7 @@ export default {
     rightnow(){
       this.$router.push({
         path: "/Settlement",
-        query: { goodsOne:this.obj,count: this.value, flags: this.flags }
+        query: { goodsOne: this.goodsOne , flags: this.flags }
       });
     }
   },

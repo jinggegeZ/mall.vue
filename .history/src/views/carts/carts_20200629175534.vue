@@ -65,7 +65,7 @@ export default {
       shopList: [],
       arr: [],
       ass: [],
-      flag:1
+      flag:''
     };
   },
   methods: {
@@ -74,7 +74,7 @@ export default {
         .Card()
         .then(res => {
           this.shopList = res.shopList;
-          localStorage.setItem("length", this.shopList.length);
+          localStorage.setItem("shopList", this.shopList.length);
         })
         .catch(err => {});
     },
