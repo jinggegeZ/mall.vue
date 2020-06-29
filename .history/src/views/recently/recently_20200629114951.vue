@@ -4,7 +4,19 @@
       <van-icon name="arrow-left" color="#1989fa" class="back_last" @click="backmine" />最近浏览
     </div>
     <div class="collect" v-for="(item,index) in arr" :key="index">
-      <van-swipe-cell>
+      <van-swipe-cell v-if="goodsname !== ''">
+        <van-card
+          :price="item.mallPrice"
+          :title="item.goodsname"
+          class="goods-card"
+          :thumb="item.image"
+        />
+        <van-icon name="arrow-left" class="hua" />
+        <template #right>
+          <van-button @click="del" square text="删除" type="danger" class="delete-button" />
+        </template>
+      </van-swipe-cell>
+      <van-swipe-cell v-else>
         <van-card
           :price="item.mallPrice"
           :title="item.name"
@@ -13,7 +25,7 @@
         />
         <van-icon name="arrow-left" class="hua" />
         <template #right>
-          <van-button @click="del(index)" square text="删除" type="danger" class="delete-button" />
+          <van-button @click="del" square text="删除" type="danger" class="delete-button" />
         </template>
       </van-swipe-cell>
     </div>
@@ -32,18 +44,8 @@ export default {
     backmine() {
       this.$router.push("/my");
     },
-    del(index){
-      this.$dialog.confirm({title:'确认删除该条浏览记录'})
-      .then(res => {
-        this.arr = JSON.parse(localStorage.getItem("views"))
-        this.arr.splice(index,1)
-        localStorage.setItem('views',JSON.stringify(this.arr))
-      }).catch(err => {
-        console.log(err);
-      })
-
-
-      
+    del(){
+      this.arr
     }
   },
   mounted() {

@@ -3,7 +3,7 @@
     <div class="locat">
       <van-icon name="arrow-left" color="#1989fa" class="back_last" @click="backmine" />我的收藏
     </div>
-    <div class="collect" v-for="(item,index) in obj" :key="index">
+    <div class="collect" v-for="(item,index)in arr" :key="index">
       <van-swipe-cell>
         <van-card
           :price="item.present_price"

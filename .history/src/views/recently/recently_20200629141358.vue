@@ -37,7 +37,8 @@ export default {
       .then(res => {
         this.arr = JSON.parse(localStorage.getItem("views"))
         this.arr.splice(index,1)
-        localStorage.setItem('views',JSON.stringify(this.arr))
+        localStorage.setItem('views',JSON.stringify(this.views))
+
       }).catch(err => {
         console.log(err);
       })

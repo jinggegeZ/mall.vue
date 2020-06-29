@@ -33,11 +33,11 @@ export default {
     if(!localStorage.collect){
       let arr = []
       arr.push(item)
-      localStorage.setItem('collect',JSON.stringify(arr))
+      localStorage.setItem('collection',JSON.stringify(arr))
     }else{
       let arr = JSON.parse(localStorage.collect)
       arr.push(item)
-      localStorage.setItem('collect',JSON.stringify(arr))
+      localStorage.setItem('collection',JSON.stringify(arr))
     }
     
   }

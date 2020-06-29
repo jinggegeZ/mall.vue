@@ -35,9 +35,9 @@ export default {
     del(index){
       this.$dialog.confirm({title:'确认删除该条浏览记录'})
       .then(res => {
-        this.arr = JSON.parse(localStorage.getItem("views"))
-        this.arr.splice(index,1)
-        localStorage.setItem('views',JSON.stringify(this.arr))
+        let arr = JSON.parse(localStorage.getItem("views"))
+        arr.splice(index,1)
+        localStorage.setItem('views',JSON.stringify(arr))
       }).catch(err => {
         console.log(err);
       })

@@ -240,9 +240,9 @@ export default {
       else{
         this.$api.collection(this.obj)
         .then(res => {
+          this.flag = true
           this.$toast.success(res.msg)
           this.$utils.collection(this.obj)
-          this.flag = true
         }).catch(() => {})
       }
     },

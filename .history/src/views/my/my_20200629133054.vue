@@ -3,7 +3,7 @@
     <div class="box">
       <div class="box1">
         <div class="header">会员中心</div>
-          <div class="mybox" v-if="userInfo">
+          <div class="mybox" v-if="this.userInfo === res.userInfo">
             <div class="b-img"><img :src="userInfo.avatar" alt=""></div>
             <div class="b-font" >欢迎您：{{userInfo.nickname}}</div>
             <div class="b-back" @click="logout">退出登录</div>
@@ -82,7 +82,6 @@
    data () {
      return {
         userInfo:{},
-        
      }
    },
    methods: {

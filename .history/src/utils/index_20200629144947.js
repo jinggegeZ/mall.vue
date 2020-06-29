@@ -30,16 +30,9 @@ export default {
     }
   },
   collection(item){
-    if(!localStorage.collect){
-      let arr = []
-      arr.push(item)
-      localStorage.setItem('collect',JSON.stringify(arr))
-    }else{
-      let arr = JSON.parse(localStorage.collect)
-      arr.push(item)
-      localStorage.setItem('collect',JSON.stringify(arr))
-    }
-    
+    let arr = []
+    arr.push(item)
+    localStorage.setItem('views',JSON.stringify(arr))
   }
 }
 

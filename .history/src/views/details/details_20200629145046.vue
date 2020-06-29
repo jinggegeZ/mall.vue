@@ -22,7 +22,7 @@
           <!-- 是否已经收藏 -->
           <div v-else-if="iscollect === 0 && flag === false" @click="collection">收藏<van-icon name="like" size="18" void-color="white" color="#dddddd" /></div>
           <!-- 再次点击取消-->
-          <div v-else>取消收藏<van-icon name="like" size="18" void-color="white" color="red" @click="cancelCollection" /></div>
+          <div v-else @click="cancelCollection">取消收藏<van-icon name="like" size="18" void-color="white" color="red" /></div>
         </div>
       </div>
     </div>
@@ -240,9 +240,9 @@ export default {
       else{
         this.$api.collection(this.obj)
         .then(res => {
-          this.$toast.success(res.msg)
-          this.$utils.collection(this.obj)
           this.flag = true
+          this.$toast.success(res.msg)
+          this.$utils.collection()
         }).catch(() => {})
       }
     },
@@ -250,7 +250,6 @@ export default {
     cancelCollection(){
       this.$api.cancelCollection(this.ids).then(res => {
         this.flag = false
-        this.$toast.success(res.msg)
       }).catch(err => {
         console.log(err);
       })

@@ -240,9 +240,9 @@ export default {
       else{
         this.$api.collection(this.obj)
         .then(res => {
+          this.flag = true
           this.$toast.success(res.msg)
           this.$utils.collection(this.obj)
-          this.flag = true
         }).catch(() => {})
       }
     },
@@ -250,7 +250,6 @@ export default {
     cancelCollection(){
       this.$api.cancelCollection(this.ids).then(res => {
         this.flag = false
-        this.$toast.success(res.msg)
       }).catch(err => {
         console.log(err);
       })

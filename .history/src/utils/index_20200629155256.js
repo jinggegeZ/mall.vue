@@ -30,14 +30,14 @@ export default {
     }
   },
   collection(item){
-    if(!localStorage.collect){
+    if(!localStorage.collection){
       let arr = []
       arr.push(item)
-      localStorage.setItem('collect',JSON.stringify(arr))
+      localStorage.setItem('collection',JSON.stringify(arr))
     }else{
       let arr = JSON.parse(localStorage.collect)
       arr.push(item)
-      localStorage.setItem('collect',JSON.stringify(arr))
+      localStorage.setItem('collection',JSON.stringify(arr))
     }
     
   }

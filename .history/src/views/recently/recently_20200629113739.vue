@@ -1,15 +1,15 @@
 <template>
   <div>
     <div class="locat">
-      <van-icon name="arrow-left" color="#1989fa" class="back_last" @click="backmine" />我的收藏
+      <van-icon name="arrow-left" color="#1989fa" class="back_last" @click="backmine" />最近浏览
     </div>
-    <div class="collect" v-for="(item,index) in obj" :key="index">
+    <div class="collect">
       <van-swipe-cell>
         <van-card
-          :price="item.present_price"
-          :title="item.name"
+          price="2.00"
+          title="商品标题"
           class="goods-card"
-          :thumb="item.image"
+          thumb="https://img.yzcdn.cn/vant/cat.jpeg"
         />
         <van-icon name="arrow-left" class="hua" />
         <template #right>
@@ -24,18 +24,17 @@
 export default {
   data() {
     return {
-      obj:[]
+      arr:[]
     };
   },
   components: {},
   methods: {
     backmine() {
-      this.$router.go(-1);
+      this.$router.push("/my");
     }
   },
   mounted() {
-    this.obj = JSON.parse(localStorage.getItem('collect'))
-    console.log(this.obj);
+    this.arr = JSON.parse(localStorage.getItem('views'))
   },
   watch: {},
   computed: {}
