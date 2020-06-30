@@ -13,8 +13,6 @@ export default new Vuex.Store({
     areaCode:'',
     addressDetail:'',
     address:'',
-    shopList:[],
-    cartNum:0,
   },
   mutations: {
     setCitya(state,data){

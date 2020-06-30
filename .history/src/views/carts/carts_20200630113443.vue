@@ -75,7 +75,7 @@ export default {
         .then(res => {
           this.shopList = res.shopList;
           localStorage.setItem("length", this.shopList.length);
-          this.$store.commit("setShopList", res.shopList);
+          
         })
         .catch(err => {});
     },

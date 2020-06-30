@@ -72,11 +72,7 @@ export default {
   },
   mounted() {},
   watch: {},
-  computed: {
-    shopList(){
-      return this.$store.state.shopList
-    }
-  }
+  computed: {}
 };
 </script>
 
