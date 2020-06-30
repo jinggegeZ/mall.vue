@@ -106,22 +106,12 @@
                 <div>
                   <div class="foot5">{{obj.name}}</div>
                   <div class="font">¥{{obj.present_price}}元</div>
-                  <div>剩余：{{obj.amount}}</div>
+                  <div>剩余：706件</div>
                 </div>
               </div>
               <div class="conbox2">
                 <div class="conbox3">
-                    <div class="conbox4">
-                      <div>
-                      <div class="foot4">购买数量</div>
-                      <div class="foo6">
-                        <div class="foot3">数量{{obj.amount}}件</div>
-                        <div class="foot7">一件起售，每人最多加入50件</div>
-                      </div>
-                    </div>
-                    <div><van-stepper v-model="number" :max="obj.amount" /></div>
-                    </div>
-                  <div class="foot9" @click="addShop(index)"><van-button type="primary">立即加入购物车</van-button></div>
+                  <div class="foot4" @click="addShop(index)">立即加入购物车</div>
                 </div>
               </div>
             </div>
@@ -372,8 +362,6 @@ export default {
 }
 .font {
   color: red;
-  margin-top: 5px;
-  margin-bottom: 5px;
 }
 .deta_f {
   margin-top: 30px;
@@ -453,13 +441,9 @@ export default {
   
 }
 .conbox3 {
-  width: 98%;
+  width: 95%;
   height: 95%;
-}
-.conbox4 {
-  width: 100%;
-  display: flex;
-  height: 50px;
+  background: skyblue;
 }
 .foot1 {
   display: flex;
@@ -509,12 +493,5 @@ export default {
   display: flex;
   align-items: center;
   height: 40px;
-}
-.foot9 {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 5px;
 }
 </style>

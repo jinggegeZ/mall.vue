@@ -197,7 +197,7 @@ Vue.use(VueRouter)
     name: 'Completed',
     component: () => import('../views/Completed/Completed'),
     meta:{
-      title:'已完成'
+      title:'结算'
     }
   },
 ]

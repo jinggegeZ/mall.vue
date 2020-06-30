@@ -459,7 +459,6 @@ export default {
 .conbox4 {
   width: 100%;
   display: flex;
-  height: 50px;
 }
 .foot1 {
   display: flex;
@@ -515,6 +514,6 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 5px;
+
 }
 </style>

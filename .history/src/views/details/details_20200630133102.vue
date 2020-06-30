@@ -459,7 +459,6 @@ export default {
 .conbox4 {
   width: 100%;
   display: flex;
-  height: 50px;
 }
 .foot1 {
   display: flex;
@@ -508,7 +507,7 @@ export default {
 .bb6 {
   display: flex;
   align-items: center;
-  height: 40px;
+  height: 50px;
 }
 .foot9 {
   width: 100%;

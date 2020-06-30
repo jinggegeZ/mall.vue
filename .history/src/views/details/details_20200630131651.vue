@@ -121,7 +121,7 @@
                     </div>
                     <div><van-stepper v-model="number" :max="obj.amount" /></div>
                     </div>
-                  <div class="foot9" @click="addShop(index)"><van-button type="primary">立即加入购物车</van-button></div>
+                  <div class="foot4" @click="addShop(index)"><van-button type="primary">立即加入购物车</van-button></div>
                 </div>
               </div>
             </div>
@@ -372,8 +372,6 @@ export default {
 }
 .font {
   color: red;
-  margin-top: 5px;
-  margin-bottom: 5px;
 }
 .deta_f {
   margin-top: 30px;
@@ -459,7 +457,6 @@ export default {
 .conbox4 {
   width: 100%;
   display: flex;
-  height: 50px;
 }
 .foot1 {
   display: flex;
@@ -509,12 +506,5 @@ export default {
   display: flex;
   align-items: center;
   height: 40px;
-}
-.foot9 {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 5px;
 }
 </style>

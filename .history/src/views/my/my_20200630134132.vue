@@ -40,7 +40,7 @@
         <div class="foot-box">
           <div class="foot-box1">
             <div><van-icon name="send-gift-o" size="25" /></div>
-            <div @click="order1">全部订单</div>
+            <div @click="order">全部订单</div>
           </div>
           <div><van-icon name="arrow" size="30" /></div>
         </div>
@@ -103,9 +103,6 @@
      },
      order(){
        this.$router.push('/Completed')
-     },
-     order1(){
-       this.$router.push('/order')
      },
      recently(){
        this.$router.push('/recently')

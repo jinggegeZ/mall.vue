@@ -193,11 +193,11 @@ Vue.use(VueRouter)
     }
   },
   {
-    path: '/Completed',
-    name: 'Completed',
-    component: () => import('../views/Completed/Completed'),
+    path: '/Settlement',
+    name: 'Settlement',
+    component: () => import('../views/Settlement/Settlement'),
     meta:{
-      title:'已完成'
+      title:'结算'
     }
   },
 ]

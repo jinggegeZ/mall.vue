@@ -459,7 +459,6 @@ export default {
 .conbox4 {
   width: 100%;
   display: flex;
-  height: 50px;
 }
 .foot1 {
   display: flex;
