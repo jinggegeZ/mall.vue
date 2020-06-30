@@ -1,34 +1,41 @@
 <template>
   <div class="other_bei">
     <div class="locat"><van-icon name="arrow-left" color="#1989fa" class="back_last"  @click="backmine" />我的订单</div>
-    <div v-if="list.length < 0">
-      <div>您还没有买任何产品</div>
-      <div>立即购买再来查看哦</div>
-      <div ><van-button type="primary" @click="byshop">去购买</van-button></div>
-    </div>
-    <div class="order" v-else>
+    <div class="order">
       <div class="order_a">
-        <div class="order_b" v-for="(item,index) in list" :key="index">
+        <div class="order_b" >
           <div class="order_c">
-            <div>订单编号:{{item.order_id}}</div>
+            <div>订单编号:{{}}</div>
             <div class="order_d">交易完成</div>
           </div>
-          <div class="order_e" v-for="(item1,index1) in item.order_list" :key="index1">
+          <div class="order_e">
             <div class="order_f">
               <div class="order_g">
-                <img :src="item1.image_path" alt="" width="80">
+                <img src alt />
               </div>
-              <div class="order_h">{{item1.name}}</div>
+              <div class="order_h">dddddddddddddddddddddddddddddd</div>
               <div class="order_i">
-                <div>￥{{item1.mallPrice}}</div>
-                <div class="order_j">x{{item1.count}}</div>
+                <div>￥6</div>
+                <div class="order_j">x1</div>
+              </div>
+            </div>
+          </div>
+          <div class="order_e">
+            <div class="order_f">
+              <div class="order_g">
+                <img src alt />
+              </div>
+              <div class="order_h">dddddddddddddddddddddddddddddd</div>
+              <div class="order_i">
+                <div>￥6</div>
+                <div class="order_j">x1</div>
               </div>
             </div>
           </div>
           <div class="order_k">
-            <div>创建时间：{{item.add_time}}</div>
-            <div>收货地址:{{item.address}}</div>
-            <div>共<span>3</span>件商品 <span>合计￥{{item.mallPrice}}元</span></div>
+            <div>创建时间：</div>
+            <div>收货地址</div>
+            <div>共<span>3</span>件商品 <span>合计￥122.80元</span></div>
           </div>
         </div>
       </div>
@@ -48,9 +55,6 @@ export default {
   methods: {
     backmine(){
       this.$router.push('my')
-    },
-    byshop(){
-      this.$router.push('/')
     }
   },
   mounted() {
@@ -58,7 +62,7 @@ export default {
     .then(res => {
       this.list = res.list
       this.arr = res.list.order_list
-      console.log(this.list);
+      console.log(this.arr);
     }).catch(err => {})
   },
   watch: {},

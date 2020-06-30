@@ -18,9 +18,9 @@
 
         <div class="bb6">
           <!-- 判断是否登录 -->
-          <div v-if="nickname === '' && flag === false" @click="getcollection" >收藏<van-icon name="like" size="18" void-color="white" color="#dddddd" /></div>
+          <div v-if="nickname === '' && flag === false" @click="collection" >收藏<van-icon name="like" size="18" void-color="white" color="#dddddd" /></div>
           <!-- 是否已经收藏 -->
-          <div v-else-if="iscollect === 0 && flag === false" @click="getcollection">收藏<van-icon name="like" size="18" void-color="white" color="#dddddd" /></div>
+          <div v-else-if="iscollect === 0 && flag === false" @click="collection">收藏<van-icon name="like" size="18" void-color="white" color="#dddddd" /></div>
           <!-- 再次点击取消-->
           <div v-else>取消收藏<van-icon name="like" size="18" void-color="white" color="red" @click="cancelCollection" /></div>
         </div>
@@ -226,7 +226,7 @@ export default {
       this.$router.push('carts')
     },
     //收藏商品
-    getcollection(){
+    collection(){
       if(this.nickname === ""){
         this.$dialog.confirm({
           title:'提示',
@@ -239,10 +239,9 @@ export default {
       }
       else{
         this.$api.collection(this.obj)
-
         .then(res => {
-          this.$toast.success(res.msg)
-          this.$utils.getcollection(this.obj)
+          this.$dialog.success(res.msg)
+          this.$utils.collection(this.obj)
           this.flag = true
         }).catch(() => {})
       }

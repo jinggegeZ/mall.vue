@@ -18,10 +18,10 @@
               <div class="order_g">
                 <img :src="item1.image_path" alt="" width="80">
               </div>
-              <div class="order_h">{{item1.name}}</div>
+              <div class="order_h">dddddddddddddddddddddddddddddd</div>
               <div class="order_i">
-                <div>￥{{item1.mallPrice}}</div>
-                <div class="order_j">x{{item1.count}}</div>
+                <div>￥6</div>
+                <div class="order_j">x1</div>
               </div>
             </div>
           </div>

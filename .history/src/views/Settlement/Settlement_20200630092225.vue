@@ -45,7 +45,7 @@
           </div>
         </div>
         <div v-if="flags===0" class="d-flex">
-          <img :src="this.goodsOne.image"  class="img1" />
+          <img :src="this.goodsOne.image"  width="80px" />
           <div class="item">
             <div class="name">{{this.goodsOne.name}}</div>
             <div class="flex-j-sb">

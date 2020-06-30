@@ -241,6 +241,7 @@ export default {
         this.$api.collection(this.obj)
 
         .then(res => {
+          console.log(123);
           this.$toast.success(res.msg)
           this.$utils.getcollection(this.obj)
           this.flag = true

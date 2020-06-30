@@ -92,7 +92,7 @@ export default {
           query: { id: item.id }
         });
       }
-      this.$utils.details(item);
+      this.$utils.goDetail(item);
     }
   },
   mounted() {

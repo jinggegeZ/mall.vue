@@ -13,15 +13,27 @@
             <div>订单编号:{{item.order_id}}</div>
             <div class="order_d">交易完成</div>
           </div>
-          <div class="order_e" v-for="(item1,index1) in item.order_list" :key="index1">
+          <div class="order_e" v-for="(item1,index) in item.order_list" :key="index1">
             <div class="order_f">
               <div class="order_g">
-                <img :src="item1.image_path" alt="" width="80">
+                <img src alt />
               </div>
-              <div class="order_h">{{item1.name}}</div>
+              <div class="order_h">dddddddddddddddddddddddddddddd</div>
               <div class="order_i">
-                <div>￥{{item1.mallPrice}}</div>
-                <div class="order_j">x{{item1.count}}</div>
+                <div>￥6</div>
+                <div class="order_j">x1</div>
+              </div>
+            </div>
+          </div>
+          <div class="order_e">
+            <div class="order_f">
+              <div class="order_g">
+                <img src alt />
+              </div>
+              <div class="order_h">dddddddddddddddddddddddddddddd</div>
+              <div class="order_i">
+                <div>￥6</div>
+                <div class="order_j">x1</div>
               </div>
             </div>
           </div>

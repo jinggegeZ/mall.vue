@@ -31,7 +31,7 @@
         </div>
         <div v-if="flag===1">
           <div v-for="(item,index) in shopList" :key="index" class="d-flex">
-            <img :src="item.image_path" class="img1" />
+            <img :src="item.image_path" class="img" />
             <div class="item">
               <div class="name">{{item.name}}</div>
               <div class="flex-j-sb">
@@ -45,7 +45,7 @@
           </div>
         </div>
         <div v-if="flags===0" class="d-flex">
-          <img :src="this.goodsOne.image"  class="img1" />
+          <img :src="this.goodsOne.image" class="img1" width="80px" />
           <div class="item">
             <div class="name">{{this.goodsOne.name}}</div>
             <div class="flex-j-sb">

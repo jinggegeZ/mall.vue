@@ -7,7 +7,7 @@
       <div v-if="item.goodsName">
         <div class="box">
           <div class="img">
-            <img :src="item.image" alt @click="details(item)" />
+            <img :src="item.image" alt @click="goDetail(item)" />
           </div>
           <div>
             <div class="title">{{item.goodsName}}</div>
@@ -23,7 +23,7 @@
       <div v-else-if="item.name">
         <div class="box">
           <div class="img">
-            <img :src="item.image" alt @click="details(item)" />
+            <img :src="item.image" alt @click="goDetail(item)" />
           </div>
           <div>
             <div class="title">{{item.name}}</div>
@@ -92,7 +92,7 @@ export default {
           query: { id: item.id }
         });
       }
-      this.$utils.details(item);
+      this.$utils.goDetail(item);
     }
   },
   mounted() {

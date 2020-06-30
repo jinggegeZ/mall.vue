@@ -20,8 +20,8 @@
               </div>
               <div class="order_h">{{item1.name}}</div>
               <div class="order_i">
-                <div>￥{{item1.mallPrice}}</div>
-                <div class="order_j">x{{item1.count}}</div>
+                <div>￥{{item.mallPrice}}</div>
+                <div class="order_j">x1</div>
               </div>
             </div>
           </div>
