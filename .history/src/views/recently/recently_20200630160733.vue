@@ -143,8 +143,8 @@ img {
 }
 .icon {
   position: absolute;
-  right: 15px;
-  bottom: 25px;
+  right: 5px;
+  top: 5px;
 
 }
 </style>

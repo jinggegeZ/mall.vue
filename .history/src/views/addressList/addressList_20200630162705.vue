@@ -36,7 +36,7 @@ export default {
   },
   methods: {
     back() {
-      this.$router.go(-1);
+      this.$router.push("my");
     },
     onAdd() {
       this.$toast("新增地址");

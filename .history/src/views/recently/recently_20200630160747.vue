@@ -144,7 +144,7 @@ img {
 .icon {
   position: absolute;
   right: 15px;
-  bottom: 25px;
+  top: 25px;
 
 }
 </style>

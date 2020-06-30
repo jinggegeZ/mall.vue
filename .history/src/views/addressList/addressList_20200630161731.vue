@@ -36,7 +36,7 @@ export default {
   },
   methods: {
     back() {
-      this.$router.go(-1);
+      this.$router.push("my");
     },
     onAdd() {
       this.$toast("新增地址");
@@ -50,9 +50,8 @@ export default {
       this.$toast("编辑地址");
     },
     select(item){
-      this.$api.setDefaultAddress(item)
-      .then(res => {}).catch(err => {})
-      
+      this.
+      this.$router.push({path:'/Settlement',query:{item: item}})
     }
   },
   mounted() {
