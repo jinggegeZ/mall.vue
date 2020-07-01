@@ -8,7 +8,7 @@
         <div class="writeave">
           <div class="writeave_1">
             <div class="writeave_a">
-             <img :src="list.image_path" alt="">
+             <img :src="arr.order_list.image_path" alt="">
             </div>
             <div class="writeave_b">
               <div class="writeave_c">商品评分</div>
@@ -19,13 +19,13 @@
           </div>
         </div>
         <div class="writeave_d">
-          <textarea name id cols="30" rows="10" placeholder="说说你的购买感受吧" v-model="text"></textarea>
+          <textarea name id cols="30" rows="10" placeholder="说说你的购买感受吧"></textarea>
         </div>
         <div class="writeave_e">
             <van-checkbox v-model="checked">匿名评价</van-checkbox>
         </div>
         <div style="margin: 14px;">
-          <van-button round block type="info" native-type="submit" @click="click">提交</van-button>
+          <van-button round block type="info" native-type="submit">提交</van-button>
         </div>
       </van-form>
     </div>
@@ -38,35 +38,19 @@ export default {
     return {
        checked: true,
         value: 3,
-        list:{},
-        text:''
+        list:[],
+        arr:{}
     };
   },
   components: {},
   methods: {
       backEvaluate(){
           this.$router.push('/evaluate')
-      },
-      click(){
-        this.$api.comment({
-          id: this.list.cid,
-          rate: this.value,
-          content: this.text,
-          anonymous: this.checked,
-          _id: this.list._id,
-          order_id: this.order_id,
-          image:this.list.image_path
-        }).then(res => {
-          this.$router.push('/')
-          this.$toast.success('评论成功已为您返回首页！')
-        }).catch(err => {
-          console.log(err);
-        })
       }
   },
   mounted() {
-    this.list = this.$route.query.item
-    console.log(this.list);
+    this.arr = this.$route.query.item
+    console.log(this.arr);
   },
   watch: {},
   computed: {}

@@ -86,8 +86,8 @@ export default {
         return service.get('/myOrder/orderNum')
     },
     // 17. 商品评论(post)
-    comment({id,rate,content,anonymous,_id,order_id,image}){
-       return service.post('/goodsOne/comment',{
+    comment(id,rate,content,anonymous,_id,order_id,image){
+       return service.get('/goodsOne/comment',{
             id:id,
             rate:rate,
             content:content,

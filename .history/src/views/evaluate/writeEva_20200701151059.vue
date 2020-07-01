@@ -53,15 +53,10 @@ export default {
           rate: this.value,
           content: this.text,
           anonymous: this.checked,
-          _id: this.list._id,
-          order_id: this.order_id,
-          image:this.list.image_path
-        }).then(res => {
-          this.$router.push('/')
-          this.$toast.success('评论成功已为您返回首页！')
-        }).catch(err => {
-          console.log(err);
-        })
+          _id: this.list.,
+          order_id,
+          image
+        }).then()
       }
   },
   mounted() {

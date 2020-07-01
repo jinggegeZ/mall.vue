@@ -87,7 +87,7 @@ export default {
       this.$router.push("/addressList");
     },
     onSubmit() {
-      if (this.flags === '1' ) {
+      if (this.flags === 1 ) {
         this.shopList.map(item => {
           this.arr.push(item.cid);
         });
@@ -106,7 +106,7 @@ export default {
           })
           .catch(err => {});
       }
-      if (this.flags === '0' ) {
+      if (this.flags === 0 ) {
         this.arr.push(this.goodsOne.id);
         this.$api
           .order({

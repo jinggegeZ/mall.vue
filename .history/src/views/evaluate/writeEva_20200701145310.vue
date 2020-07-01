@@ -19,7 +19,7 @@
           </div>
         </div>
         <div class="writeave_d">
-          <textarea name id cols="30" rows="10" placeholder="说说你的购买感受吧" v-model="text"></textarea>
+          <textarea name id cols="30" rows="10" placeholder="说说你的购买感受吧"></textarea>
         </div>
         <div class="writeave_e">
             <van-checkbox v-model="checked">匿名评价</van-checkbox>
@@ -39,7 +39,7 @@ export default {
        checked: true,
         value: 3,
         list:{},
-        text:''
+        
     };
   },
   components: {},
@@ -48,20 +48,7 @@ export default {
           this.$router.push('/evaluate')
       },
       click(){
-        this.$api.comment({
-          id: this.list.cid,
-          rate: this.value,
-          content: this.text,
-          anonymous: this.checked,
-          _id: this.list._id,
-          order_id: this.order_id,
-          image:this.list.image_path
-        }).then(res => {
-          this.$router.push('/')
-          this.$toast.success('评论成功已为您返回首页！')
-        }).catch(err => {
-          console.log(err);
-        })
+        
       }
   },
   mounted() {

@@ -87,26 +87,26 @@ export default {
       this.$router.push("/addressList");
     },
     onSubmit() {
-      if (this.flags === '1' ) {
+      if (this.flag === 1 ) {
         this.shopList.map(item => {
           this.arr.push(item.cid);
         });
         this.$api
-          .order({
-            address: this.defaultAdd.address,
-            tel: this.defaultAdd.tel,
-            orderId: this.arr,
-            totalPrice: this.total,
-            idDirect: false,
+          .order(
+             this.defaultAdd.address,
+            this.defaultAdd.tel,
+            this.arr,
+            this.total,
+             false,
             count: this.count
-          })
+          )
           .then(res => {
             this.$toast.success(res.msg);
             this.$router.push("/");
           })
           .catch(err => {});
       }
-      if (this.flags === '0' ) {
+      if (this.flags === 0 ) {
         this.arr.push(this.goodsOne.id);
         this.$api
           .order({

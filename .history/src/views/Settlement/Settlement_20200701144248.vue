@@ -54,7 +54,7 @@
             </div>
           </div>
           <div class="foot">
-            <van-submit-bar :price="totals*100" button-text="提交订单" @submit="onSubmit" />
+            <van-submit-bar :price="totals*100" button-text="提交订单" @submit="click" />
           </div>
         </div>
       </div>
@@ -86,8 +86,8 @@ export default {
     addresslist() {
       this.$router.push("/addressList");
     },
-    onSubmit() {
-      if (this.flags === '1' ) {
+    click() {
+      if (this.flags === 1 ) {
         this.shopList.map(item => {
           this.arr.push(item.cid);
         });
@@ -106,7 +106,7 @@ export default {
           })
           .catch(err => {});
       }
-      if (this.flags === '0' ) {
+      if (this.flags === 0 ) {
         this.arr.push(this.goodsOne.id);
         this.$api
           .order({

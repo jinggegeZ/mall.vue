@@ -22,15 +22,15 @@
           </div>
         </van-tab>
         <van-tab title="已评价">
-          <div class="eva_b" v-for="(item,index) in arr" :key="index">
-            <div class="order_e" v-for="(item1,index1) in item.goods" :key="index1">
+          <div class="eva_b">
+            <div class="order_e">
               <div class="order_f">
                 <div class="order_g">
-                  <img :src="item1.image_path" alt="" >
+                  <img :src="item1.image" alt="">
                 </div>
                 <div class="order_h">
                   <div>{{item1.name}}</div>
-                  <van-button plain round icon="chat" type="danger" size="small" class="shai" @click="gooldeva(item)">评论晒单</van-button>
+                  <van-button plain round type="default" size="small" class="shai" @click="gooldeva">查看评价</van-button>
                 </div>
               </div>
             </div>
@@ -46,7 +46,7 @@ export default {
   data() {
     return {
       list:{},
-      arr:[]
+      arr:{}
     };
   },
   components: {},
@@ -72,7 +72,6 @@ export default {
       this.list = res.data.list
       console.log(this.list);
     }).catch(err => {})
-
     this.$api.alreadyEvaluated()
     .then(res => {
       this.arr = res.data.list
@@ -101,7 +100,6 @@ export default {
   display: flex;
   justify-content: center;
   border-bottom: 1px solid #eeeeee;
-  background: white;
 }
 .order_f {
   width: 94%;
@@ -127,5 +125,4 @@ export default {
   float: right;
   margin-top: 15px;
 }
-
 </style>

@@ -33,12 +33,12 @@ export default {
     // 7. 购物车支付页面(post)
     order({address,tel,orderId,totalPrice,idDirect,count}){
         return service.post('/order',{
-            address:address,
-            tel:tel,
-            orderId:orderId,
-            totalPrice:totalPrice,
-            idDirect:idDirect,
-            count:count
+            address,
+            tel,
+            orderId,
+            totalPrice,
+            idDirect,
+            count
         })
     },
     // 8.单个商品详情(get)
@@ -86,8 +86,8 @@ export default {
         return service.get('/myOrder/orderNum')
     },
     // 17. 商品评论(post)
-    comment({id,rate,content,anonymous,_id,order_id,image}){
-       return service.post('/goodsOne/comment',{
+    comment(id,rate,content,anonymous,_id,order_id,image){
+       return service.get('/goodsOne/comment',{
             id:id,
             rate:rate,
             content:content,
