@@ -276,7 +276,7 @@ export default {
      this.$router.push({
        path:'/Settlement',
        query:{
-         goodsOne: JSON.stringify(this.obj),
+         goodsOne: this.obj,
          count: this.value,
          flags: this.flags
        }

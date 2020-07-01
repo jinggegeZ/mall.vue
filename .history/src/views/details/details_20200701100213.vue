@@ -182,7 +182,7 @@ export default {
       iscollect:'',
       nickname:'',
       flag : false,
-      flags:'0',
+      flags:0,
       
     };
   },
@@ -276,7 +276,7 @@ export default {
      this.$router.push({
        path:'/Settlement',
        query:{
-         goodsOne: JSON.stringify(this.obj),
+         goodsOne: this.obj,
          count: this.value,
          flags: this.flags
        }

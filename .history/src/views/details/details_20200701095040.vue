@@ -274,14 +274,8 @@ export default {
     },
     rightnow(){
      this.$router.push({
-       path:'/Settlement',
-       query:{
-         goodsOne: JSON.stringify(this.obj),
-         count: this.value,
-         flags: this.flags
-       }
-     });
-     localStorage.setItem('goodsOne',JSON.stringify(this.obj))
+       path:'/'
+     })
     }
   },
   mounted() {

@@ -129,7 +129,6 @@ export default {
   mounted() {
     this.counts = this.$route.query.count;
     this.flags = this.$route.query.flags;
-    console.log(this.flags);
     if(this.flags === '0'){
       if(localStorage.goodsOne){
         this.goodsOne = JSON.parse(localStorage.getItem("goodsOne"))

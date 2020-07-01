@@ -65,7 +65,7 @@ export default {
       shopList: [],
       arr: [],
       ass: [],
-      flags:'1'
+      flag:'1'
     };
   },
   methods: {
@@ -139,9 +139,9 @@ export default {
         this.$router.push({
           path: "/Settlement",
           query: { 
-            flags: this.flags, 
+            flag: this.flag, 
             total: this.total ,
-            shopList: JSON.stringify(this.shopList)
+           
           }
         });
         localStorage.setItem("shopList", JSON.stringify(this.shopList));

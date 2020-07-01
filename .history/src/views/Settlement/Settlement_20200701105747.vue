@@ -29,7 +29,7 @@
         <div class="img">
           <img src="../../../public/caitiao.jpg" alt height="8px" width="100%" />
         </div>
-        <div v-if="flags === '1'">
+        <div v-if="flag === 1">
           <div v-for="(item,index) in shopList" :key="index" class="d-flex">
             <img :src="item.image_path" class="img1" />
             <div class="item">
@@ -44,7 +44,7 @@
             <van-submit-bar :price="this.total*100" button-text="提交订单" @submit="onSubmit" />
           </div>
         </div>
-        <div v-else-if="flags === '0'" class="d-flex">
+        <div v-else-if="flags === 0" class="d-flex">
           <img :src="this.goodsOne.image_path"  class="img1" />
           <div class="item">
             <div class="name">{{this.goodsOne.name}}</div>
@@ -75,7 +75,8 @@ export default {
       count: "",
       goodsOne: {},
       counts: "",
-      flags: '',
+      flag: 0,
+      flags: 1,
       total: ""
     };
   },
@@ -128,9 +129,9 @@ export default {
   },
   mounted() {
     this.counts = this.$route.query.count;
+    this.flag = this.$route.query.flag;
     this.flags = this.$route.query.flags;
-    console.log(this.flags);
-    if(this.flags === '0'){
+    if(flags === '0'){
       if(localStorage.goodsOne){
         this.goodsOne = JSON.parse(localStorage.getItem("goodsOne"))
       }
@@ -138,7 +139,7 @@ export default {
         this.goodsOne = JSON.parse(this.$route.query.goodsOne)
       }
     }
-     if(this.flags === '1'){
+     if(flag === '1'){
        if(localStorage.shopList){
         this.shopList = JSON.parse(localStorage.getItem("shopList"));
         }

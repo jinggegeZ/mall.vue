@@ -273,15 +273,12 @@ export default {
       }).catch(err => {})
     },
     rightnow(){
-     this.$router.push({
-       path:'/Settlement',
-       query:{
-         goodsOne: JSON.stringify(this.obj),
-         count: this.value,
-         flags: this.flags
-       }
-     });
-     localStorage.setItem('goodsOne',JSON.stringify(this.obj))
+      this.$router.push({
+        path: "/Settlement",
+        query: { goodsOne: JSON.stringify(this.obj),
+        count: this.value, flags: this.flags }
+      });
+      localStorage.setItem('goodsone' ,JSON.stringify(this.obj))
     }
   },
   mounted() {

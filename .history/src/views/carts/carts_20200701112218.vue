@@ -139,7 +139,7 @@ export default {
         this.$router.push({
           path: "/Settlement",
           query: { 
-            flags: this.flags, 
+            flag: this.flag, 
             total: this.total ,
             shopList: JSON.stringify(this.shopList)
           }
