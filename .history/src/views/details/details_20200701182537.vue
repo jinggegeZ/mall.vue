@@ -77,7 +77,7 @@
                 </div>
                 <div class="deta_K">
                   <div class="deta_l">
-                    <span>{{item1.nickname}}</span>
+                    <span>{{item.comment_nickname}}</span>
                     <span class="deta_m">{{item.comment_time}}</span>
                   </div>
                   <div>

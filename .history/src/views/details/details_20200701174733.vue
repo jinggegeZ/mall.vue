@@ -52,38 +52,21 @@
           </div>
         </van-tab>
         <van-tab title="商品评论">
-          <div class="deta_pin" v-for="(item,index) in comment" :key="index">
-            <div class="deta_h" v-if="item.anonymous === true">
-              <div class="deta_i" >
+          <div class="deta_pin">
+            <div class="deta_h" >
+              <div class="deta_i">
                 <div class="deta_j">
-                  <img :src="item.comment_avatar" alt="">
+                  <img src alt />
                 </div>
                 <div class="deta_K">
                   <div class="deta_l">
-                    <span>{{item.comment_nickname}}</span>
-                    <span class="deta_m">{{item.comment_time}}</span>
+                    <span>用户名</span>
+                    <span class="deta_m">2002-15-453</span>
                   </div>
                   <div>
-                    <van-rate v-model="item.rate" readonly />
+                    <van-rate v-model="value" readonly />
                   </div>
-                  <div>{{item.content}}</div>
-                </div>
-              </div>
-            </div>
-            <div class="deta_h" v-else>
-              <div class="deta_i" v-for="(item1,index1) in item.user" :key="index1">
-                <div class="deta_j">
-                  <img :src="item1.avatar" alt="">
-                </div>
-                <div class="deta_K">
-                  <div class="deta_l">
-                    <span>{{item1.nickname}}</span>
-                    <span class="deta_m">{{item.comment_time}}</span>
-                  </div>
-                  <div>
-                    <van-rate v-model="item.rate" readonly />
-                  </div>
-                  <div>{{item.content}}</div>
+                  <div>评价内容。。。。</div>
                 </div>
               </div>
             </div>
@@ -184,8 +167,7 @@ export default {
       nickname:'',
       flag : false,
       flags:'0',
-      arr:[],
-      comment:[]
+      
     };
   },
   methods: {
@@ -289,13 +271,10 @@ export default {
   mounted() {
     this.nickname = localStorage.getItem('nickname')
     this.ids = this.$route.query.id;
-    //获取单个商品详情
     this.$api
       .one(this.ids)
       .then(res => {
         this.obj = res.goods.goodsOne;
-        this.comment = res.goods.comment
-        console.log(this.comment);
         this.images.push(this.obj.image);
         this.images.push(this.obj.image_path);
         console.log(res);
@@ -310,6 +289,7 @@ export default {
        this.$store.commit("setCartNum", res.shopList.length);
      })
      .catch(err => {})
+    
   },
   watch: {},
   computed: {

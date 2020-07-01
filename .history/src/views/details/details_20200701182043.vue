@@ -53,31 +53,14 @@
         </van-tab>
         <van-tab title="商品评论">
           <div class="deta_pin" v-for="(item,index) in comment" :key="index">
-            <div class="deta_h" v-if="item.anonymous === true">
+            <div class="deta_h" >
               <div class="deta_i" >
-                <div class="deta_j">
+                <div class="deta_j" v-if="item.anonymous === true">
                   <img :src="item.comment_avatar" alt="">
                 </div>
                 <div class="deta_K">
                   <div class="deta_l">
                     <span>{{item.comment_nickname}}</span>
-                    <span class="deta_m">{{item.comment_time}}</span>
-                  </div>
-                  <div>
-                    <van-rate v-model="item.rate" readonly />
-                  </div>
-                  <div>{{item.content}}</div>
-                </div>
-              </div>
-            </div>
-            <div class="deta_h" v-else>
-              <div class="deta_i" v-for="(item1,index1) in item.user" :key="index1">
-                <div class="deta_j">
-                  <img :src="item1.avatar" alt="">
-                </div>
-                <div class="deta_K">
-                  <div class="deta_l">
-                    <span>{{item1.nickname}}</span>
                     <span class="deta_m">{{item.comment_time}}</span>
                   </div>
                   <div>

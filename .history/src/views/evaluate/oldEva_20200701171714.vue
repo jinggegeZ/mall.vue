@@ -36,21 +36,7 @@ export default {
     backEvaluate() {
       this.$router.push("/evaluate");
     },
-    addshop(index){
-      this.$api.addShop(this.obj[index].cid)
-      .then(res => {
-      this.$dialog.confirm({message:"加入成功"})
-        // findindex 返回他的下标，如果没有就返回-1
-      let index = this.shopList.findIndex(item1 => {
-         return item1.cid === item.goodsId
-      })
-      if (index === -1) this.$store.commit('addCartNum')
-        console.log(res);
-      }).catch(err => {
-        console.log(err);
-      })
-      
-    },
+    
   },
   mounted() {
     this.$api.alreadyEvaluated()

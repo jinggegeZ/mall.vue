@@ -7,15 +7,15 @@
       <div class="oldeva2">
         <div class="oldeva">
           <van-rate v-model="item.rate" readonly />
-          <span class="oldeva_a">{{item.comment_time}}</span>
+          <span class="oldeva_a">{{}}</span>
         </div>
         <div class="oldeva_b">
-        {{item.content}}
+        {{}}
         </div>
-        <div class="oldeva_c" v-for="(item1,index1) in item.goods" :key="index1">
-            <div class="oldeva_d"><img :src="item1.image" alt=""></div>
-            <div class="oldeva_e">{{item1.name}}</div>
-            <van-button round type="warning" icon="shopping-cart" size="mini" color="#1989fa" @click="addshop(index)"></van-button>
+        <div class="oldeva_c">
+            <div class="oldeva_d"><img src="" alt=""></div>
+            <div class="oldeva_e">商品名称呵呵哈哈哈</div>
+            <van-button round type="warning" icon="shopping-cart" size="mini" color="#1989fa"></van-button>
         </div>
       </div>
     </div>
@@ -35,29 +35,11 @@ export default {
   methods: {
     backEvaluate() {
       this.$router.push("/evaluate");
-    },
-    addshop(index){
-      this.$api.addShop(this.obj[index].cid)
-      .then(res => {
-      this.$dialog.confirm({message:"加入成功"})
-        // findindex 返回他的下标，如果没有就返回-1
-      let index = this.shopList.findIndex(item1 => {
-         return item1.cid === item.goodsId
-      })
-      if (index === -1) this.$store.commit('addCartNum')
-        console.log(res);
-      }).catch(err => {
-        console.log(err);
-      })
-      
-    },
+    }
   },
   mounted() {
-    this.$api.alreadyEvaluated()
-    .then(res => {
-      this.obj = res.data.list
-      console.log(this.obj);
-    }).catch(err => {})
+    this.obj = this.$route.query.item
+    console.log(this.obj);
   },
   watch: {},
   computed: {}
@@ -68,11 +50,9 @@ export default {
 .oldeva1 {
   display: flex;
   justify-content: center;
-  background: white;
 }
 .oldeva2 {
   width: 94%;
-  
 }
 .oldeva {
   display: flex;

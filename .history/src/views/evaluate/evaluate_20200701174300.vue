@@ -57,6 +57,7 @@ export default {
         path:'/writeEva',
         query:{item: item}
       })
+      localStorage.setItem()
     },
     backmine(){
       this.$router.push('my')

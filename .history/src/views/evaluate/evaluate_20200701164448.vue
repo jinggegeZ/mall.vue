@@ -63,8 +63,10 @@ export default {
     },
     gooldeva(item){
        this.$router
-       .push('/oldEva')
-       
+       .push({
+         path:'/oldEva',
+         query:{item: item}
+       })
     }
 
   },

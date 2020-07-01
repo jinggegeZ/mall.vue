@@ -70,23 +70,6 @@
                 </div>
               </div>
             </div>
-            <div class="deta_h" v-else>
-              <div class="deta_i" v-for="(item1,index1) in item.user" :key="index1">
-                <div class="deta_j">
-                  <img :src="item1.avatar" alt="">
-                </div>
-                <div class="deta_K">
-                  <div class="deta_l">
-                    <span>{{item1.nickname}}</span>
-                    <span class="deta_m">{{item.comment_time}}</span>
-                  </div>
-                  <div>
-                    <van-rate v-model="item.rate" readonly />
-                  </div>
-                  <div>{{item.content}}</div>
-                </div>
-              </div>
-            </div>
 
           </div>
         </van-tab>

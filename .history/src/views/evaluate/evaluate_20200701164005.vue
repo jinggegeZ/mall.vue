@@ -61,10 +61,11 @@ export default {
     backmine(){
       this.$router.push('my')
     },
-    gooldeva(item){
-       this.$router
-       .push('/oldEva')
-       
+    gooldeva(){
+       this.$router.push({
+         path:'/oldEva',
+         query:{item: item}
+       })
     }
 
   },

@@ -37,7 +37,7 @@ export default {
       this.$router.push("/evaluate");
     },
     addshop(index){
-      this.$api.addShop(this.obj[index].cid)
+      this.$api.addShop(this.obj[index])
       .then(res => {
       this.$dialog.confirm({message:"加入成功"})
         // findindex 返回他的下标，如果没有就返回-1

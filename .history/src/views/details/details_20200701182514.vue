@@ -73,11 +73,11 @@
             <div class="deta_h" v-else>
               <div class="deta_i" v-for="(item1,index1) in item.user" :key="index1">
                 <div class="deta_j">
-                  <img :src="item1.avatar" alt="">
+                  <img :src="item.comment_avatar" alt="">
                 </div>
                 <div class="deta_K">
                   <div class="deta_l">
-                    <span>{{item1.nickname}}</span>
+                    <span>{{item.comment_nickname}}</span>
                     <span class="deta_m">{{item.comment_time}}</span>
                   </div>
                   <div>
