@@ -30,7 +30,7 @@
           <img src="../../../public/caitiao.jpg" alt height="8px" width="100%" />
         </div>
         <div v-if="flag==='1'">
-          <div v-for="(item,index) in shopList" :key="index" class="d-flex">
+          <div v-for="(item,index) in abbs" :key="index" class="d-flex">
             <img :src="item.image_path" class="img1" />
             <div class="item">
               <div class="name">{{item.name}}</div>
@@ -41,7 +41,7 @@
             </div>
           </div>
           <div class="foot">
-            <van-submit-bar :price="this.total*100" button-text="提交订单" @submit="onSubmit" />
+            <van-submit-bar :price="totals*100" button-text="提交订单" @submit="onSubmit" />
           </div>
         </div>
         <div v-if="flags==='0'" class="d-flex">
@@ -69,7 +69,7 @@ export default {
   components: {},
   data() {
     return {
-      shopList: [],
+      abbs: [],
       defaultAdd: {},
       arr: [],
       count: "",
@@ -89,7 +89,7 @@ export default {
     },
     onSubmit() {
       if (this.flag === 1) {
-        this.shopList.map(item => {
+        this.abbs.map(item => {
           this.arr.push(item.cid);
         });
         this.$api
@@ -131,19 +131,13 @@ export default {
   mounted() {
     this.goodsOne = this.$route.query.goodsOne;
     this.counts = this.$route.query.count;
-    if(localStorage.goodsOne){
-      this.goodsOne = JSON.parse(localStorage.getItem("goodsOne"))
+    if(localStorage.abb){
+      this.abbs = JSON.parse(localStorage.getItem("abb"));
     }
     else{
-      this.goodsOne = JSON.parse(this.$route.query.goodsOne)
+        this.abbs = JSON.parse(this.$route.query.shopList)
     }
-    if(localStorage.shopList){
-      this.shopList = JSON.parse(localStorage.getItem("shopList"));
-    }
-    else{
-        this.shopList = JSON.parse(this.$route.query.shopList)
-    }
-    console.log(this.shopList);
+    console.log(this.abbs);
     this.flag = this.$route.query.flag;
     this.flags = this.$route.query.flags;
     this.total = this.$route.query.total;

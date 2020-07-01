@@ -77,9 +77,17 @@ import homepage8 from '../components/homepage8/homepage8'
     }).catch(err => {
         console.log(err);
     }),
-     this.$api.Card().then(res => {
-       this.$store.commit("setCartNum", res.shopList.length);
-     }).catch(err => {})
+    this.$api
+      .getCard()
+      .then(res => {
+        this.shopList = res.shopList;
+        let num = this.shopList.length;
+        this.$store.commit("setNum", num);
+        console.log(res);
+      })
+      .catch(err => {
+        console.log(err);
+      });
    },
    watch: {
 

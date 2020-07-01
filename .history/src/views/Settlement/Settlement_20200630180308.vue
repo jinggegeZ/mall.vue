@@ -41,7 +41,7 @@
             </div>
           </div>
           <div class="foot">
-            <van-submit-bar :price="this.total*100" button-text="提交订单" @submit="onSubmit" />
+            <van-submit-bar :price="totals*100" button-text="提交订单" @submit="onSubmit" />
           </div>
         </div>
         <div v-if="flags==='0'" class="d-flex">
@@ -131,19 +131,13 @@ export default {
   mounted() {
     this.goodsOne = this.$route.query.goodsOne;
     this.counts = this.$route.query.count;
-    if(localStorage.goodsOne){
-      this.goodsOne = JSON.parse(localStorage.getItem("goodsOne"))
-    }
-    else{
-      this.goodsOne = JSON.parse(this.$route.query.goodsOne)
-    }
     if(localStorage.shopList){
-      this.shopList = JSON.parse(localStorage.getItem("shopList"));
+      this.shopList = localStorage.getItem("shopList");
     }
     else{
-        this.shopList = JSON.parse(this.$route.query.shopList)
+        this.shopList = this.$route.query.shopList
     }
-    console.log(this.shopList);
+    console.log(this.abbs);
     this.flag = this.$route.query.flag;
     this.flags = this.$route.query.flags;
     this.total = this.$route.query.total;

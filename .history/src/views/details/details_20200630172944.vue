@@ -275,9 +275,9 @@ export default {
     rightnow(){
       this.$router.push({
         path: "/Settlement",
-        query: { goodsOne: JSON.stringify(this.obj),count: this.value, flags: this.flags }
+        query: { goodsOne:this.obj,count: this.value, flags: this.flags }
       });
-      localStorage.getItem('goodsone' ,JSON.stringify(this.obj))
+      localStorage.getItem('flags',this.flags)
     }
   },
   mounted() {

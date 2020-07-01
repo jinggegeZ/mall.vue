@@ -29,7 +29,7 @@
         <div class="img">
           <img src="../../../public/caitiao.jpg" alt height="8px" width="100%" />
         </div>
-        <div v-if="flag==='1'">
+        <div v-if="flag===1">
           <div v-for="(item,index) in shopList" :key="index" class="d-flex">
             <img :src="item.image_path" class="img1" />
             <div class="item">
@@ -41,10 +41,10 @@
             </div>
           </div>
           <div class="foot">
-            <van-submit-bar :price="this.total*100" button-text="提交订单" @submit="onSubmit" />
+            <van-submit-bar :price="totals*100" button-text="提交订单" @submit="onSubmit" />
           </div>
         </div>
-        <div v-if="flags==='0'" class="d-flex">
+        <div v-if="flags===0" class="d-flex">
           <img :src="this.goodsOne.image"  class="img1" />
           <div class="item">
             <div class="name">{{this.goodsOne.name}}</div>
@@ -131,17 +131,11 @@ export default {
   mounted() {
     this.goodsOne = this.$route.query.goodsOne;
     this.counts = this.$route.query.count;
-    if(localStorage.goodsOne){
-      this.goodsOne = JSON.parse(localStorage.getItem("goodsOne"))
-    }
-    else{
-      this.goodsOne = JSON.parse(this.$route.query.goodsOne)
-    }
-    if(localStorage.shopList){
+    if(localStorage.shopList.value){
       this.shopList = JSON.parse(localStorage.getItem("shopList"));
     }
     else{
-        this.shopList = JSON.parse(this.$route.query.shopList)
+      this.shopList = this.$route.query.shopList
     }
     console.log(this.shopList);
     this.flag = this.$route.query.flag;

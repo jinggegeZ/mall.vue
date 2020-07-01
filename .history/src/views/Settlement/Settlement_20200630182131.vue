@@ -41,7 +41,7 @@
             </div>
           </div>
           <div class="foot">
-            <van-submit-bar :price="this.total*100" button-text="提交订单" @submit="onSubmit" />
+            <van-submit-bar :price="totals*100" button-text="提交订单" @submit="onSubmit" />
           </div>
         </div>
         <div v-if="flags==='0'" class="d-flex">

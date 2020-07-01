@@ -101,6 +101,7 @@ export default {
       this.ass = this.shopList.filter(item => {
         return item.check === true
       });
+      localStorage.setItem('shopList', JSON.stringify(this.ass))
       if (this.ass.length > 0) {
         this.$dialog
           .confirm({
@@ -132,15 +133,15 @@ export default {
     },
     // 结算页面
     Goto() {
-      this.shopList = this.shopList.filter(item => {
+      this.ass = this.shopList.filter(item => {
         return item.check === true;
       });
-      if (this.shopList.length > 0) {
+      if (this.ass.length > 0) {
         this.$router.push({
           path: "/Settlement",
-          query: { flag: this.flag, total: this.total ,shopList: JSON.stringify(this.shopList)}
+          query: { flag: this.flag, total: this.total,shoplist: this.shoplist }
         });
-        localStorage.setItem("shopList", JSON.stringify(this.shopList));
+        localStorage.setItem("shopList", JSON.stringify(this.ass));
       } else {
         this.$toast.fail("没有要结算的商品");
       }
