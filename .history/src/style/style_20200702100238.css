@@ -41,8 +41,8 @@ html {
 html{
     width: 100% !important;
     
+},
+.van-search__action {
+    margin-left: 10px;
 }
-.highlights-text {
-    color: #ff5134;
-  }
 

@@ -8,7 +8,7 @@
         <div class="ipt">
             <van-search v-model="value" show-action placeholder="请输入搜索关键词">
                 <template #action>
-                    <div @click="gosearched">搜索</div>
+                    <div @click="gosearched" class="t-font">搜索</div>
                 </template>
             </van-search>
         </div>
@@ -90,18 +90,19 @@
         position: fixed;
         z-index: 99;
         width: 100%;
-        background: #fff;
+        background: rgb(220,220,220);
     }
     .t-head {
         display: flex;
         align-items: center;
     }
     .ipt {
-        width: 300px;
-        height: 40px;
+        width: 200px;
+        margin-top: 5px;
         display: flex;
         justify-content: space-around;
-        
     }
-    
+    .t-font {
+        color: rgb(134,134,134);
+    }
 </style>

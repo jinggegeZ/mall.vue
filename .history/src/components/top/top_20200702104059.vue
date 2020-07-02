@@ -98,10 +98,10 @@
     }
     .ipt {
         width: 300px;
-        height: 40px;
+        height: 50px;
         display: flex;
         justify-content: space-around;
-        
+        align-items: center;
     }
     
 </style>

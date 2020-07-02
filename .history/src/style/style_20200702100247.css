@@ -42,7 +42,7 @@ html{
     width: 100% !important;
     
 }
-.highlights-text {
-    color: #ff5134;
-  }
+.van-search__action {
+    margin-left: 10px;
+}
 

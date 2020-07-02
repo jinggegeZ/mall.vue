@@ -42,7 +42,26 @@ html{
     width: 100% !important;
     
 }
-.highlights-text {
-    color: #ff5134;
-  }
+.van-search__action {
+    margin-left: 10px;
+    background: #fff;
+}
+.van-search{
+    background: #fff;
+}
+.van-search__content{
+    background: #fff;
+    height: 50px;
+}
+.van-cell__value {
+    height: 50px;
+    line-height: 50px;
+}
+.van-field__left-icon {
+    height: 50px;
+    line-height: 50px;
+}
+.aaa .van-cell . {
+    height: 100px !important;
+}
 

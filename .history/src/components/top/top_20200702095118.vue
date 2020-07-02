@@ -6,12 +6,13 @@
             <div><van-icon name="location-o" /></div>
         </div>
         <div class="ipt">
-            <van-search v-model="value" show-action placeholder="请输入搜索关键词">
-                <template #action>
-                    <div @click="gosearched">搜索</div>
-                </template>
-            </van-search>
+        <van-search v-model="value"  placeholder="请输入搜索关键词" >
+        <template>
+            <div class="t-font" @click="gosearched">搜索</div>
+        </template>
+        </van-search>
         </div>
+        
     </div>
  </div>
 </template>
@@ -90,18 +91,19 @@
         position: fixed;
         z-index: 99;
         width: 100%;
-        background: #fff;
+        background: rgb(220,220,220);
+        position: relative;
     }
     .t-head {
         display: flex;
         align-items: center;
     }
     .ipt {
-        width: 300px;
-        height: 40px;
-        display: flex;
-        justify-content: space-around;
-        
+        margin-top: 5px;
     }
-    
+    .t-font {
+        color: rgb(134,134,134);
+        position: absolute;
+        right: 10;
+    }
 </style>

@@ -90,7 +90,7 @@
         position: fixed;
         z-index: 99;
         width: 100%;
-        background: #fff;
+        background: rgb(220,220,220);
     }
     .t-head {
         display: flex;
@@ -98,10 +98,9 @@
     }
     .ipt {
         width: 300px;
-        height: 40px;
+        margin-top: 5px;
         display: flex;
         justify-content: space-around;
-        
     }
     
 </style>

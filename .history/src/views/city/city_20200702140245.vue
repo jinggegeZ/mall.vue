@@ -4,7 +4,7 @@
       <van-nav-bar title="城市列表" left-text="返回" right-text left-arrow @click-left="onClickLeft" />
     </div>
     <div class="ipt">
-      <van-search v-model="value" placeholder="请输入城市名" />
+      <van-search v-model="search" placeholder="请输入城市名" />
     </div>
     <div class="text">当前城市</div>
     <div class="box">

@@ -7,8 +7,8 @@ export default {
         return service.get('/recommend')
     },
     // 搜索页
-    search(value){
-        return service.post(`/search`,{value})
+    serach(value){
+        return service.post(`/search,{value}`)
     },
     // 分类查询(get)
     classification(id){

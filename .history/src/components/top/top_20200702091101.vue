@@ -5,13 +5,8 @@
             <div>{{city}}</div>
             <div><van-icon name="location-o" /></div>
         </div>
-        <div class="ipt">
-            <van-search v-model="value" show-action placeholder="请输入搜索关键词">
-                <template #action>
-                    <div @click="gosearched">搜索</div>
-                </template>
-            </van-search>
-        </div>
+        <div class="ipt"><van-search v-model="value" placeholder="请输入搜索关键词" @click="gosearched" /></div>
+        <div class="t-font">搜索</div>
     </div>
  </div>
 </template>
@@ -36,10 +31,7 @@
            this.$router.push('/city')
        },
        gosearched(){
-           this.$router.push({
-               path:"/searched",
-               query:{'value': this.value}
-           })
+           this.$
        }
    },
    mounted() {
@@ -90,18 +82,16 @@
         position: fixed;
         z-index: 99;
         width: 100%;
-        background: #fff;
+        background: rgb(220,220,220);
     }
     .t-head {
         display: flex;
         align-items: center;
     }
     .ipt {
-        width: 300px;
-        height: 40px;
-        display: flex;
-        justify-content: space-around;
-        
+        margin-top: 5px;
     }
-    
+    .t-font {
+        color: rgb(134,134,134);
+    }
 </style>
