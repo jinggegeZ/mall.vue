@@ -10,34 +10,34 @@
         </template>
       </van-search>
     </div>
-    <div v-if="flag || cityName===''">
-      <div class="text">当前城市</div>
-      <div class="box">
-        <div class="box1"></div>
-        <div class="dv">{{this.citya}}</div>
-      </div>
-      <div class="text">热门城市</div>
-      <div class="Text">
-        <div class="Text1">
-          <div class="grid" v-for="(item,index) in arr" :key="index" @click="changeCity(item.name)" >{{item.name}}</div>
-        </div>
-      </div>
-      <div class="foot">
-        <van-index-bar class="indexBar" :sticky="false" highlight-color="#AE853A">
-          <div v-for="(item,index) in msg" :key="index">
-            <van-index-anchor :index="item" :key="index" />
-            <van-cell v-for="items in datas[item]" :key="items.id" :title="items.name" />
-          </div>
-        </van-index-bar>
+    <div class="text">当前城市</div>
+    <div class="box">
+      <div class="box1"></div>
+      <div class="dv">{{this.citya}}</div>
+    </div>
+    <div class="text">热门城市</div>
+    <div class="Text">
+      <div class="Text1">
+        <div
+          class="grid"
+          v-for="(item,index) in arr"
+          :key="index"
+          @click="changeCity(item.name)"
+        >{{item.name}}</div>
       </div>
     </div>
-    <div v-else>
-      <div v-if="this.cityList.length==0">
-        <div class="woring">您输入的地址有误，请重新输入</div>
+    <div class="Text">
+      <div class="Text1">
+        <div class="grid" v-for="(item,index) in arr" :key="index">{{item}}</div>
       </div>
-      <div v-else>
-        <van-cell v-for="item in cityList" :key="item.id" :title="item.name" @click="changeCity(item.name)" />
-      </div>
+    </div>
+    <div class="foot">
+      <van-index-bar class="indexBar" :sticky="false" highlight-color="#AE853A">
+        <div v-for="(item,index) in msg" :key="index">
+          <van-index-anchor :index="item" :key="index" />
+          <van-cell v-for="items in datas[item]" :key="items.id" :title="items.name" />
+        </div>
+      </van-index-bar>
     </div>
   </div>
 </template>
@@ -50,22 +50,16 @@ export default {
   components: {},
   data() {
     return {
-      cityName: "",
-      arr: [],
+      value: "",
+      arr: ["北京", "上海", "杭州", "重庆", "成都", "厦门"],
       city: city,
       msg: [],
-      datas: {},
-      flag: true,
-      cityList: []
+      datas: []
     };
   },
   methods: {
     onClickLeft() {
       this.$router.push("/");
-    },
-    onCancel() {
-      this.flag = true;
-      this.cityName = "";
     },
     changeCity(name) {
       // localStorage.setItem("cityName", name);
@@ -75,28 +69,10 @@ export default {
   },
   mounted() {
     this.datas = this.city.data.cities;
-    this.arr = this.city.data.hotCities;
     let keys = Object.keys(this.city.data.cities);
     this.msg = keys;
   },
-  watch: {
-    cityName(val) {
-      // 将全部城市push在一个数组里面
-      let arr = [];
-      for (let i in this.datas) {
-        arr.push(this.datas[i]);
-      }
-      let cityLists = [];
-      arr.map(item => {
-        item.map(item1 => {
-          cityLists.push(item1);
-        });
-      });
-      this.cityList = cityLists.filter(item => {
-        return JSON.stringify(item).includes(val);
-      });
-    }
-  },
+  watch: {},
   computed: {
     citya() {
       return this.$store.state.citya;

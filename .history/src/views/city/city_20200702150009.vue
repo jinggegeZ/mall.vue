@@ -22,6 +22,11 @@
           <div class="grid" v-for="(item,index) in arr" :key="index" @click="changeCity(item.name)" >{{item.name}}</div>
         </div>
       </div>
+      <div class="Text">
+        <div class="Text1">
+          <div class="grid" v-for="(item,index) in arr" :key="index">{{item}}</div>
+        </div>
+      </div>
       <div class="foot">
         <van-index-bar class="indexBar" :sticky="false" highlight-color="#AE853A">
           <div v-for="(item,index) in msg" :key="index">

@@ -168,6 +168,7 @@ export default {
 .searchHistory {
   width: 100%;
   height: 100%;
+  
   background: #fff;
 }
 .h-top {
@@ -178,6 +179,7 @@ export default {
   align-items: center;
   font-size: 18px;
   color: #999;
+  margin-top: 10px;
   margin-bottom: 10px;
 }
 .icon {

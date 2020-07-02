@@ -3,13 +3,12 @@
     <div class="top">
       <van-nav-bar title="城市列表" left-text="返回" right-text left-arrow @click-left="onClickLeft" />
     </div>
-    <div class="ipt">
-      <van-search v-model="cityName" show-action placeholder="请输入城市名" @focus="flag=false">
-        <template #action>
-          <div v-if="flag===false" @click="onCancel">取消</div>
-        </template>
-      </van-search>
-    </div>
+
+    <van-search v-model="cityName" show-action placeholder="请输入城市名" @focus="flag=false">
+      <template #action>
+        <div v-if="flag===false" @click="onCancel">取消</div>
+      </template>
+    </van-search>
     <div v-if="flag || cityName===''">
       <div class="text">当前城市</div>
       <div class="box">
@@ -19,14 +18,24 @@
       <div class="text">热门城市</div>
       <div class="Text">
         <div class="Text1">
-          <div class="grid" v-for="(item,index) in arr" :key="index" @click="changeCity(item.name)" >{{item.name}}</div>
+          <div
+            class="grid"
+            v-for="(item,index) in arr"
+            :key="index"
+            @click="changeCity(item.name)"
+          >{{item.name}}</div>
         </div>
       </div>
       <div class="foot">
         <van-index-bar class="indexBar" :sticky="false" highlight-color="#AE853A">
           <div v-for="(item,index) in msg" :key="index">
             <van-index-anchor :index="item" :key="index" />
-            <van-cell v-for="items in datas[item]" :key="items.id" :title="items.name" />
+            <van-cell
+              v-for="items in datas[item]"
+              :key="items.id"
+              :title="items.name"
+              @click="changeCity(item.name)"
+            />
           </div>
         </van-index-bar>
       </div>
@@ -36,14 +45,19 @@
         <div class="woring">您输入的地址有误，请重新输入</div>
       </div>
       <div v-else>
-        <van-cell v-for="item in cityList" :key="item.id" :title="item.name" @click="changeCity(item.name)" />
+        <van-cell
+          v-for="item in cityList"
+          :key="item.id"
+          :title="item.name"
+          @click="changeCity(item.name)"
+        />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import city from "../../../city";
+import city from "../../city";
 export default {
   name: "City",
   props: {},
@@ -61,7 +75,7 @@ export default {
   },
   methods: {
     onClickLeft() {
-      this.$router.push("/");
+      this.$router.go(-1);
     },
     onCancel() {
       this.flag = true;
@@ -69,8 +83,8 @@ export default {
     },
     changeCity(name) {
       // localStorage.setItem("cityName", name);
-      this.$store.commit("setCitya", name);
-      this.$router.push("/");
+      this.$store.commit('setCitya', name)
+      this.$router.push('/')
     }
   },
   mounted() {
@@ -101,16 +115,17 @@ export default {
     citya() {
       return this.$store.state.citya;
     }
+    
   }
 };
 </script>
 
 <style scoped lang='scss'>
 .text {
-  width: 100%;
   height: 50px;
   display: flex;
   align-items: center;
+  padding: 0 10px;
 }
 .box {
   width: 100%;
@@ -163,5 +178,12 @@ export default {
 }
 .van-nav-bar {
   justify-content: center;
+}
+.ipt {
+  display: flex;
+}
+.woring {
+  padding: 20px;
+  text-align: center;
 }
 </style>

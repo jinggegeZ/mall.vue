@@ -2,8 +2,8 @@
  <div>
     <div class="top">
         <div class="t-head" @click="postion">
-            <div><van-icon name="location-o" /></div>
             <div>{{city}}</div>
+            <div><van-icon name="location-o" /></div>
         </div>
         <div class="ipt">
             <van-search v-model="value" show-action placeholder="请输入搜索关键词">
@@ -98,10 +98,9 @@
     }
     .ipt {
         width: 300px;
-        height: 50px;
+        height: 40px;
         display: flex;
         justify-content: space-around;
-        align-items: center;
         
     }
     

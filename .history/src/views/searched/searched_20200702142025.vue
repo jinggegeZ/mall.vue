@@ -168,6 +168,7 @@ export default {
 .searchHistory {
   width: 100%;
   height: 100%;
+  margin-top: 20px;
   background: #fff;
 }
 .h-top {
@@ -178,7 +179,11 @@ export default {
   align-items: center;
   font-size: 18px;
   color: #999;
-  margin-bottom: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.h-top .van-icon{
+  margin-top: 10px;
 }
 .icon {
   height: 20px;

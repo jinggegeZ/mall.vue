@@ -22,6 +22,11 @@
           <div class="grid" v-for="(item,index) in arr" :key="index" @click="changeCity(item.name)" >{{item.name}}</div>
         </div>
       </div>
+      <div class="Text">
+        <div class="Text1">
+          <div class="grid" v-for="(item,index) in arr" :key="index">{{item}}</div>
+        </div>
+      </div>
       <div class="foot">
         <van-index-bar class="indexBar" :sticky="false" highlight-color="#AE853A">
           <div v-for="(item,index) in msg" :key="index">
@@ -51,21 +56,16 @@ export default {
   data() {
     return {
       cityName: "",
+      value: "",
       arr: [],
       city: city,
       msg: [],
-      datas: {},
-      flag: true,
-      cityList: []
+      datas: []
     };
   },
   methods: {
     onClickLeft() {
       this.$router.push("/");
-    },
-    onCancel() {
-      this.flag = true;
-      this.cityName = "";
     },
     changeCity(name) {
       // localStorage.setItem("cityName", name);
@@ -75,28 +75,10 @@ export default {
   },
   mounted() {
     this.datas = this.city.data.cities;
-    this.arr = this.city.data.hotCities;
     let keys = Object.keys(this.city.data.cities);
     this.msg = keys;
   },
-  watch: {
-    cityName(val) {
-      // 将全部城市push在一个数组里面
-      let arr = [];
-      for (let i in this.datas) {
-        arr.push(this.datas[i]);
-      }
-      let cityLists = [];
-      arr.map(item => {
-        item.map(item1 => {
-          cityLists.push(item1);
-        });
-      });
-      this.cityList = cityLists.filter(item => {
-        return JSON.stringify(item).includes(val);
-      });
-    }
-  },
+  watch: {},
   computed: {
     citya() {
       return this.$store.state.citya;

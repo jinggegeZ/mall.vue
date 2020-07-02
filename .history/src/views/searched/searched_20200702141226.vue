@@ -17,7 +17,7 @@
             <div class="searchHistory">
               <div class="h-top">
                 <div>搜索历史</div>
-                <div @click="dels" class="icon">
+                <div @click="dels">
                   <van-icon name="delete" size="20" />
                 </div>
               </div>
@@ -168,6 +168,7 @@ export default {
 .searchHistory {
   width: 100%;
   height: 100%;
+  margin-top: 20px;
   background: #fff;
 }
 .h-top {
@@ -178,15 +179,10 @@ export default {
   align-items: center;
   font-size: 18px;
   color: #999;
-  margin-bottom: 10px;
-}
-.icon {
-  height: 20px;
-  width: 20px;
 }
 .box {
   width: 100%;
-  height: 100px;
+  height: 60px;
   background: #fff;
   display: flex;
   align-items: center;
@@ -205,9 +201,7 @@ export default {
   width: 60px;
   height: 20px;
   border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+  
   width: 100px;
   height: 30px;
   background: orange;
