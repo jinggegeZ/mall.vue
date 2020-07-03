@@ -135,7 +135,7 @@
                       </div>
                     </div>
                     <div>
-                      <van-stepper v-model="count" :max="obj.amount" />
+                      <!-- <van-stepper v-model="count" :max="obj.amount" /> -->
                     </div>
                   </div>
                   <div class="foot9" @click="addShop(index)">
@@ -303,16 +303,17 @@ export default {
     },
     //立即购买
     rightnow() {
-      this.$router.push({
-        path: "/Settlement",
-        query: {
-          goodsOne: JSON.stringify(this.obj),
-          count: this.count,
-          flags: this.flags
-        }
-      });
-      // 将goodsone储存到localstorage
-      localStorage.setItem("goodsOne", JSON.stringify(this.obj));
+      // this.$router.push({
+      //   path: "/Settlement",
+      //   query: {
+      //     goodsOne: JSON.stringify(this.obj),
+      //     count: this.value,
+      //     flags: this.flags
+      //   }
+      // });
+      //将goodsone储存到localstorage
+      // localStorage.setItem("goodsOne", JSON.stringify(this.obj));
+      console.log(this.value);
     }
   },
   mounted() {

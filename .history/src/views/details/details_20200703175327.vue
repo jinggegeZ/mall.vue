@@ -311,7 +311,7 @@ export default {
           flags: this.flags
         }
       });
-      // 将goodsone储存到localstorage
+      将goodsone储存到localstorage
       localStorage.setItem("goodsOne", JSON.stringify(this.obj));
     }
   },

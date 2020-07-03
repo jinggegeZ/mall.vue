@@ -135,7 +135,7 @@
                       </div>
                     </div>
                     <div>
-                      <van-stepper v-model="count" :max="obj.amount" />
+                      <van-stepper v-model="number" :max="obj.amount" />
                     </div>
                   </div>
                   <div class="foot9" @click="addShop(index)">
@@ -307,11 +307,11 @@ export default {
         path: "/Settlement",
         query: {
           goodsOne: JSON.stringify(this.obj),
-          count: this.count,
+          count: this.value,
           flags: this.flags
         }
       });
-      // 将goodsone储存到localstorage
+      //将goodsone储存到localstorage
       localStorage.setItem("goodsOne", JSON.stringify(this.obj));
     }
   },
