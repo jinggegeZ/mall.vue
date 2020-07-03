@@ -11,8 +11,8 @@
       <div class="r-box">
         <van-tabs @change="change" v-model="active" v-if="bxMallSubDto.length > 0">
           <van-tab
-            v-for="(item, index1) in bxMallSubDto"
-            :key="index1"
+            v-for="(item, index) in bxMallSubDto"
+            :key="index"
             :name="item.mallSubId"
             :title="item.mallSubName"
           >
@@ -92,14 +92,14 @@ export default {
   mounted() {
     this.category = JSON.parse(localStorage.getItem("category"));
     
-    this.bxMallSubDto = this.category[0].bxMallSubDto;
+    this.bxMallSubDto = this.category[this.activeIndex].bxMallSubDto;
+
     if (this.$route.query.index) {
-      this.activeIndex = this.$route.query.index;
-      this.ids = this.category[this.activeIndex].bxMallSubDto[0].mallSubId;
-      this.bxMallSubDto = this.category[this.activeIndex].bxMallSubDto
+      this.ids = this.category[this.activeIndex].bxMallSubDto[
+        this.active
+      ].mallSubId;
       this.classification();
-    } 
-    else {
+    } else {
       this.ids = this.category[this.activeIndex].bxMallSubDto[this.active].mallSubId;
       this.classification();
     }

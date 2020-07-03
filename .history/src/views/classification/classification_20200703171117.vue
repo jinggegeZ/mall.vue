@@ -96,8 +96,8 @@ export default {
     if (this.$route.query.index) {
       this.activeIndex = this.$route.query.index;
       this.ids = this.category[this.activeIndex].bxMallSubDto[0].mallSubId;
-      this.bxMallSubDto = this.category[this.activeIndex].bxMallSubDto
       this.classification();
+      console.log(this.ids);
     } 
     else {
       this.ids = this.category[this.activeIndex].bxMallSubDto[this.active].mallSubId;
