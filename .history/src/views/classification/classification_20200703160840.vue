@@ -92,6 +92,7 @@ export default {
   mounted() {
     this.category = JSON.parse(localStorage.getItem("category"));
     this.activeIndex = this.$route.query.index;
+    console.log(this.activeIndex);
     this.bxMallSubDto = this.category[this.activeIndex].bxMallSubDto;
 
     if (this.$route.query.index) {
