@@ -26,7 +26,7 @@
         <van-index-bar class="indexBar" :sticky="false" highlight-color="#AE853A">
           <div v-for="(item,index) in msg" :key="index">
             <van-index-anchor :index="item" :key="index" />
-            <van-cell v-for="items in datas[item]" :key="items.id" :title="items.name" @click="changeCity(items.name)" />
+            <van-cell v-for="items in datas[item]" :key="items.id" :title="items.name" @click="changecity(items.name)" />
           </div>
         </van-index-bar>
       </div>
@@ -68,12 +68,15 @@ export default {
       this.flag = true;
       this.cityName = "";
     },
-    changeCity(val) {
-      localStorage.setItem("name", val);
+    changeCity(name) {
+      // localStorage.setItem("cityName", name);
       this.$store.commit("setCitya", name);
       this.$router.push("/");
     },
-   
+    changecity(name){
+      
+      localStorage.setItem('name',name)
+    }
   },
   mounted() {
     this.datas = this.city.data.cities;

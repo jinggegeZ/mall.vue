@@ -26,7 +26,7 @@
         <van-index-bar class="indexBar" :sticky="false" highlight-color="#AE853A">
           <div v-for="(item,index) in msg" :key="index">
             <van-index-anchor :index="item" :key="index" />
-            <van-cell v-for="items in datas[item]" :key="items.id" :title="items.name" @click="changeCity(items.name)" />
+            <van-cell v-for="items in datas[item]" :key="items.id" :title="items.name" @click="changecity(items.name)" />
           </div>
         </van-index-bar>
       </div>

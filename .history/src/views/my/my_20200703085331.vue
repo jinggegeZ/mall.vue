@@ -3,7 +3,7 @@
     <div class="box">
       <div class="box1">
         <div class="header">会员中心</div>
-          <div class="mybox" v-if="nickname">
+          <div class="mybox" v-if="localStrorage.nickname">
             <div class="b-img"><img :src="userInfo.avatar" alt=""></div>
             <div class="b-font" >欢迎您：{{userInfo.nickname}}</div>
             <div class="b-back" @click="logout">退出登录</div>
@@ -81,8 +81,7 @@
    },
    data () {
      return {
-        nickname:'',
-        userInfo:{}
+        userInfo:{},
         
      }
    },
@@ -115,7 +114,6 @@
        this.$api.loginOut({})
        .then(res => {
          this.$toast('退出成功')
-         this.$router.go(0)
          localStorage.removeItem('nickname')
          
        }).catch(err => {
@@ -129,7 +127,6 @@
    mounted() {
      this.$api.queryUser({}).then(res => {
        this.userInfo = res.userInfo
-       this.nickname = res.userInfo.nickname
        console.log(res);
      }).catch(err => {
        console.log(err);

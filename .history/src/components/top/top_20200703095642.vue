@@ -1,10 +1,10 @@
 <template>
  <div>
     <div class="top">
-        <div class="t-head" >
+        <div class="t-head" @click="postion">
             <div @click="citychange"><van-icon name="location-o" /></div>
-            <div @click="postion" v-if="name === null ">{{city}}</div>
-            <div @click="postion" v-else>{{name}}</div>
+            <div v-if="name === null ">{{city}}</div>
+            <div v-else>{{this.name}}</div>
         </div>
         <div class="ipt">
             <van-search v-model="value" show-action placeholder="请输入搜索关键词">

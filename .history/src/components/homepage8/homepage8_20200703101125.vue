@@ -18,8 +18,8 @@
           </div>
         </div>
       </div>
+      <div class="fllfoot">这是一个秘密哦</div>
     </div>
-    <div class="fllfoot">这是一个秘密哦</div>
   </div>
 </template>
 

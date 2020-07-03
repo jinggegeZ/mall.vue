@@ -29,7 +29,6 @@ export default {
       list:[],
       value: '',
       time:'',
-      goods:[]
     };
   },
   components: {},
@@ -39,9 +38,14 @@ export default {
     },
 
     addshop(index){
-      this.$api.addShop(this.goods[index].id)
+      this.$api.addShop(this.list[index].id)
       .then(res => {
       this.$dialog.confirm({message:"加入成功"})
+        // findindex 返回他的下标，如果没有就返回-1
+      let index = this.item.goods.findIndex(item1 => {
+         return item1.id === item.goodsId
+      })
+      if (index === -1) this.$store.commit('addCartNum')
         console.log(res);
       }).catch(err => {
         console.log(err);
@@ -53,10 +57,6 @@ export default {
     this.$api.alreadyEvaluated()
     .then(res => {
       this.list = res.data.list
-      res.data.list.map(item => {
-        this.goods = item.goods
-        console.log(this.goods);
-      })
       console.log(this.list);
     }).catch(err => {})
   },

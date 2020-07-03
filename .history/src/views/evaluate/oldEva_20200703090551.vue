@@ -3,7 +3,7 @@
     <div class="locat">
       <van-icon name="arrow-left" color="#1989fa" class="back_last" @click="backEvaluate" />评价中心
     </div>
-    <div class="oldeva1" v-for="(item,index) in list" :key="index">
+    <div class="oldeva1" v-for="(item,index) in obj" :key="index">
       <div class="oldeva2">
         <div class="oldeva">
           <van-rate v-model="item.rate" readonly />
@@ -26,10 +26,9 @@
 export default {
   data() {
     return {
-      list:[],
+      obj:[],
       value: '',
       time:'',
-      goods:[]
     };
   },
   components: {},
@@ -37,11 +36,15 @@ export default {
     backEvaluate() {
       this.$router.push("/evaluate");
     },
-
     addshop(index){
-      this.$api.addShop(this.goods[index].id)
+      this.$api.addShop(this.item.goods[index].cid)
       .then(res => {
       this.$dialog.confirm({message:"加入成功"})
+        // findindex 返回他的下标，如果没有就返回-1
+      let index = this.shopList.findIndex(item1 => {
+         return item1.cid === item.goodsId
+      })
+      if (index === -1) this.$store.commit('addCartNum')
         console.log(res);
       }).catch(err => {
         console.log(err);
@@ -52,12 +55,8 @@ export default {
   mounted() {
     this.$api.alreadyEvaluated()
     .then(res => {
-      this.list = res.data.list
-      res.data.list.map(item => {
-        this.goods = item.goods
-        console.log(this.goods);
-      })
-      console.log(this.list);
+      this.obj = res.data.list
+      console.log(this.obj);
     }).catch(err => {})
   },
   watch: {},

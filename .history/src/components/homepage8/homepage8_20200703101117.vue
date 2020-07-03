@@ -1,56 +1,60 @@
 <template>
-  <div>
-    <div class="flbox">
-      <div class="floor">
+ <div >
+      <div class="flbox">
+        <div class="floor">
         <div class="f-font2">热销商品</div>
       </div>
-      <div v-for="(item,index) in hotGoods" :key="index" @click="details(index)">
+        <div v-for="(item,index) in hotGoods" :key="index"  @click="details(index)">
         <div :class="[{'left':(index==0)},{'right':(index>0)}]" class="div">
-          <div class="img-box">
-            <div>
-              <img :src="item.image" alt />
-            </div>
-            <div class="imgfont">{{item.name}}</div>
-            <div class="img-style">
-              <div class="prifont">¥{{item.price}}</div>
-              <div class="img-font">¥{{item.price}}</div>
-            </div>
-          </div>
+              <div class="img-box">
+                  <div><img :src="item.image" alt="" /></div>
+                  <div class="imgfont">{{item.name}}</div>
+                <div class="img-style">
+                  <div class="prifont">¥{{item.price}}</div>
+                  <div class="img-font">¥{{item.price}}</div>
+                </div>
+              </div>
         </div>
       </div>
-    </div>
-    <div class="fllfoot">这是一个秘密哦</div>
-  </div>
+       <div class="fllfoot">这是一个秘密哦</div>
+      </div>
+ </div>
 </template>
 
 <script>
-export default {
-  name: "",
-  props: {
-    hotGoods: {
-      type: Array,
-      default: () => {}
-    }
-  },
-  components: {},
-  data() {
-    return {
-      id: ""
-    };
-  },
-  methods: {
-    details(index) {
-      this.$router.push({
-        path: "/details",
-        query: { id: this.hotGoods[index].goodsId }
-      });
-      this.$utils.details(this.hotGoods[index]);
-    }
-  },
-  mounted() {},
-  watch: {},
-  computed: {}
-};
+ export default {
+   name: '',
+   props: {
+     hotGoods:{
+       type: Array,
+       default:() =>{}
+     }
+   },
+   components: {
+
+   },
+   data () {
+     return {
+       id:'',
+     }
+   },
+   methods: {
+     details(index){
+       this.$router.push({path:'/details',query:{id: this.hotGoods[index].goodsId}});
+       this.$utils.details(this.hotGoods[index])
+     },
+    
+   },
+   mounted() {
+
+   },
+   watch: {
+
+   },
+   computed: {
+
+   }
+ }
 </script>
 
 <style scoped lang='scss'>
@@ -58,15 +62,16 @@ export default {
   width: 100%;
   margin-bottom: 50px;
 }
-.fff {
+.fff{
   margin-bottom: 30px;
 }
-.floor {
+  .floor{
   width: 100%;
   height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 .f-font2 {
   color: red;
@@ -80,7 +85,7 @@ export default {
 .left {
   float: left;
   width: 50%;
-  background: white;
+  background: white;  
 }
 .right {
   float: right;
@@ -91,7 +96,7 @@ img {
   width: 80%;
 }
 .div {
-  display: flex;
+ display: flex;
 }
 .img-box {
   display: flex;

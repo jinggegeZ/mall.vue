@@ -1,10 +1,9 @@
 <template>
  <div>
     <div class="top">
-        <div class="t-head" >
-            <div @click="citychange"><van-icon name="location-o" /></div>
-            <div @click="postion" v-if="name === null ">{{city}}</div>
-            <div @click="postion" v-else>{{name}}</div>
+        <div class="t-head" @click="postion">
+            <div><van-icon name="location-o" /></div>
+            <div v-if="">{{city}}</div>
         </div>
         <div class="ipt">
             <van-search v-model="value" show-action placeholder="请输入搜索关键词">
@@ -29,8 +28,7 @@
      return {
          city:'',
          obj:{},
-         value:'',
-         name:''
+         value:''
      }  
    },
    methods: {
@@ -42,10 +40,6 @@
                path:"/searched",
                query:{'value': this.value}
            })
-       },
-       citychange(){
-           localStorage.removeItem('name')
-           this.$router.go(0)
        }
    },
    mounted() {
@@ -75,7 +69,6 @@
       function onError(data) {
         // 定位出错
       }
-      _this.name = localStorage.getItem('name')
     });
     
    },

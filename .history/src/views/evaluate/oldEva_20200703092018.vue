@@ -29,7 +29,6 @@ export default {
       list:[],
       value: '',
       time:'',
-      goods:[]
     };
   },
   components: {},
@@ -39,7 +38,7 @@ export default {
     },
 
     addshop(index){
-      this.$api.addShop(this.goods[index].id)
+      this.$api.addShop(this.item.goods[index].id)
       .then(res => {
       this.$dialog.confirm({message:"加入成功"})
         console.log(res);
@@ -53,10 +52,6 @@ export default {
     this.$api.alreadyEvaluated()
     .then(res => {
       this.list = res.data.list
-      res.data.list.map(item => {
-        this.goods = item.goods
-        console.log(this.goods);
-      })
       console.log(this.list);
     }).catch(err => {})
   },

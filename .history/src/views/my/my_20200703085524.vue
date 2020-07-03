@@ -82,7 +82,6 @@
    data () {
      return {
         nickname:'',
-        userInfo:{}
         
      }
    },
@@ -115,7 +114,6 @@
        this.$api.loginOut({})
        .then(res => {
          this.$toast('退出成功')
-         this.$router.go(0)
          localStorage.removeItem('nickname')
          
        }).catch(err => {
@@ -128,7 +126,6 @@
    },
    mounted() {
      this.$api.queryUser({}).then(res => {
-       this.userInfo = res.userInfo
        this.nickname = res.userInfo.nickname
        console.log(res);
      }).catch(err => {

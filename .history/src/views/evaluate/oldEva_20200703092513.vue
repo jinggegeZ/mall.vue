@@ -39,7 +39,7 @@ export default {
     },
 
     addshop(index){
-      this.$api.addShop(this.goods[index].id)
+      this.$api.addShop(this.list[index].id)
       .then(res => {
       this.$dialog.confirm({message:"加入成功"})
         console.log(res);
