@@ -1,6 +1,9 @@
 <template>
   <div class="allbox">
-    <div v-if="userInfo">
+  <div v-if="userInfo === null ">
+        <van-empty description="您需要登录后使用哦" />
+    </div>
+    <div v-else>
       <div class="cart">购物车</div>
       <div>
       <div v-if="shopList">
@@ -58,9 +61,7 @@
       </div>
       </div>
     </div>
-    <div v-else>
-        <van-empty description="您需要登录后使用哦" />
-    </div>
+    
   </div>
 </template>
 

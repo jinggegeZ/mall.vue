@@ -172,6 +172,7 @@ export default {
     this.$api.queryUser()
     .then(res => {
       this.userInfo = res.userInfo
+      console.log(this.userInfo);
     })
     .catch(err => {})
   },

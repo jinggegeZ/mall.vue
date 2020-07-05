@@ -3,7 +3,16 @@
     <div v-if="userInfo">
       <div class="cart">购物车</div>
       <div>
-      <div v-if="shopList">
+      <div v-if="shopList.length <= 0">
+        <div class="cart-item1">
+          <van-icon name="shopping-cart" class="cart-item2" />
+        </div>
+        <div class="cart-item3">你的购物车还是空的</div>
+        <div class="cart-item3" @click="buyShop">
+          <div class="cart-item4">去购物</div>
+        </div>
+      </div>
+      <div v-else>
         <div class="chose">
           <div v-if="checkAll===false">
             <van-checkbox v-model="checkAll" @click="checkedAll">全选</van-checkbox>
@@ -47,19 +56,10 @@
           </div>
         </div>
       </div>
-      <div v-else>
-        <div class="cart-item1">
-          <van-icon name="shopping-cart" class="cart-item2" />
-        </div>
-        <div class="cart-item3">你的购物车还是空的</div>
-        <div class="cart-item3" @click="buyShop">
-          <div class="cart-item4">去购物</div>
-        </div>
-      </div>
       </div>
     </div>
-    <div v-else>
-        <van-empty description="您需要登录后使用哦" />
+    <div v-else class="else">
+        <div >您还没有登录！请登录哦</div>
     </div>
   </div>
 </template>
@@ -172,6 +172,7 @@ export default {
     this.$api.queryUser()
     .then(res => {
       this.userInfo = res.userInfo
+      console.log(this.userInfo);
     })
     .catch(err => {})
   },
@@ -288,5 +289,8 @@ export default {
   border-radius: 10px;
   padding: 10px 20px;
 }
-
+.else {
+  width: 100%;
+  
+}
 </style>

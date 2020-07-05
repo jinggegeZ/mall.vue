@@ -3,6 +3,15 @@
     <div v-if="userInfo">
       <div class="cart">购物车</div>
       <div>
+      <div v-else>
+        <div class="cart-item1">
+          <van-icon name="shopping-cart" class="cart-item2" />
+        </div>
+        <div class="cart-item3">你的购物车还是空的</div>
+        <div class="cart-item3" @click="buyShop">
+          <div class="cart-item4">去购物</div>
+        </div>
+      </div>
       <div v-if="shopList">
         <div class="chose">
           <div v-if="checkAll===false">
@@ -45,15 +54,6 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div v-else>
-        <div class="cart-item1">
-          <van-icon name="shopping-cart" class="cart-item2" />
-        </div>
-        <div class="cart-item3">你的购物车还是空的</div>
-        <div class="cart-item3" @click="buyShop">
-          <div class="cart-item4">去购物</div>
         </div>
       </div>
       </div>
@@ -172,6 +172,7 @@ export default {
     this.$api.queryUser()
     .then(res => {
       this.userInfo = res.userInfo
+      console.log(this.userInfo);
     })
     .catch(err => {})
   },
